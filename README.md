@@ -1,7 +1,9 @@
 # Credit Card Fraud Detection
 This python project show how to use classifier to detect fraudulent credit card transactions
 ## Fraud rate 
-Kaggle example [PR3] 0,173%
+Fraud rate
+* in Kaggle example [PR3] 0,173%
+* in credit card transaction in Europe in 2024 0.1%
 
 # How to manage imbalanced data
 
