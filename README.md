@@ -11,6 +11,11 @@ For this example the imbalanced is higher.
 
 This work is based on credit card transactions because it was more simple to achieve some significant results.
 
+## Research about the card transactions fraud detection
+
+If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
+![image](../imgs/FD00A-googleScholarStat.png)
+
 # How to manage imbalanced data
 ## Definition
 Imbalanced data refers to scenarios where the classes in the dataset are not reprsented equally.
@@ -38,6 +43,9 @@ The confusion matrix is quite powerfull but it does not give you on figure to co
 GridSearchCV
 
 # References
+## General web site
+* [G1] Google Scholar
+	- https://scholar.google.com/
 
 ## Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
