@@ -1,5 +1,19 @@
 # Credit Card Fraud Detection
 This python project show how to use classifier to detect fraudulent credit card transactions
+
+## Research about the card transactions fraud detection
+
+If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
+The number of publications have doubled in 10 years.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
+
+## Data source
+
+Even fraud detection in credit card transactions has a lot of publication. Data example are very rare.
+A first source data is the example in Kaggle [PR3] but it is not very satisfying.
+
+
 ## Fraud rate 
 Fraud rate
 * in Kaggle example [PR3] 0,173%
@@ -11,12 +25,6 @@ For this example the imbalanced is higher.
 
 This work is based on credit card transactions because it was more simple to achieve some significant results.
 
-## Research about the card transactions fraud detection
-
-If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
-The number of publications have doubled in 10 years.
-
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
 
 # How to manage imbalanced data
 ## Definition
