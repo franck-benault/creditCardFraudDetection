@@ -10,9 +10,12 @@ The number of publications have doubled in 10 years.
 
 ## Data source
 
-Even fraud detection in credit card transactions has a lot of publication. Data example are very rare.
-A first source data is the example in Kaggle [PR3] but it is not very satisfying.
+Even fraud detection in credit card transactions has a lot of publications. Data example are very rare.
+A first source data is the example in Kaggle [PR3]. Even it is very often used for publication. It is not very satisfying.
 
+A second solution is to simulate data set using for example the Python library imbalanced learn [PL2].
+The need od example data for fraud detection is described in the site [PR2]. 
+This site explained how to create a data set simulating credit card transaction with some fraudulent transactions.
 
 ## Fraud rate 
 Fraud rate
@@ -42,6 +45,8 @@ The confusion matrix is quite powerfull but it does not give you on figure to co
 * Matthews correlation coefficient (MCC)
 * Cohen's kappa
 
+# Python and Python libraries
+* imbalanced learning
 
 ## Resampling techniques
 ### Oversampling the minority class
@@ -59,8 +64,14 @@ GridSearchCV
 
 ## Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
-  - https://www.commercegate.com/ultimate-guide-high-risk-mcc-codes/
+  - https://www.commercegate.com/ultimate-guide-high-risk-mcc-codes
 * [PR2] Reproducible Machine Learning for Credit Card Fraud detection - Practical handbook
-  - https://fraud-detection-handbook.github.io/fraud-detection-handbook/Foreword.html
+  - https://fraud-detection-handbook.github.io/fraud-detection-handbook
 * [PR3] Kaggle credit card transactions
   - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+ 
+## Python and Python libraries
+* [PL1] scikit-learn
+	- https://scikit-learn.org
+* [PL2] imbalanced learn
+	-  https://imbalanced-learn.org 
