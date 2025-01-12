@@ -14,7 +14,9 @@ This work is based on credit card transactions because it was more simple to ach
 ## Research about the card transactions fraud detection
 
 If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
-![image](../imgs/FD00A-googleScholarStat.png)
+The number of publications have doubled in 10 years.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
 
 # How to manage imbalanced data
 ## Definition
