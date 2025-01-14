@@ -58,29 +58,30 @@ The confusion matrix is quite powerfull but it does not give you on figure to co
 
 ### Results
 Using strategy="most_frequent"
-accuracy score: 0.9989
-f1 score: 0.0000
-mcc score: 0.0000
-roc auc score: 0.5000
+* accuracy score: 0.9989
+* f1 score: 0.0000
+* mcc score: 0.0000
+* roc auc score: 0.5000
 
 Using stategy="uniform"
-accuracy score: 0.4990
-f1 score: 0.0021
-mcc score: 0.0007
-roc auc score: 0.5051
+* accuracy score: 0.4990
+* f1 score: 0.0021
+* mcc score: 0.0007
+* roc auc score: 0.5051
 
 Using stategy="stratified"
-accuracy score: 0.9978
-f1 score: 0.0000
-mcc score: -0.0011
-roc auc score: 0.4994
+* accuracy score: 0.9978
+* f1 score: 0.0000
+* mcc score: -0.0011
+* roc auc score: 0.4994
 
 the following result are the minimum that the learning algorithm should exceed:
+
 maximal result:
-accuracy score: 0.9989
-f1 score: 0.0021
-mcc score: 0.0007
-roc auc score: 0.5051
+* accuracy score: 0.9989
+* f1 score: 0.0021
+* mcc score: 0.0007
+* roc auc score: 0.5051
 
 # Hyperparameter tuning
 GridSearchCV
