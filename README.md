@@ -44,9 +44,17 @@ Imbalanced data refers to scenarios where the classes in the dataset are not rep
 Also the target class is often the one underrepresented. For fraud on card transactions, I often see *severe* imbalanced data. 
 
 ## Metrics choice issue
-Accurancy is not a good metric for severe imbalanced datasets.
 
-The confusion matrix is quite powerfull but it does not give you on figure to compare to other result. So I need also a single figure metric.
+
+The confusion matrix is an important tool to visualize the force or the weakness of a classifier. 
+But it is quite difficult to use it for automation. A simple indicator is always easier for automation.
+
+Among the single figure metrics the first one is Accurancy. it measures the proportion of correctly classified transactions among all transactions.
+For accuracy the scale is from 0 (poor result) to 1 (excelent result)
+
+$Accurancy = (TP+TN)/(Total Samples)$
+
+But it is not a good metric for severe imbalanced datasets. We can see that we the example of the dummy classifier.
 
 * Precision & Recall
 * F1-score
