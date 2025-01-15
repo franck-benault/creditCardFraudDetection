@@ -56,15 +56,33 @@ $Accurancy = (TP+TN)/(Total Samples)$
 
 But it is not a good metric for severe imbalanced datasets. We can see that we the example of the dummy classifier.
 
-* Precision & Recall
+* Precision
+	- it measures the proportion of actual fraudulent transactions correctly identified by the model.
+	- $Recall = TP / (TP+ FN)$
+* Recall
+	- it quantifies the proportion of transactions predicted as fraudulent that are indeed fraudulent.
+	- $Precision = TP / (TP+FP)$
 * F1-score
+	- it is the harmonic mean of Precision and Recall. This value is useful when there is a significant imbalanced. F1 score has been used during previous projects in my company.
+	- $F1-score = 2 x (Precision x Recall) / (Precision + Recall)$
+
+All these metrics (Accuracy, Recall, Precision, F1 score) follow the same scale : 1 is a perfect result, 0 is the worst result. 
+F1 following the formula could be undefined but in this case the implementation returns 0 with a warning.  
+F1 score is a first important metrics for managing severe imbalanced data.
+
 * ROC-AUC
+	- it means the Area Under the Receiver Operation Characteristic Curve.  It provides a  measure of the ability of the model to discriminate between classes across different threshold levels. A higher AUC score means a better performing model. The scale of this score is different 0.5 is a total random classification and 1.0 represents a perfect classification. It is also possible to draw the ROC curve.
 * Matthews correlation coefficient (MCC)
+	- it is adapted for the problems with two classes, which is the case of the fraud detection. A random classification returns 0. A perfect classification gives 1. The following the formula a complete misclassification should return -1.
 * Cohen's kappa
 
 # Python and Python libraries
-* imbalanced learning
 
+* [PL1] scikit-learn
+	- https://scikit-learn.org
+* [PL2] imbalanced learn
+	- https://imbalanced-learn.org
+  
 ## Resampling techniques
 ### Oversampling the minority class
 ### Undersampling the majority class
