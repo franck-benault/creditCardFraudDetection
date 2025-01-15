@@ -9,13 +9,22 @@ The number of publications have doubled in 10 years.
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
 
 ## Data source
-
+### Kaggle example [PR3]
 Even fraud detection in credit card transactions has a lot of publications. Data example are very rare.
 A first source data is the example in Kaggle [PR3]. Even it is very often used for publication. It is not very satisfying.
 
+### Simulated data
 A second solution is to simulate data set using for example the Python library imbalanced learn [PL2].
 The need od example data for fraud detection is described in the site [PR2]. 
 This site explained how to create a data set simulating credit card transaction with some fraudulent transactions.
+
+The following figures are just an approximation
+* Number transactions per day
+	- 1 000 000
+* Number fraudulent transactions per day
+ 	- 1 000 
+	- Fraud rate 0,1% 
+* 2/3 Mastercard transactions, 1/3 Visa transactions
 
 ## Fraud rate 
 Fraud rate
