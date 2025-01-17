@@ -109,7 +109,7 @@ def show_importance(modelClf,predictors):
     else:
         print("No feature importance")
 
-def show_confusion_matrix(y_test,y_pred):
+def show_confusion_matrix(y_test,y_pred,imageName=None):
     cm = pd.crosstab(y_test, y_pred, rownames=['Actual'], colnames=['Predicted'])
     fig, (ax1) = plt.subplots(ncols=1, figsize=(5,5))
     sns.heatmap(cm, 
@@ -120,4 +120,6 @@ def show_confusion_matrix(y_test,y_pred):
     linewidths=.2,linecolor="Darkblue", cmap="Blues")
     cm.style.format("{:20}")
     plt.title('Confusion Matrix', fontsize=14)
+    if(imageName!=None):
+        plt.savefig(imageName)
     plt.show()
