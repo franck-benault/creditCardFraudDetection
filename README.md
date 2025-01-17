@@ -125,7 +125,7 @@ Using stategy="stratified"
 the following result are the minimum that the learning algorithm should exceed:
 
 maximal result:
-* accuracy score: 0.9989
+* ~~accuracy score: 0.9989~~
 * f1 score: 0.0021
 * mcc score: 0.0007
 * roc auc score: 0.5051
