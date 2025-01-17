@@ -94,11 +94,14 @@ The Dummy classifier does not learn anything from the data.
 In fact it is used as a baseline for comparing the performance of more complex and more realistic models. 
 There are several possible strategies, here are the most known :
 * most frequent :
-	- This classifier always predicts the most frequent class in the training data. 
+	- This classifier always predicts the most frequent class in the training data.
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixMostFrequent.png)
 * uniform :
-	- This classifier generates random predictions with uniform probabilities for all classes  
+	- This classifier generates random predictions with uniform probabilities for all classes
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixUniform.png) 
 * stratified :
-  	- This classifier generates random predictions based on the class distribution in the training data 
+  	- This classifier generates random predictions based on the class distribution in the training data
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixStratified.png)
 
 ### Results
 Using strategy="most_frequent"
