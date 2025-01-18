@@ -86,14 +86,14 @@ F1 score is a first important metrics for managing severe imbalanced data.
 # Transactions data detail
 ## Categorical data
 One issue with the transactions data is that there are a lot of categorical data.
-Also some of these categorical data may have a lot of possible values (more than 100)
+Also some of these categorical data may have a lot of possible values (more than 100).
 So the classical encoding may create a lot of column and the algorithm will be slow and will have poor results.
 
 ### MCC (Merchant Category Code)
 
 ### Terminal Country
 During one day, it may have 200 values possible per day which is huge because the full table has aurond 250 codes.
-We could take only the most current
+We could take only the most present values.
 
 ### How to encode the data
 
