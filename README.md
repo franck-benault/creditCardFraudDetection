@@ -108,7 +108,7 @@ About the country, the idea is define three group:
 * All the other countries (WORLD)
 
 The information value calculated on this new column is 1.117 (compared to the 1.907).
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png.png)
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png)
 
 ## Card holder profil
   
