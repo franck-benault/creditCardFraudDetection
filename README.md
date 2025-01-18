@@ -97,7 +97,18 @@ The terminal country is stored using the norm ISO-3166-1 the code alpha3, meanin
 During one day, there are sometimes 200 values which is huge because the full table has aurond 250 codes.
 We could take only the most present values.
 
+the IV (information value) calculated on this field is 1.907.
+
 ### How to encode the data
+The idea is the find a way to group several categories to a new one without lossing to much information.
+This grouping must have a business meaning.
+About the country, the idea is define three group:
+* Belgium (BELGIUM)
+* All the other european countries (EUROPE)
+* All the other countries (WORLD)
+
+The information value calculated on this new column is 1.117 (compared to the 1.907).
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png.png)
 
 ## Card holder profil
   

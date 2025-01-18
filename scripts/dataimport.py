@@ -1,6 +1,7 @@
 import warnings
 warnings.filterwarnings('ignore')
 import sourcedata as sd
+import countrymanagement as cm
 
 import pandas as pd 
 import numpy as np
@@ -27,14 +28,19 @@ def fill_missing_values(dfTrx):
     dfTrx['vaa_score'].fillna(np.mean(dfTrx['vaa_score']), inplace=True)
     return dfTrx
 
+def category_grouping(dfTrx):
+    dfTrx['country_group'] = dfTrx['term_country'].apply(cm.get_country_group)
+    dfTrx=dfTrx.drop(columns=['term_country'])
+    return dfTrx
+    
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group'], dtype = int)
     return dfTrx
 
 def remove_column_not_yet_managed(dfTrx):
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code','trx_reversal',
                              'ecom_indicator','trx_authentication','pos_entry_mode','card_entry_mode','ch_present',
-                            'card_pan_id','term_country', 'term_mcc'])
+                            'card_pan_id','term_mcc'])
     return dfTrx
 
 
@@ -42,6 +48,7 @@ def full_import_and_clean(inputFileName):
     dfTrx = read_file(inputFileName)
     dfTrx = remove_columns(dfTrx)
     dfTrx = fill_missing_values(dfTrx)
+    dfTrx = category_grouping(dfTrx)
     dfTrx = category_encoding(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)
     return dfTrx
