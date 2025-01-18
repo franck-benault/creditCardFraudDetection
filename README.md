@@ -92,7 +92,9 @@ So the classical encoding may create a lot of column and the algorithm will be s
 ### MCC (Merchant Category Code)
 
 ### Terminal Country
-During one day, it may have 200 values possible per day which is huge because the full table has aurond 250 codes.
+The terminal country is stored using the norm ISO-3166-1 the code alpha3, meaning that Belgium is stored using "BEL".
+
+During one day, there are sometimes 200 values which is huge because the full table has aurond 250 codes.
 We could take only the most present values.
 
 ### How to encode the data
