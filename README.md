@@ -45,7 +45,6 @@ Also the target class is often the one underrepresented. For fraud on card trans
 
 ## Metrics choice issue
 
-
 The confusion matrix is an important tool to visualize the force or the weakness of a classifier. 
 But it is quite difficult to use it for automation. A simple indicator is always easier for automation.
 
@@ -124,13 +123,11 @@ In fact it is used as a baseline for comparing the performance of more complex a
 There are several possible strategies, here are the most known :
 * most frequent :
 	- This classifier always predicts the most frequent class in the training data.
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixMostFrequent.png)
 * uniform :
 	- This classifier generates random predictions with uniform probabilities for all classes
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixUniform.png) 
 * stratified :
   	- This classifier generates random predictions based on the class distribution in the training data
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixStratified.png)
+
 
 ### Results
 Using strategy="most_frequent"
@@ -138,18 +135,21 @@ Using strategy="most_frequent"
 * f1 score: 0.0000
 * mcc score: 0.0000
 * roc auc score: 0.5000
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixMostFrequent.png)
 
 Using stategy="uniform"
 * accuracy score: 0.4990
 * f1 score: 0.0021
 * mcc score: 0.0007
 * roc auc score: 0.5051
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixUniform.png) 
 
 Using stategy="stratified"
 * accuracy score: 0.9978
 * f1 score: 0.0000
 * mcc score: -0.0011
 * roc auc score: 0.4994
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixStratified.png)
 
 the following result are the minimum that the learning algorithm should exceed:
 
@@ -158,6 +158,19 @@ maximal result:
 * f1 score: 0.0021
 * mcc score: 0.0007
 * roc auc score: 0.5051
+
+## Naive Bayes Classifier
+Even if it is a real machine learning algorithm, the expected result is low.
+The reason is that it algorithm takes each variable independently which is cleary wrong for the transactions.
+This is also the reason that there is no scaling or normalisation applied on the input data.
+The result are better than the dummy classifier. So the algorithm learns something from the data.
+
+On test data:
+* f1 score: 0.0575
+* mcc score: 0.1231
+* roc auc score: 0.7535
+
+This is a sort of second starting point from more complex algorithms.
 
 # Hyperparameter tuning
 GridSearchCV

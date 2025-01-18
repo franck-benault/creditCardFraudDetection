@@ -20,7 +20,7 @@ def read_file(inputFileName):
 
 
 def remove_columns(dfTrx):
-    dfTrx=dfTrx.drop(columns=['db_uuid','issuer_id', 'cluster_profile'])
+    dfTrx=dfTrx.drop(columns=['issuer_id', 'cluster_profile'])
     return dfTrx
 
 def fill_missing_values(dfTrx):
