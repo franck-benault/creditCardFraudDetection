@@ -29,7 +29,13 @@ The following figures are just an approximation
 ## Fraud rate 
 Fraud rate
 * in Kaggle example [PR3] 0,173%
-* in credit card transactions in Europe (Belgium, France) in 2024 0.1%
+
+The Bank of France publishes each year a report about the payment [PR4].
+The fraud rate about card payment in value is between 0,07% and 0,05% following the years.
+Be careful the market in France is different than in Belgium. The split between credit card and debit card is less clear in France.
+For a country like Belgium where there is a clear split between credit card and debit card. I think that the fraud rate is around 0,1%.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
 
 About debit card transactions, the fraud rate can be considered ten times lower (0.01%).
 This is due to the fact that debit cards have less possibilities about e-commerce, about booking.
@@ -199,6 +205,8 @@ GridSearchCV
   - https://fraud-detection-handbook.github.io/fraud-detection-handbook
 * [PR3] Kaggle credit card transactions
   - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+* [PR4] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
+    - https://www.banque-france.fr/system/files/2025-01/OSMP_2023_EN.pdf
  
 ## Python and Python libraries
 * [PL1] scikit-learn
