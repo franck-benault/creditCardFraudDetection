@@ -14,6 +14,11 @@ from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.metrics import recall_score, precision_score, accuracy_score, balanced_accuracy_score, f1_score, roc_auc_score, roc_curve, matthews_corrcoef
 from sklearn.model_selection import train_test_split
 
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import MaxAbsScaler
+
 def getPredictors(dataFrame):
     predictors = [col for col in dataFrame.columns ]
     predictors.remove('Class')
@@ -167,3 +172,51 @@ def plt_train_test(range, tabf1Train,tabf1Test=[]):
 
     fig.autofmt_xdate()
     plt.show()
+
+def calculate_scores(y_test,y_pred,scoreType):
+    if(scoreType=='f1'):
+        return f1_score(y_test,y_pred)
+    if(scoreType=='accuraty'):
+        return accuracy_score(y_test,y_pred)
+    if(scoreType=='recall'):
+        return recall_score(y_test,y_pred)
+    if(scoreType=='roc_auc_score'):
+        return roc_auc_score(y_test,y_pred)
+    if(scoreType=='precision'):
+        return precision_score(y_test,y_pred)
+    else:
+        return f1_score(y_test,y_pred)
+
+def getScalers():
+    scalers={"StandardScaler":StandardScaler(),
+            "MinMaxScaler":MinMaxScaler(), 
+            "RobustScaler":RobustScaler(),
+            "MaxAbsScaler":MaxAbsScaler()}
+    return scalers
+
+def processModel(model, dfTrx, predictors, drop_list,
+                 parameters={"max_iter":1000},scaler=None):  
+    then= datetime.now()
+    #print(parameters)
+    model.set_params(**parameters)
+    
+    for y in drop_list:
+        #print(y)
+        predictors.remove(y)
+
+    then= datetime.now()
+    x_train, x_test, y_train, y_test, scaler  =split_data(dfTrx,predictors, 'Class',scaler)
+    model.fit(x_train, y_train)
+    predsTrain = model.predict(x_train)
+    predsTest = model.predict(x_test)
+
+    scoreType="f1"
+    f1Train = calculate_scores(y_train,predsTrain,scoreType)
+    f1Test  = calculate_scores(y_test,predsTest,scoreType)
+
+    now = datetime.now()
+    duration= now - then
+    duration_in_s = duration.total_seconds()
+    print(f"Duration {duration_in_s:.1f} and now {now}")
+    print(f"duration_in_s {duration_in_s:.1f} parameters {parameters} scaler {scaler} f1Train {f1Train:.4f} f1Test {f1Test:.4f}")
+    return duration_in_s,f1Train,f1Test, scaler

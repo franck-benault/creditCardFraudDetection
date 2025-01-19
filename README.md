@@ -193,6 +193,20 @@ This is a sort of second starting point from more complex algorithms.
 # Hyperparameter tuning
 GridSearchCV
 
+# Main classifiers comparaison
+## Skitlearn library
+### Ensemble package
+There 3 approaches in this package :
+* Bagging
+* Boosting
+* Stacking
+
+#### Adaboost classifier
+This classifier is present in skitlearn library in the package ensemble.
+It uses a boosting approach.
+The scaling has no influence to the performance.
+
+
 # References
 ## General web site
 * [G1] Google Scholar
