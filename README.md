@@ -190,8 +190,12 @@ On test data:
 
 This is a sort of second starting point from more complex algorithms.
 
-# Hyperparameter tuning
-GridSearchCV
+# Hyperparameters tuning
+## RandomizedSearchCV
+With this method, the hyperparamters are chosen randomly and not all the combinaison are tested.
+But it is a good approach when there are a lot of hyperparameters.
+
+## GridSearchCV
 
 # Main classifiers comparaison
 ## Skitlearn library

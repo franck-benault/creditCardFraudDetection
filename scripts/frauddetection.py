@@ -19,6 +19,9 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import RobustScaler
 from sklearn.preprocessing import MaxAbsScaler
 
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import RandomizedSearchCV
+
 def getPredictors(dataFrame):
     predictors = [col for col in dataFrame.columns ]
     predictors.remove('Class')
@@ -220,3 +223,36 @@ def processModel(model, dfTrx, predictors, drop_list,
     print(f"Duration {duration_in_s:.1f} and now {now}")
     print(f"duration_in_s {duration_in_s:.1f} parameters {parameters} scaler {scaler} f1Train {f1Train:.4f} f1Test {f1Test:.4f}")
     return duration_in_s,f1Train,f1Test, scaler
+
+def hyperparameterSelectionGridSearchCV(classifier, dic_param, scoring, dfTrxEncoded2, predictors, drop_list,scaler):
+    for y in drop_list:
+        #print(y)
+        predictors.remove(y)
+
+    x_train, x_test, y_train, y_test, scaler = split_data(dfTrxEncoded2,predictors, 'Class',scaler)
+    grid = GridSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=2).fit(x_train, y_train)
+    print(grid.best_params_)
+    
+    y_pred=grid.predict(x_train)
+    scoref1=calculate_scores(y_train,y_pred,'f1')
+    print("scoref1",scoref1)
+    show_confusion_matrix(y_pred, y_train)
+    
+    return grid.best_params_
+
+def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, dfTrxEncoded2, predictors, drop_list, scaler):
+    for y in drop_list:
+        #print(y)
+        predictors.remove(y)
+
+    x_train, x_test, y_train, y_test, scaler = split_data(dfTrxEncoded2,predictors, 'Class',scaler)
+    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=2,n_iter=10).fit(x_train, y_train)
+    print(random_search.best_params_)
+    print(random_search.best_score_)
+    score=random_search.score(x_train,y_train)
+    y_pred=random_search.predict(x_train)
+    scoref1=calculate_scores(y_train,y_pred,'f1')
+    print("score  ",score)
+    print("scoref1",scoref1)
+    show_confusion_matrix(y_pred, y_train)
+    return random_search.best_params_
