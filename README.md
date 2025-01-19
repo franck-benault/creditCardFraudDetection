@@ -126,7 +126,7 @@ The metrics are in fact
 ## Filter on the amount
 The transaction with high amount are very often genuine.
 The result is not very convincig because only a few transactions are filtered (0.02%). 
-And number of transactions fraudulent filtered are low : only one
+And number of fraudulent transactions filtered are low : only one
 
 # Main Classifiers
 ## Dummy Classifier
