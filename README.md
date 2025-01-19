@@ -116,6 +116,18 @@ The information value calculated on this new column is 1.117 (compared to the 1.
 ### Undersampling the majority class
 ### Combining oversampling and undersampling
 
+# Data filtering
+The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
+
+The metrics are in fact 
+* the proportion of total transactions filtered
+* the number of transactions fraudulent that are filtered
+
+## Filter on the amount
+The transaction with high amount are very often genuine.
+The result is not very convincig because only a few transactions are filtered (0.02%). 
+And number of transactions fraudulent filtered are low : only one
+
 # Main Classifiers
 ## Dummy Classifier
 The Dummy classifier does not learn anything from the data. 
