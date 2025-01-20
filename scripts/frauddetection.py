@@ -232,6 +232,7 @@ def hyperparameterSelectionGridSearchCV(classifier, dic_param, scoring, dfTrxEnc
     x_train, x_test, y_train, y_test, scaler = split_data(dfTrxEncoded2,predictors, 'Class',scaler)
     grid = GridSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=2).fit(x_train, y_train)
     print(grid.best_params_)
+    print(grid.best_score_)
     
     y_pred=grid.predict(x_train)
     scoref1=calculate_scores(y_train,y_pred,'f1')
