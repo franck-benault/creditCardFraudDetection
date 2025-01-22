@@ -184,9 +184,9 @@ This is also the reason that there is no scaling or normalisation applied on the
 The result are better than the dummy classifier. So the algorithm learns something from the data.
 
 On test data:
-* f1 score: 0.0575
-* mcc score: 0.1231
-* roc auc score: 0.7535
+* f1 score: 0.0431
+* mcc score: 0.10741
+* roc auc score: 0.7631
 
 This is a sort of second starting point from more complex algorithms.
 

@@ -45,6 +45,12 @@ def get_highrisk_mcc_group(code):
     else:
         return "LOW_RISK"
 
+def get_mcc_group_ATM(code):
+    if (code==6011):
+        return "ATM"
+    else:
+        return "OTHER"
+
 def get_mcc_group_citybank(code):
     if(code<=1499):
         return "AGRICULTURAL"  
