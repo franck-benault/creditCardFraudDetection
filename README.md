@@ -9,13 +9,13 @@ The number of publications have doubled in 10 years.
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
 
 ## Data source
-### Kaggle example [PR3]
+### Kaggle example [PR5]
 Even fraud detection in credit card transactions has a lot of publications. Data example are very rare.
-A first source data is the example in Kaggle [PR3]. Even it is very often used for publication. It is not very satisfying.
+A first source data is the example in Kaggle [PR5]. Even it is very often used for publication. It is not very satisfying.
 
 ### Simulated data
 A second solution is to simulate data set using for example the Python library imbalanced learn [PL2].
-The need od example data for fraud detection is described in the site [PR2]. 
+The need od example data for fraud detection is described in the site [PR4]. 
 This site explained how to create a data set simulating credit card transaction with some fraudulent transactions.
 
 The following figures are just an approximation
@@ -28,9 +28,9 @@ The following figures are just an approximation
 
 ## Fraud rate 
 Fraud rate
-* in Kaggle example [PR3] 0,173%
+* in Kaggle example [PR5] 0,173%
 
-The Bank of France publishes each year a report about the payment [PR4].
+The Bank of France publishes each year a report about the payment [PR6].
 The fraud rate about card payment in value is between 0,07% and 0,05% following the years.
 Be careful the market in France is different than in Belgium. The split between credit card and debit card is less clear in France.
 For a country like Belgium where there is a clear split between credit card and debit card. I think that the fraud rate is around 0,1%.
@@ -95,6 +95,17 @@ Also some of these categorical data may have a lot of possible values (more than
 So the classical encoding may create a lot of column and the algorithm will be slow and will have poor results.
 
 ### MCC (Merchant Category Code)
+The MCC code defined the type of activity the merchant does. Even it is not always fully thrustable.
+It seems an important information about the fraud detection. The fraudsters are targeted a type of activities.
+The information value calculated on this field is 1.404 which shows the importance of this field.
+
+If we consider the case of 1 million transactions per day. We can evaluate that 500 differents mcc categories are used per day.
+The idea is to group the mcc code in around 10 groups without loosing to much information.
+
+Issuing the grouping proposed in [PR1] does not give a good IV result the information value calculated on this grouping is 0.00008.
+
+If we just do a simple grouping using the code 6011 (AUTOMATED CASH DISBURSEMENTS) or ATM representing around 2% of the transactions.
+This simple grouping with on one side ATM and on the other side all other codes has an information value of 0.023.
 
 ### Terminal Country
 The terminal country is stored using the norm ISO-3166-1 the code alpha3, meaning that Belgium is stored using "BEL".
@@ -219,11 +230,15 @@ The scaling has no influence to the performance.
 ## Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
   - https://www.commercegate.com/ultimate-guide-high-risk-mcc-codes
-* [PR2] Reproducible Machine Learning for Credit Card Fraud detection - Practical handbook
+* [PR2] MCC group resource center
+  - https://resourcecenter.comdata.com/wp-content/uploads/sites/4/2019/10/Merchant_Groups_and_Category_Codes_MCCs.pdf
+* [PR3] MCC group citybank
+  - https://www.citibank.com/tts/solutions/commercial-cards/assets/docs/govt/Merchant-Category-Codes.pdf
+* [PR4] Reproducible Machine Learning for Credit Card Fraud detection - Practical handbook
   - https://fraud-detection-handbook.github.io/fraud-detection-handbook
-* [PR3] Kaggle credit card transactions
+* [PR5] Kaggle credit card transactions
   - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
-* [PR4] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
+* [PR6] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
     - https://www.banque-france.fr/system/files/2025-01/OSMP_2023_EN.pdf
  
 ## Python and Python libraries
