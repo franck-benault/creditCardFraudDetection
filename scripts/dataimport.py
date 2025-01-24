@@ -32,8 +32,18 @@ def fill_missing_values(dfTrx):
 def category_grouping(dfTrx):
     dfTrx['country_group'] = dfTrx['term_country'].apply(cm.get_country_group)
     dfTrx=dfTrx.drop(columns=['term_country'])
-    dfTrx['mcc_group'] = dfTrx['term_mcc'].apply(mccmanagement.get_mcc_group_ATM)
-    dfTrx=dfTrx.drop(columns=['term_mcc'])
+    
+    dfTrx['mcc_group'] = dfTrx['term_mcc'].apply(mccmanagement.get_mcc_group_citybank)
+    dfTrx['mcc_group'] = np.where(dfTrx.term_mcc.isin([mccmanagement.mccATM]),'ATM',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['AGRICULTURAL']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['CONTRACTED_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['AIRLINES']),'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['CAR_RENTAL']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['LODGING']),'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['TRANSPORTATION_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['MISCELLANOUS_STORES']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
+    dfTrx= dfTrx.drop(columns=['term_mcc'])
     return dfTrx
     
 def category_encoding(dfTrx):
