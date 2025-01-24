@@ -45,7 +45,7 @@ def get_highrisk_mcc_group(code):
     else:
         return "LOW_RISK"
 
-mccATM=611
+mccATM=6011
 def get_mcc_group_ATM(code):
     if (code==mccATM):
         return "ATM"
