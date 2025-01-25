@@ -50,6 +50,11 @@ def category_encoding(dfTrx):
     dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group'], dtype = int)
     return dfTrx
 
+def amount_transformation(dfTrx):
+    dfTrx['trx_amount_log10']=np.log10(1+dfTrx['trx_amount'])
+    dfTrx= dfTrx.drop(columns=['trx_amount'])
+    return dfTrx
+
 def remove_column_not_yet_managed(dfTrx):
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code','trx_reversal',
                              'ecom_indicator','trx_authentication','pos_entry_mode','card_entry_mode','ch_present',
@@ -63,5 +68,6 @@ def full_import_and_clean(inputFileName):
     dfTrx = fill_missing_values(dfTrx)
     dfTrx = category_grouping(dfTrx)
     dfTrx = category_encoding(dfTrx)
+    dfTrx = amount_transformation(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)
     return dfTrx
