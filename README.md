@@ -89,6 +89,20 @@ F1 score is a first important metrics for managing severe imbalanced data.
 	- https://imbalanced-learn.org
 
 # Transactions data detail
+## Numerical data
+### Transaction amount
+The transaction amount if it is not in Euro is converting to Euro.
+When the transaction amount is put in box plot compairing the Geniune and the Fraudulent transaction, the outliers makes the graphic difficult to read.
+It is clear that the very high amount are more present for the Geniune transactions thant the fraudulent transaction.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-boxplot.png)
+
+If we do a transformation of the amount using log10, the diagram is clearer.
+The explanation is usually that the fraudsters try to not be too visible so they do often low amount or medium amount transactions.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-log10-boxplot.png)
+
+
 ## Categorical data
 One issue with the transactions data is that there are a lot of categorical data.
 Also some of these categorical data may have a lot of possible values (more than 100).
