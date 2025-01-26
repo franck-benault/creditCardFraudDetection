@@ -100,6 +100,7 @@ It is clear that the very high amount are more present for the Geniune transacti
 If we do a transformation of the amount using log10, the diagram is clearer.
 The explanation is usually that the fraudsters try to not be too visible so they do often low amount or medium amount transactions.
 This finding is explained in the article [A1].
+The Amount column from the Kaggle example has exactly the same distribution.
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-log10-boxplot.png)
 
