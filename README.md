@@ -99,6 +99,7 @@ It is clear that the very high amount are more present for the Geniune transacti
 
 If we do a transformation of the amount using log10, the diagram is clearer.
 The explanation is usually that the fraudsters try to not be too visible so they do often low amount or medium amount transactions.
+This finding is explained in the article [A1].
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-log10-boxplot.png)
 
@@ -248,6 +249,10 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 ## General web site
 * [G1] Google Scholar
 	- https://scholar.google.com/
+
+## Articles about credit card fraud detection
+* [A1] Impact of sampling techniques and data leakage on XGBoost performance in credit card fraud detection
+  - https://arxiv.org/pdf/2412.07437
 
 ## Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
