@@ -131,6 +131,16 @@ We could take only the most present values.
 
 the IV (information value) calculated on this field is 1.907.
 
+### Trx_reversal
+The normal financial flux for a payment transaction is that the card holder pays the merchant (no reversal).
+But sometimes the merchant has to reimbourses the card holder this is the reversal transactions.
+There are more "no reserval" transactions than "reversal" transactions.
+But the reversal transactions are used sometimes by the fraudsters. The fraud rate is around 10 times higher for reversal transactions.
+The information value calculated on this column in 0.013, quite low but not without any information.
+
+Because this column contains only 3 possible values the encoding of this column is not really a problem.
+
+
 ### How to encode the data
 The idea is the find a way to group several categories to a new one without lossing to much information.
 This grouping must have a business meaning.
@@ -159,7 +169,12 @@ The metrics are in fact
 ## Filter on the amount
 The transaction with high amount are very often genuine.
 The result is not very convincig because only a few transactions are filtered (0.02%). 
-And number of fraudulent transactions filtered are low : only one
+The good point is that the number of fraudulent transactions filtered are low : only one
+
+## Filter on the partial reversal
+The transaction with partial reversal are very often genuine but are very rare.
+So again the result is not very convincig because only a few transactions are filtered.
+The good point is that the number of fraudulent transactions filtered are low.
 
 # Main Classifiers
 ## Dummy Classifier

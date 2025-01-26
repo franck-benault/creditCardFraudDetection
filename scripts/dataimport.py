@@ -45,9 +45,21 @@ def category_grouping(dfTrx):
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx= dfTrx.drop(columns=['term_mcc'])
     return dfTrx
+
+def fixTrx_reversal(trx_reversal):
+    if(trx_reversal=='FULL REVERSAL'):
+        return 'FULL_REVERSAL'
+    if(trx_reversal=='NO REVERSAL'):
+        return 'NO_RESERSAL'
+    else:
+        return 'PARTIAL_REVERSAL'
+
+def reversal_fix(dfTrx):
+    dfTrx['trx_reversal'] = dfTrx['trx_reversal'].apply(fixTrx_reversal)
+    return dfTrx
     
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal'], dtype = int)
     return dfTrx
 
 def amount_transformation(dfTrx):
@@ -56,7 +68,7 @@ def amount_transformation(dfTrx):
     return dfTrx
 
 def remove_column_not_yet_managed(dfTrx):
-    dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code','trx_reversal',
+    dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code',
                              'ecom_indicator','trx_authentication','pos_entry_mode','card_entry_mode','ch_present',
                             'card_pan_id'])
     return dfTrx
@@ -67,6 +79,7 @@ def full_import_and_clean(inputFileName):
     dfTrx = remove_columns(dfTrx)
     dfTrx = fill_missing_values(dfTrx)
     dfTrx = category_grouping(dfTrx)
+    dfTrx = reversal_fix(dfTrx)
     dfTrx = category_encoding(dfTrx)
     dfTrx = amount_transformation(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)
