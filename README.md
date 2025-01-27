@@ -263,7 +263,9 @@ But it is a good approach when there are a lot of hyperparameters.
 ### GridSearchCV
 GridSearchCV (Grid Search Cross-Validation) is a technique used in machine learning for hyperparameter tuning.
 It searchs the optimal hyperparameters by trying all the possible combinaisons giving by the parameter param_grid (a dictionary).
-It may take a huge time to process all the possibilities.
+
+The disavantage of this technique is that it may be computationally expensive, and take a huge time to process all the possibilities.
+So the idea is to first use the RandomizedSearchCV to have a first approach of the hyperparameters and then use the GridSearchCV to refine the result.
 
 ## Main classifiers comparaison
 ### Skitlearn library
