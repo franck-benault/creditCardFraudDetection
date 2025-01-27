@@ -60,6 +60,7 @@ For accuracy the scale is from 0 (poor result) to 1 (excelent result)
 $Accurancy = (TP+TN)/(Total Samples)$
 
 But it is not a good metric for severe imbalanced datasets. We can see that we the example of the dummy classifier.
+With imbalanced dataset, we can speak about **misleading** accuracy.
 
 * Precision
 	- it measures the proportion of actual fraudulent transactions correctly identified by the model.
