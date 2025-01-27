@@ -44,12 +44,12 @@ For this example the imbalanced is higher.
 This work is based on credit card transactions because it was more simple to achieve some significant results.
 
 
-# How to manage imbalanced data
-## Definition
+## How to manage imbalanced data
+### Definition
 Imbalanced data refers to scenarios where the classes in the dataset are not reprsented equally.
 Also the target class is often the one underrepresented. For fraud on card transactions, I often see *severe* imbalanced data. 
 
-## Metrics choice issue
+### Metrics choice issue
 
 The confusion matrix is an important tool to visualize the force or the weakness of a classifier. 
 But it is quite difficult to use it for automation. A simple indicator is always easier for automation.
@@ -81,16 +81,16 @@ F1 score is a first important metrics for managing severe imbalanced data.
 	- it is adapted for the problems with two classes, which is the case of the fraud detection. A random classification returns 0. A perfect classification gives 1. The following the formula a complete misclassification should return -1.
 * Cohen's kappa
 
-# Python and Python libraries
+## Python and Python libraries
 
 * [PL1] scikit-learn
 	- https://scikit-learn.org
 * [PL2] imbalanced learn
 	- https://imbalanced-learn.org
 
-# Transactions data detail
-## Numerical data
-### Transaction amount
+## Transactions data detail
+### Numerical data
+#### Transaction amount
 The transaction amount if it is not in Euro is converting to Euro.
 When the transaction amount is put in box plot compairing the Geniune and the Fraudulent transaction, the outliers makes the graphic difficult to read.
 It is clear that the very high amount are more present for the Geniune transactions thant the fraudulent transaction.
@@ -105,12 +105,12 @@ The Amount column from the Kaggle example has exactly the same distribution.
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-log10-boxplot.png)
 
 
-## Categorical data
+### Categorical data
 One issue with the transactions data is that there are a lot of categorical data.
 Also some of these categorical data may have a lot of possible values (more than 100).
 So the classical encoding may create a lot of column and the algorithm will be slow and will have poor results.
 
-### MCC (Merchant Category Code)
+#### MCC (Merchant Category Code)
 The MCC code defined the type of activity the merchant does. Even it is not always fully thrustable.
 It seems an important information about the fraud detection. The fraudsters are targeted a type of activities.
 The information value calculated on this field is 1.404 which shows the importance of this field.
@@ -123,7 +123,7 @@ Issuing the grouping proposed in [PR1] does not give a good IV result the inform
 If we just do a simple grouping using the code 6011 (AUTOMATED CASH DISBURSEMENTS) or ATM representing around 2% of the transactions.
 This simple grouping with on one side ATM and on the other side all other codes has an information value of 0.023.
 
-### Terminal Country
+#### Terminal Country
 The terminal country is stored using the norm ISO-3166-1 the code alpha3, meaning that Belgium is stored using "BEL".
 
 During one day, there are sometimes 200 values which is huge because the full table has aurond 250 codes.
@@ -131,7 +131,7 @@ We could take only the most present values.
 
 the IV (information value) calculated on this field is 1.907.
 
-### Trx_reversal
+#### Trx_reversal
 The normal financial flux for a payment transaction is that the card holder pays the merchant (no reversal).
 But sometimes the merchant has to reimbourses the card holder this is the reversal transactions.
 There are more "no reserval" transactions than "reversal" transactions.
@@ -141,7 +141,7 @@ The information value calculated on this column in 0.013, quite low but not with
 Because this column contains only 3 possible values the encoding of this column is not really a problem.
 
 
-### How to encode the data
+#### How to encode the data
 The idea is the find a way to group several categories to a new one without lossing to much information.
 This grouping must have a business meaning.
 About the country, the idea is define three group:
@@ -152,32 +152,34 @@ About the country, the idea is define three group:
 The information value calculated on this new column is 1.117 (compared to the 1.907).
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png)
 
-## Card holder profil
+### Card holder profil
+
+### Merchant profil
   
 ## Resampling techniques
 ### Oversampling the minority class
 ### Undersampling the majority class
 ### Combining oversampling and undersampling
 
-# Data filtering
+## Data filtering
 The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
 
 The metrics are in fact 
 * the proportion of total transactions filtered
 * the number of transactions fraudulent that are filtered
 
-## Filter on the amount
+### Filter on the amount
 The transaction with high amount are very often genuine.
 The result is not very convincig because only a few transactions are filtered (0.02%). 
 The good point is that the number of fraudulent transactions filtered are low : only one
 
-## Filter on the partial reversal
+### Filter on the partial reversal
 The transaction with partial reversal are very often genuine but are very rare.
 So again the result is not very convincig because only a few transactions are filtered.
 The good point is that the number of fraudulent transactions filtered are low.
 
-# Main Classifiers
-## Dummy Classifier
+## Main Classifiers
+### Dummy Classifier
 The Dummy classifier does not learn anything from the data. 
 In fact it is used as a baseline for comparing the performance of more complex and more realistic models. 
 There are several possible strategies, here are the most known :
@@ -189,7 +191,7 @@ There are several possible strategies, here are the most known :
   	- This classifier generates random predictions based on the class distribution in the training data
 
 
-### Results
+#### Results
 Using strategy="most_frequent"
 * accuracy score: 0.9989
 * f1 score: 0.0000
@@ -219,7 +221,7 @@ maximal result:
 * mcc score: 0.0007
 * roc auc score: 0.5051
 
-## Naive Bayes Classifier
+### Naive Bayes Classifier
 Even if it is a real machine learning algorithm, the expected result is low.
 The reason is that it algorithm takes each variable independently which is cleary wrong for the transactions.
 This is also the reason that there is no scaling or normalisation applied on the input data.
@@ -232,16 +234,16 @@ On test data:
 
 This is a sort of second starting point from more complex algorithms.
 
-# Hyperparameters tuning
-## RandomizedSearchCV
+## Hyperparameters tuning
+### RandomizedSearchCV
 With this method, the hyperparamters are chosen randomly and not all the combinaison are tested.
 But it is a good approach when there are a lot of hyperparameters.
 
-## GridSearchCV
+### GridSearchCV
 
-# Main classifiers comparaison
-## Skitlearn library
-### Ensemble package
+## Main classifiers comparaison
+### Skitlearn library
+#### Ensemble package
 There 3 approaches in this package :
 * Bagging
 * Boosting
@@ -252,25 +254,25 @@ This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
 The scaling has no influence to the performance.
 
-# Final results
-## Time learning
+## Final results
+### Time learning
 The figures (here in secondes) do not mean anything alone. But it allows to compare the time learning between algorithm.
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-timeLearning.png)
 
-## Metrics
+### Metrics
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-metrics.png)
 
-# References
-## General web site
+## References
+### General web site
 * [G1] Google Scholar
 	- https://scholar.google.com/
 
-## Articles about credit card fraud detection
+### Articles about credit card fraud detection
 * [A1] Impact of sampling techniques and data leakage on XGBoost performance in credit card fraud detection
   - https://arxiv.org/pdf/2412.07437
 
-## Payment reference  and credit card fraud detection web sites
+### Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
   - https://www.commercegate.com/ultimate-guide-high-risk-mcc-codes
 * [PR2] MCC group resource center
@@ -284,7 +286,7 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 * [PR6] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
     - https://www.banque-france.fr/system/files/2025-01/OSMP_2023_EN.pdf
  
-## Python and Python libraries
+### Python and Python libraries
 * [PL1] scikit-learn
 	- https://scikit-learn.org
 * [PL2] imbalanced learn
