@@ -158,9 +158,26 @@ The information value calculated on this new column is 1.117 (compared to the 1.
 ### Merchant profil
   
 ## Resampling techniques
-### Oversampling the minority class
-### Undersampling the majority class
-### Combining oversampling and undersampling
+### Data-based technique
+#### Undersampling the majority class
+* RandomUnderSampling
+* Tomek's link
+* Edited Nearest Neighbour (ENN)
+
+#### Oversampling the minority class
+* Random over sampling
+* SMOTE (Synthetic Minority Over-sampling Technique)
+* ADASYN (Adaptive Synthetic Sampling)
+
+#### Combining oversampling and undersampling
+
+### Algorith-based solutions
+Ensemble methods:
+* BalancedRandomForestClassifier
+* EasyEnsembleClassifier
+* BalancedBaggingClassifier
+
+### Tuning-based solutions
 
 ## Data filtering
 The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
