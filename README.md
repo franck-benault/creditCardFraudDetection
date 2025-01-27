@@ -178,6 +178,7 @@ Ensemble methods:
 * BalancedBaggingClassifier
 
 ### Tuning-based solutions
+class_weight Parameter for Scikit-Learn.
 
 ## Data filtering
 The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
