@@ -195,7 +195,7 @@ The good point is that the number of fraudulent transactions filtered are low : 
 ### Filter on the partial reversal
 The transaction with partial reversal are very often genuine but are very rare.
 So again the result is not very convincig because only a few transactions are filtered.
-The good point is that the number of fraudulent transactions filtered are low.
+The good point is that the number of fraudulent transactions filtered are low (0.05%). 
 
 ## Main Classifiers
 ### Dummy Classifier
