@@ -254,11 +254,16 @@ On test data:
 This is a sort of second starting point from more complex algorithms.
 
 ## Hyperparameters tuning
+The following techniques () are coming from the package sklearn.model_selection of scikit-learn.
+
 ### RandomizedSearchCV
 With this method, the hyperparamters are chosen randomly and not all the combinaison are tested.
 But it is a good approach when there are a lot of hyperparameters.
 
 ### GridSearchCV
+GridSearchCV (Grid Search Cross-Validation) is a technique used in machine learning for hyperparameter tuning.
+It searchs the optimal hyperparameters by trying all the possible combinaisons giving by the parameter param_grid (a dictionary).
+It may take a huge time to process all the possibilities.
 
 ## Main classifiers comparaison
 ### Skitlearn library
