@@ -280,6 +280,10 @@ This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
 The scaling has no influence to the performance.
 
+
+#### Imbalanced learning library
+##### imblearn.ensemble EasyEnsembleClassifier
+
 ## Final results
 ### Time learning
 The figures (here in secondes) do not mean anything alone. But it allows to compare the time learning between algorithm.
