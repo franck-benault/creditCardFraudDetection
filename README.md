@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection
-This python project show how to use classifier to detect fraudulent credit card transactions
+This project shows how to use classifier to detect fraudulent credit card transactions.
+It is in a context of a back office and the goal is to do a classification based on supervised learning.
+the goal is not do to a kind of scoring.
 
 ## Research about the card transactions fraud detection
 
@@ -7,6 +9,12 @@ If you request the Google Scholar web site [G1]. We can see the increase of the 
 The number of publications have doubled in 10 years.
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD00A-googleScholarStat.png)
+
+## Fraud detection in Cloud as a service
+During the last years some articles have been published about the credit card fraud detection. The article [CL1] explains how to build a solution of fraud detection using Big Query.
+
+Amazon has a solution "Fraud Detector" which is a complete fraud detection tool in its Cloud as a Service [CL2].   
+
 
 ## Data source
 ### Kaggle example [PR5]
@@ -324,6 +332,12 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
   - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 * [PR6] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
     - https://www.banque-france.fr/system/files/2025-01/OSMP_2023_EN.pdf
+
+### Cloud articles and solutions
+* [CL1] How to build a serverless real-time credit card fraud detection solution (Google Big Query)
+  - https://cloud.google.com/blog/products/data-analytics/how-to-build-a-fraud-detection-solution?hl=en
+* [CL2] Amazon Fraud detector
+  - https://aws.amazon.com/fr/fraud-detector/
  
 ### Python and Python libraries
 * [PL1] scikit-learn
