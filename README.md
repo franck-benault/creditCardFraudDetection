@@ -153,6 +153,13 @@ About the country, the idea is define three group:
 The information value calculated on this new column is 1.117 (compared to the 1.907).
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png)
 
+#### Transaction information enrichment 
+The transaction information are not enough to detect correctly the fraudulent transactions. 
+In the article [A2] this issue is clearly set : 
+> a single transaction information is typically not sufficient to detect a fraud occurrence and the analysis has to consider aggregate measures like total spent per day, transaction number per week or average amount of a transaction.
+
+The idea is to create card holder profile and merchant profile by using unsupervised learning and then enrich the transactions with these profiles. 
+
 ### Card holder profil
 
 ### Merchant profil
@@ -301,6 +308,8 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 ### Articles about credit card fraud detection
 * [A1] Impact of sampling techniques and data leakage on XGBoost performance in credit card fraud detection
   - https://arxiv.org/pdf/2412.07437
+* [A2] Learned lessons in credit card fraud detection from a practitioner perspective (2014 Andrea Del Pozzolo, Olivier Caelen)
+  - http://euro.ecom.cmu.edu/resources/elibrary/epay/1-s2.0-S095741741400089X-main.pdf
 
 ### Payment reference  and credit card fraud detection web sites
 * [PR1] High risk merchant category code (MCC)
