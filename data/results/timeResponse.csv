@@ -1,0 +1,8 @@
+Package,Name,Hyperparamters,Learning time
+sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.07
+sklearn.naive_bayes',GaussianNB,Default,2.2
+sklearn.ensemble',AdaBoostClassifier,Default,60.6
+sklearn.ensemble',AdaBoostClassifier,After tunning,27.8
+xgboost',XGBClassifier,Default,6.1
+xgboost',XGBClassifier,After tunning,36.9
+imblearn.ensemble,EasyEnsembleClassifier,Default,42.9
