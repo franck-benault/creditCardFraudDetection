@@ -284,7 +284,8 @@ This is a sort of second starting point from more complex algorithms.
 
 #### AutoGluon [PL3]
 AutoGluon is a project coming for AWS (Amazon) but now available as Python library.
-The goal is to do Machine Learning without a deep knowlegde of this subjet.
+The goal is to do Machine Learning without a deep knowlegde of this subjet. 
+AutoGluon will choose the best algorithm and the best hyperparameters associated to the data in input.
 
 Even it is quite easy to start with. It does not follow completly the API defined in scikit-learn.
 The result done is that CatBoost would be the most performant algorithm.
