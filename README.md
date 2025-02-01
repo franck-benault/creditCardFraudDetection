@@ -151,6 +151,7 @@ Because this column contains only 3 possible values the encoding of this column 
 
 
 #### How to encode the data
+##### Grouping and one hot encoding
 The idea is the find a way to group several categories to a new one without lossing to much information.
 This grouping must have a business meaning.
 About the country, the idea is define three group:
@@ -160,6 +161,13 @@ About the country, the idea is define three group:
 
 The information value calculated on this new column is 1.117 (compared to the 1.907).
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01D-piediag-country-group.png)
+
+##### Use algorithm accepting categorical data
+There are two algorithms accepting directly the categorical data
+* Autogluon
+* CatBoost
+
+I haven't studied in this way further and I have used these algorithms with the categorical data already processed by grouping and one hot encoding. 
 
 #### Transaction information enrichment 
 The transaction information are not enough to detect correctly the fraudulent transactions. 
