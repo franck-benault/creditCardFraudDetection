@@ -115,7 +115,7 @@ def print_scores(y_test,y_pred,scoreType,drawRocCurve=False):
     if(scoreType=='precision'):
         return precision_score(y_test,y_pred)
     else:
-        return f1_score(y_test,y_pred)
+        return f1_score(y_test,y_pred),matthews_corrcoef(y_test,y_pred),roc_auc_score(y_test,y_pred)
 
 def show_importance(modelClf,predictors):
     if(hasattr(modelClf,"feature_importances_")):
