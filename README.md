@@ -165,7 +165,7 @@ The information value calculated on this new column is 1.117 (compared to the 1.
 ##### Use algorithm accepting categorical data
 There are two algorithms accepting directly the categorical data
 * Autogluon [PL3]
-* CatBoost
+* CatBoost [PL4]
 
 I haven't studied in this way further and I have used these algorithms with the categorical data already processed by grouping and one hot encoding. 
 
@@ -285,10 +285,11 @@ This is a sort of second starting point from more complex algorithms.
 #### AutoGluon [PL3]
 AutoGluon is a project coming for AWS (Amazon) but now available as Python library.
 The goal is to do Machine Learning without a deep knowlegde of this subjet.
-AutoGluon with try several machine learning algorithms and propose the most performant one.
 
 Even it is quite easy to start with. It does not follow completly the API defined in scikit-learn.
 The result done is that CatBoost would be the most performant algorithm.
+
+The first result shows that CatBoost [PL4] is probably the most performant algorithm.
 
 ## Hyperparameters tuning
 The following techniques () are coming from the package sklearn.model_selection of scikit-learn.
@@ -369,3 +370,5 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 	-  https://imbalanced-learn.org
 * [PL3] AutoGluon documentation
   	- https://auto.gluon.ai/stable/index.html
+* [PL4] CatBoost documentation
+	- https://catboost.ai/
