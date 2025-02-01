@@ -174,3 +174,4 @@ data/raw/KAGGLEexport.csv
 data/cleaned/WL*.csv
 data/cleaned/SIM*.csv
 notebooks/AutogluonModels/
+notebooks/catboost_info/

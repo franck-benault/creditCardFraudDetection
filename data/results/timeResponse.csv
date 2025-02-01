@@ -8,4 +8,5 @@ Package,Name,Hyperparameters,Learning time
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,63
 08-xgboost,XGBClassifier,1-Default,7
 08-xgboost,XGBClassifier,2-After tuning,49
+09-catboost,CatBoostClassifier,1-Default,87
 10-imblearn.ensemble,EasyEnsembleClassifier,Default,119
