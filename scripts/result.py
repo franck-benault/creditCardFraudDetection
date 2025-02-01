@@ -13,16 +13,16 @@ def save_time_response_result(timeResponse):
 
 def update_time_response_result(package, name,hyperparameters, learningTime):
     learningTime=int(learningTime)
-    print(learningTime)
+    #print(learningTime)
     timeResponsePandas = load_time_response_result()
     
     res=timeResponsePandas[(timeResponsePandas['Package']==package) 
         & (timeResponsePandas['Name']==name)
         & (timeResponsePandas['Hyperparameters']==hyperparameters)]
-    print(res.shape[0])
+    #print(res.shape[0])
     if (res.shape[0]>0):
         index=res.index[0]
-        print('trace')
+        #print('trace')
         timeResponsePandas.loc[index, 'Learning time']=learningTime
     else:
         timeResponsePandas=pd.concat([pd.DataFrame([[package,name,hyperparameters,learningTime]], columns=timeResponsePandas.columns), timeResponsePandas], ignore_index=True)
