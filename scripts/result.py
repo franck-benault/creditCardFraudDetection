@@ -1,6 +1,11 @@
 
 import pandas as pd
 
+def load_performance_test_result():
+    usecols = ['Package','Name','Hyperparameters','F1','Mcc','ROC']
+    data = pd.read_csv("../data/results/performancetest.csv", usecols=usecols)
+    data.sort_values(["Package", "Name","Hyperparameters"])
+    return data
 
 def load_time_response_result():
     usecols = ['Package','Name','Hyperparameters','Learning time']
