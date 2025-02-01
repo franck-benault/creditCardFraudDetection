@@ -213,7 +213,10 @@ So again the result is not very convincig because only a few transactions are fi
 The good point is that the number of fraudulent transactions filtered are low (0.05%). 
 
 ## Main Classifiers
-### Dummy Classifier
+### First Classifiers
+The goal of these first classifiers (DummyClassifier, Naive Bayes, Auto gluon) are not to be used in a "real production context" but to set up some figures to evaluate the performance of more advanced classifiers.
+
+#### Dummy Classifier
 The Dummy classifier does not learn anything from the data. 
 In fact it is used as a baseline for comparing the performance of more complex and more realistic models. 
 There are several possible strategies, here are the most known :
@@ -225,13 +228,15 @@ There are several possible strategies, here are the most known :
   	- This classifier generates random predictions based on the class distribution in the training data
 
 
-#### Results
+##### Results
 Using strategy="most_frequent"
 * accuracy score: 0.9989
 * f1 score: 0.0000
 * mcc score: 0.0000
 * roc auc score: 0.5000
+  
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixMostFrequent.png)
+
 
 Using stategy="uniform"
 * accuracy score: 0.4990
@@ -245,17 +250,18 @@ Using stategy="stratified"
 * f1 score: 0.0000
 * mcc score: -0.0011
 * roc auc score: 0.4994
+
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixStratified.png)
 
-the following result are the minimum that the learning algorithm should exceed:
 
+the following result are the minimum that the learning algorithm should exceed:
 maximal result:
 * ~~accuracy score: 0.9989~~
 * f1 score: 0.0021
 * mcc score: 0.0007
 * roc auc score: 0.5051
 
-### Naive Bayes Classifier
+#### Naive Bayes Classifier
 Even if it is a real machine learning algorithm, the expected result is low.
 The reason is that it algorithm takes each variable independently which is cleary wrong for the transactions.
 This is also the reason that there is no scaling or normalisation applied on the input data.
@@ -267,6 +273,14 @@ On test data:
 * roc auc score: 0.7631
 
 This is a sort of second starting point from more complex algorithms.
+
+#### AutoGluon
+AutoGluon is a project coming for AWS (Amazon) but now available as Python library.
+The goal is to do Machine Learning without a deep knowlegde of this subjet.
+AutoGluon with try several machine learning algorithms and propose the most performant one.
+
+Even it is quite easy to start with. It does not follow completly the API defined in scikit-learn.
+The result done is that CatBoost would be the most performant algorithm.
 
 ## Hyperparameters tuning
 The following techniques () are coming from the package sklearn.model_selection of scikit-learn.
