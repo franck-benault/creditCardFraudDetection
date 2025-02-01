@@ -316,6 +316,7 @@ The scaling has no influence to the performance.
 ## Final results
 ### Time learning
 The figures (here in secondes) do not mean anything alone. But it allows to compare the time learning between algorithm.
+
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-timeLearning.png)
 
 ### Metrics
