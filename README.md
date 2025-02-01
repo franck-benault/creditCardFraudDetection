@@ -164,7 +164,7 @@ The information value calculated on this new column is 1.117 (compared to the 1.
 
 ##### Use algorithm accepting categorical data
 There are two algorithms accepting directly the categorical data
-* Autogluon
+* Autogluon [PL3]
 * CatBoost
 
 I haven't studied in this way further and I have used these algorithms with the categorical data already processed by grouping and one hot encoding. 
@@ -282,7 +282,7 @@ On test data:
 
 This is a sort of second starting point from more complex algorithms.
 
-#### AutoGluon
+#### AutoGluon [PL3]
 AutoGluon is a project coming for AWS (Amazon) but now available as Python library.
 The goal is to do Machine Learning without a deep knowlegde of this subjet.
 AutoGluon with try several machine learning algorithms and propose the most performant one.
@@ -366,4 +366,6 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 * [PL1] scikit-learn
 	- https://scikit-learn.org
 * [PL2] imbalanced learn
-	-  https://imbalanced-learn.org 
+	-  https://imbalanced-learn.org
+* [PL3] AutoGluon documentation
+  	- https://auto.gluon.ai/stable/index.html
