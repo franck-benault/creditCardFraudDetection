@@ -337,7 +337,7 @@ The figures (here in secondes) do not mean anything alone. But it allows to comp
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-timeLearning.png)
 
-### Metrics
+### Metrics on test data
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-metrics.png)
 
