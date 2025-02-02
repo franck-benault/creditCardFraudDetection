@@ -251,7 +251,9 @@ Using stategy="uniform"
 * f1 score: 0.0021
 * mcc score: 0.0007
 * roc auc score: 0.5051
-![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixUniform.png) 
+* 
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD03A-dummyClassifierMatrixUniform.png)
+
 
 Using stategy="stratified"
 * accuracy score: 0.9978
