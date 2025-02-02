@@ -290,7 +290,9 @@ The goal is to do Machine Learning without a deep knowlegde of this subjet.
 AutoGluon will choose the best algorithm and the best hyperparameters associated to the data in input.
 
 Even it is quite easy to start with. It does not follow completly the API defined in scikit-learn.
-The result done is that CatBoost would be the most performant algorithm.
+The result done is that CatBoost would be the most performant algorithm. 
+Last point because AutoGluon tries a lot of algorithms and hyperparameters, 
+it is very computing expensive and the learning time is around 15 times longer than the worst algorithm in term of time computing.
 
 The first result shows that CatBoost [PL4] is probably the most performant algorithm.
 
