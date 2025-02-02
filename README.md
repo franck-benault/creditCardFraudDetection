@@ -85,7 +85,7 @@ F1 following the formula could be undefined but in this case the implementation 
 F1 score is a first important metrics for managing severe imbalanced data.
 
 * ROC-AUC
-	- it means the Area Under the Receiver Operation Characteristic Curve.  It provides a  measure of the ability of the model to discriminate between classes across different threshold levels. A higher AUC score means a better performing model. The scale of this score is different 0.5 is a total random classification and 1.0 represents a perfect classification. It is also possible to draw the ROC curve.
+	- it means the Area Under the Receiver Operation Characteristic Curve.  It provides a  measure of the ability of the model to discriminate between classes across different threshold levels. A higher AUC score means a better performing model. The scale of this score is different 0.5 is a total random classification and 1.0 represents a perfect classification. It is also possible to draw the ROC curve. The ROC value is less sensible than the F1 score about the false positive. So if the goal is to find the maximum of the fraudulent transactions even there are false positives then ROC score is a better choice than the f1 score.
 * Matthews correlation coefficient (MCC)
 	- it is adapted for the problems with two classes, which is the case of the fraud detection. A random classification returns 0. A perfect classification gives 1. The following the formula a complete misclassification should return -1.
 * Cohen's kappa
@@ -333,13 +333,20 @@ The scaling has no influence to the performance.
 
 ## Final results
 ### Time learning
-The figures (here in secondes) do not mean anything alone. But it allows to compare the time learning between algorithm.
+The figures (here in secondes) do not mean anything alone. But it allows to compare the time learning between algorithms.
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-timeLearning.png)
 
 ### Metrics on test data
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-metrics.png)
+
+### Metrics on next days
+Here we check after tuning a model on the day1 if this model perform correctly to the next days (day2 day3 and day8).
+We want to see if the performance stays stable or if the performance drops quickly.
+if it drops it means that the model overfits and has just saved some noise.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-nextdays.png)
 
 ## References
 ### General web site
