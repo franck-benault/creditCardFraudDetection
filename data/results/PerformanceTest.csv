@@ -1,5 +1,5 @@
 Package,Name,Hyperparameters,F1,Mcc,ROC
-09-catboost,CatBoostClassifier,1-Default,0.1073,0.1517,0.5313
+10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0152,0.0741,0.8661
 03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.0,0.0,0.5
 03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0.0045,0.0034,0.5017
 03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0.0024,0.004,0.5308
@@ -8,3 +8,4 @@ Package,Name,Hyperparameters,F1,Mcc,ROC
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.0154,0.0219,0.5044
 08-xgboost,XGBClassifier,1-Default,0.0816,0.1425,0.5224
 08-xgboost,XGBClassifier,2-After tuning,0.1286,0.1592,0.5403
+09-catboost,CatBoostClassifier,1-Default,0.1073,0.1517,0.5313
