@@ -106,7 +106,16 @@ It is clear that the very high amount are more present for the Geniune transacti
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-boxplot.png)
 
-If we do a transformation of the amount using log10, the diagram is clearer.
+If we draw the histogram of the transaction, we can see the extreme heavy tail. The diagram is quite difficult to understand.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-histogram.png)
+
+In the book [BF1] topics 2.5.3, Aurélien Géron advices to transform the value by using the log.
+After this transformation, the histogram shows something closer to the normal distribution.
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD01B-Amount-log10-histogram.png)
+
+If we do a transformation of the amount using log10, the boxplot diagram is clearer too.
 The explanation is usually that the fraudsters try to not be too visible so they do often low amount or medium amount transactions.
 This finding is explained in the article [A1].
 The Amount column from the Kaggle example has exactly the same distribution.
@@ -388,3 +397,8 @@ if it drops it means that the model overfits and has just saved some noise.
   	- https://auto.gluon.ai/stable/index.html
 * [PL4] CatBoost documentation
 	- https://catboost.ai/
+
+### Books over Python and Machine learning
+#### Book in French
+These books exist in English (Translated in English or the original version is in English)
+* [BF1] Machine Learning avec Scikit-learn (Aurélien Géron) Dunod 2023 third edition
