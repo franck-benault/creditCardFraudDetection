@@ -277,12 +277,10 @@ The reason is that it algorithm takes each variable independently which is clear
 This is also the reason that there is no scaling or normalisation applied on the input data.
 The result are better than the dummy classifier. So the algorithm learns something from the data.
 
-On test data:
-* f1 score: 0.0431
-* mcc score: 0.10741
-* roc auc score: 0.7631
-
-This is a sort of second starting point from more complex algorithms.
+The results are at the end of this document, but they are quite poor 
+and following the time of this project, some features are added and the results then decrease.
+It could be possible to do a feature selection but because it won't give good result.
+The goal is here to have a kind of starting point to evaluate more complex algorithms.
 
 #### AutoGluon [PL3]
 AutoGluon is a project coming for AWS (Amazon) but now available as Python library.
