@@ -294,6 +294,12 @@ it is very computing expensive and the learning time is around 15 times longer t
 
 The first result shows that CatBoost [PL4] is probably the most performant algorithm.
 
+### More Advanced classifiers
+#### XGBoost
+XGBoast is a project outside scikit-learn.
+It is known a very effective for imbalanced data.
+The first results show that it is among the most performant classifiers.
+
 ## Hyperparameters tuning
 The following techniques () are coming from the package sklearn.model_selection of scikit-learn.
 
