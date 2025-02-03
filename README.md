@@ -210,7 +210,12 @@ Ensemble methods:
 * BalancedBaggingClassifier
 
 ### Tuning-based solutions
-class_weight Parameter for Scikit-Learn.
+The idea here instead of modifying the data (oversampling or undersampling).
+Here we use a hyperparameter scale_pos_weight to ask the classifier to increase the focus to the minority class.
+
+class_weight Parameter for Scikit-Learn ?
+#### XGBoost
+
 
 ## Data filtering
 The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
