@@ -203,9 +203,21 @@ In the article [A2] this issue is clearly set :
 
 The idea is to create card holder profile and merchant profile by using unsupervised learning and then enrich the transactions with these profiles. 
 
-### Card holder profil
+### Card holder profile
+The idea is to create using agregate of the transactions during at least last 30 days a profile of the card holder.
+If a card holder who uses very rarely his card, suddenly uses his card a lot is a possible fraud.
 
-### Merchant profil
+#### Clustering RFM (Recency, Frequency, Monetary)
+This is an approach very often used for customer segmentation.
+We can use it also for the card holder even it will be probably too simple.
+
+This approach can be apply for the card holder.
+* the frequency is how often the card is used.
+* the recency is the duration since the card has been used last time
+* Monetary is the sum of amount for the payment done with this card.
+
+
+### Merchant profile
   
 ## Resampling techniques
 ### Data-based technique
