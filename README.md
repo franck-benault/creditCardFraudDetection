@@ -97,7 +97,25 @@ F1 score is a first important metrics for managing severe imbalanced data.
 * [PL2] imbalanced learn
 	- https://imbalanced-learn.org
 
-## Transactions data detail
+## Transaction data detail
+In fact the transaction data can be split in three part
+* The transaction data itselve
+  	- Amount
+  	- Curency
+  	- Date time of the transaction
+* The merchant information
+  	- MCC (merchant code activity)
+  	- terminal id
+  	- terminal country
+* The card and card holder information
+  	- Card id
+  	- Card holder name
+  	- issuer id (code banque)
+ 
+The question is what are the information really relevant to detect the Fraud.
+The issuer id, the card holder name are probably not relevant.
+The MCC, amount are relevant may be but not enough to detect the fraud.
+
 ### Numerical data
 #### Transaction amount
 The transaction amount if it is not in Euro is converting to Euro.
