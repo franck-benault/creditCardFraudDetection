@@ -170,7 +170,7 @@ the IV (information value) calculated on this field is 1.907.
 #### Trx_reversal
 The normal financial flux for a payment transaction is that the card holder pays the merchant (no reversal).
 But sometimes the merchant has to reimbourses the card holder this is the reversal transactions.
-There are more "no reserval" transactions than "reversal" transactions.
+There are more "no reserval" transactions than "reversal" transactions (no_resersal are around 98% of the transactions).
 But the reversal transactions are used sometimes by the fraudsters. The fraud rate is around 10 times higher for reversal transactions.
 The information value calculated on this column in 0.013, quite low but not without any information.
 
