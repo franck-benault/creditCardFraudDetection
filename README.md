@@ -94,8 +94,15 @@ F1 score is a first important metrics for managing severe imbalanced data.
 
 * [PL1] scikit-learn
 	- https://scikit-learn.org
+
+This is really the main library for Machine Learning in Python.
+Also now a lot of other libraries like imbalanced learn follows the same coding interfaces.
+So it is quite easy to move from scikit-learn to another library. 
+
 * [PL2] imbalanced learn
 	- https://imbalanced-learn.org
+
+This library addresses the issue of imbalanced data set.
 
 ## Transaction data detail
 In fact the transaction data can be split in three part
