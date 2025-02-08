@@ -108,7 +108,7 @@ This library addresses the issue of imbalanced data set.
 In fact the transaction data can be split in three part
 * The transaction data itselve
   	- Amount
-  	- Curency
+  	- Currency
   	- Date time of the transaction
 * The merchant information
   	- MCC (merchant code activity)
