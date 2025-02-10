@@ -106,7 +106,7 @@ This library addresses the issue of imbalanced data set.
 
 ## Transaction data detail
 In fact the transaction data can be split in three part
-* The transaction data itselve
+* The transaction data itself
   	- Amount
   	- Currency
   	- Date time of the transaction
@@ -120,7 +120,7 @@ In fact the transaction data can be split in three part
   	- issuer id (code banque)
  
 The question is what are the information really relevant to detect the Fraud.
-The issuer id, the card holder name are probably not relevant.
+The issuer id, the card holder name are probably less or not relevant.
 The MCC, amount are relevant may be but not enough to detect the fraud.
 
 ### Numerical data
