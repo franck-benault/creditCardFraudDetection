@@ -212,7 +212,15 @@ The idea is to create card holder profile and merchant profile by using unsuperv
 
 ### Card holder profile
 The idea is to create using agregate of the transactions during at least last 30 days a profile of the card holder.
+The last 90 days is usually what a bank provides by default to the client in the application.
 If a card holder who uses very rarely his card, suddenly uses his card a lot is a possible fraud.
+
+if we take an agregate of the 
+- last 30 days, there are 3 600 000 cards
+- last 60 days, there are 4 100 000 cards
+- last 90 days, there are 4 500 000 cards
+
+
 
 #### Clustering RFM (Recency, Frequency, Monetary)
 This is an approach very often used for customer segmentation.
