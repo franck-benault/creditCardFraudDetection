@@ -221,16 +221,20 @@ if we take an agregate of the
 - last 90 days, there are 4 500 000 cards
 
 
-
 #### Clustering RFM (Recency, Frequency, Monetary)
-This is an approach very often used for customer segmentation.
-We can use it also for the card holder even it will be probably too simple.
+This is an approach very often used for customer segmentation for the analysis of the churn.
+We can use it also for the card holder even it seems probably too simple.
 
 This approach can be apply for the card holder.
 * the frequency is how often the card is used.
 * the recency is the duration since the card has been used last time
 * Monetary is the sum of amount for the payment done with this card.
 
+About the frequency and the monetary field a quit explorary data analysis shows that it is better to use the log of these values.
+Without this operation the clusters are not correctly balanced.
+
+For the fraud detection, I want to have a least 4 clusters and with almost the same size.
+The silouhette score is quite low (around 0,38 for 4 clusters for 90 days aggregate).
 
 ### Merchant profile
   
