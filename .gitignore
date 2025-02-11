@@ -176,3 +176,4 @@ data/cleaned/SIM*.csv
 notebooks/AutogluonModels/
 notebooks/catboost_info/
 data/raw/old/
+data/processed/WLCardHolderProfileRFM.csv
