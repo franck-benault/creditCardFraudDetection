@@ -59,7 +59,7 @@ def reversal_fix(dfTrx):
     return dfTrx
     
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','cluster'], dtype = int)
     return dfTrx
 
 def amount_transformation(dfTrx):
@@ -73,14 +73,23 @@ def remove_column_not_yet_managed(dfTrx):
                             'card_pan_id'])
     return dfTrx
 
+def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
+    dfCardProfile = pd.read_csv('../data/processed/'+cardHolderProfileFileName)
+    dfTrx=pd.merge(dfTrx, dfCardProfile, left_on='card_pan_id', right_on='card_pan_id', how='left')
+    dfTrx['cluster'] = dfTrx['cluster'].apply(lambda x: 'UNKNOWN' if pd.isnull(x) == True else x)
 
-def full_import_and_clean(inputFileName):
+    return dfTrx
+
+
+def full_import_and_clean(inputFileName,cardHolderProfileFileName):
     dfTrx = read_file(inputFileName)
     dfTrx = remove_columns(dfTrx)
     dfTrx = fill_missing_values(dfTrx)
     dfTrx = category_grouping(dfTrx)
     dfTrx = reversal_fix(dfTrx)
+    dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
     dfTrx = category_encoding(dfTrx)
     dfTrx = amount_transformation(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)
+    
     return dfTrx
