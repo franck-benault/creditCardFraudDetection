@@ -210,6 +210,11 @@ In the article [A2] this issue is clearly set :
 
 The idea is to create card holder profile and merchant profile by using unsupervised learning and then enrich the transactions with these profiles. 
 
+Also I would like to add some information about the previous transaction. So the global enrichment of the transaction information looks like
+
+![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/transactionsPreparationProcess.png)
+
+
 ### Card holder profile
 The idea is to create using agregate of the transactions during at least last 30 days a profile of the card holder.
 The last 90 days is usually what a bank provides by default to the client in the application.
