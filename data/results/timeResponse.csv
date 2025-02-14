@@ -4,11 +4,11 @@ Package,Name,Hyperparameters,Learning time
 03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0
 04-sklearn.naive_bayes,GaussianNB,Default,2
 05-autogluon.tabular,TabularPredictor,Default,1733
-07-sklearn.ensemble,AdaBoostClassifier,1-Default,58
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,75
-08-xgboost,XGBClassifier,1-Default,9
-08-xgboost,XGBClassifier,2-After tuning,24
+07-sklearn.ensemble,AdaBoostClassifier,1-Default,75
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,81
+08-xgboost,XGBClassifier,1-Default,7
+08-xgboost,XGBClassifier,2-After tuning,45
 08-xgboost,XGBClassifier,3-Default-imbalanced,6
 08-xgboost,XGBClassifier,4-after tuning imbalanced,13
 09-catboost,CatBoostClassifier,1-Default,103
-10-imblearn.ensemble,EasyEnsembleClassifier,Default,119
+10-imblearn.ensemble,EasyEnsembleClassifier,Default,54
