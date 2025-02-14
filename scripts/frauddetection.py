@@ -55,7 +55,7 @@ def calc_iv(df, feature, target, pr=0):
 #calc_iv(amazon_turk,“age_bin”,“Y”,pr=0)
 
 def getAllFiles():
-    files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241125.csv']
+    files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv','export20241125.csv']
     return files
 
 def getPredictors(dataFrame):

@@ -70,7 +70,7 @@ def amount_transformation(dfTrx):
 def remove_column_not_yet_managed(dfTrx):
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code',
                              'ecom_indicator','trx_authentication','pos_entry_mode','card_entry_mode','ch_present',
-                            'card_pan_id'])
+                            'card_pan_id','acceptor_id'])
     return dfTrx
 
 def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
