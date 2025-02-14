@@ -31,7 +31,7 @@ def fill_missing_values(dfTrx):
 
 def category_grouping(dfTrx):
     dfTrx['country_group'] = dfTrx['term_country'].apply(cm.get_country_group)
-    dfTrx=dfTrx.drop(columns=['term_country'])
+    #dfTrx=dfTrx.drop(columns=['term_country'])
     
     dfTrx['mcc_group'] = dfTrx['term_mcc'].apply(mccmanagement.get_mcc_group_citybank)
     dfTrx['mcc_group'] = np.where(dfTrx.term_mcc.isin([mccmanagement.mccATM]),'ATM',dfTrx['mcc_group'] )
@@ -43,7 +43,7 @@ def category_grouping(dfTrx):
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['TRANSPORTATION_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['MISCELLANOUS_STORES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
-    dfTrx= dfTrx.drop(columns=['term_mcc'])
+    #dfTrx= dfTrx.drop(columns=['term_mcc'])
     return dfTrx
 
 def fixTrx_reversal(trx_reversal):
@@ -59,7 +59,7 @@ def reversal_fix(dfTrx):
     return dfTrx
     
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','cluster'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant'], dtype = int)
     return dfTrx
 
 def amount_transformation(dfTrx):
@@ -75,18 +75,27 @@ def ecom(dfTrx):
 def remove_column_not_yet_managed(dfTrx):
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_cnp','trx_response_code',
                              'ecom_indicator','trx_authentication','pos_entry_mode','ch_present',
-                            'card_pan_id','acceptor_id'])
+                            'card_pan_id','acceptor_id','term_country','term_mcc'])
     return dfTrx
 
 def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
     dfCardProfile = pd.read_csv('../data/processed/'+cardHolderProfileFileName)
     dfTrx=pd.merge(dfTrx, dfCardProfile, left_on='card_pan_id', right_on='card_pan_id', how='left')
-    dfTrx['cluster'] = dfTrx['cluster'].apply(lambda x: 'UNKNOWN' if pd.isnull(x) == True else x)
+    dfTrx['clusterCardHolder'] = dfTrx['clusterCardHolder'].apply(lambda x: 'UNKNOWN' if pd.isnull(x) == True else x)
 
     return dfTrx
 
 
-def full_import_and_clean(inputFileName,cardHolderProfileFileName):
+def join_merchant_profile(dfTrx,merchantProfileFileName):
+    dfMerchant = pd.read_csv('../data/processed/'+merchantProfileFileName)
+    dfTrx=pd.merge(dfTrx, dfMerchant, left_on=['acceptor_id','term_mcc','term_country'],
+                right_on=['acceptor_id','term_mcc','term_country'], how='left')
+    dfTrx['clusterMerchant'] = dfTrx['clusterMerchant'].apply(lambda x: 'UNKNOWN' if pd.isnull(x) == True else x)
+
+    return dfTrx
+
+
+def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfileFileName):
     dfTrx = read_file(inputFileName)
     dfTrx = remove_columns(dfTrx)
     dfTrx = fill_missing_values(dfTrx)
@@ -94,6 +103,7 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName):
     dfTrx = reversal_fix(dfTrx)
     dfTrx = ecom(dfTrx)
     dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
+    dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
     dfTrx = category_encoding(dfTrx)
     dfTrx = amount_transformation(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)

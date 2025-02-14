@@ -178,3 +178,4 @@ notebooks/catboost_info/
 data/raw/old/
 data/processed/WLCardHolderProfileRFM.csv
 data/results/old/
+data/processed/
