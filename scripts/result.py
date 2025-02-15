@@ -2,7 +2,7 @@
 import pandas as pd
 
 def load_performance_nextdays_result():
-    usecols = ['Package','Name','Hyperparameters','F1 Day1','F1 Day2','F1 Day3','F1 Day8','ROC Day1','ROC Day2','ROC Day3','ROC Day8']
+    usecols = ['Package','Name','Hyperparameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4']
     data = pd.read_csv("../data/results/performanceNextDays.csv", usecols=usecols)
     data=data.sort_values(["Package", "Name","Hyperparameters"])
     return data
@@ -10,16 +10,16 @@ def load_performance_nextdays_result():
 def save_performance_nextdays_result(timeResponse): 
     timeResponse.to_csv('../data/results/performanceNextDays.csv', index=False) 
 
-def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1Day2,f1Day3,f1Day8,rocDay1,rocDay2,rocDay3,rocDay8):
+def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4):
     f1Day1=round(f1Day1,4)
     f1Day2=round(f1Day2,4)
     f1Day3=round(f1Day3,4)
-    f1Day8=round(f1Day8,4)
+    f1Day4=round(f1Day4,4)
 
     rocDay1=round(rocDay1,4)
     rocDay2=round(rocDay2,4)
     rocDay3=round(rocDay3,4)
-    rocDay8=round(rocDay8,4)
+    rocDay4=round(rocDay4,4)
 
     data = load_performance_nextdays_result()
     
@@ -33,15 +33,15 @@ def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1D
         data.loc[index, 'F1 Day1']=f1Day1
         data.loc[index, 'F1 Day2']=f1Day2
         data.loc[index, 'F1 Day3']=f1Day3
-        data.loc[index, 'F1 Day8']=f1Day8
+        data.loc[index, 'F1 Day4']=f1Day4
 
         data.loc[index, 'ROC Day1']=rocDay1
         data.loc[index, 'ROC Day2']=rocDay2
         data.loc[index, 'ROC Day3']=rocDay3
-        data.loc[index, 'ROC Day8']=rocDay8
+        data.loc[index, 'ROC Day4']=rocDay4
 
     else:
-        data=pd.concat([pd.DataFrame([[package,name,hyperparameters,f1Day1,f1Day2,f1Day3,f1Day8,rocDay1,rocDay2,rocDay3,rocDay8]], columns=data.columns), data], ignore_index=True)
+        data=pd.concat([pd.DataFrame([[package,name,hyperparameters,f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4]], columns=data.columns), data], ignore_index=True)
 
     save_performance_nextdays_result(data)
 
