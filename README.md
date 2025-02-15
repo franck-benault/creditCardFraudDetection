@@ -248,7 +248,17 @@ Before performing it, the sum of amount and the count must be transformed by usi
 The unsupervised learning gives 4 clusters with score silouhette of 0.6. 
 if I try to increase the number of clusters, this score does not descrease a lot.
 But to avoid to have too many features at the end, I choose a 4 clusters solution.
-  
+
+### Card payment environment evolution
+
+The clustering done on the cards and merchants shows another point the constant change of the environment.
+New cards are created and new merchants are opened or used by the card holders.
+if I do the clustering on day 0, and I try to apply this clustering on day X, 
+it is visible that the number of cards or merchant not belonging to the clusters increases linerarly.
+Per day around 2 000 cards are created and 2 000 merchants are created too.
+
+It means that a model done on one day because less and less accurate following the time.
+
 ## Resampling techniques
 ### Data-based technique
 #### Undersampling the majority class
