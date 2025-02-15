@@ -242,6 +242,12 @@ For the fraud detection, I want to have a least 4 clusters and with almost the s
 The silouhette score is quite low (around 0,38 for 4 clusters for 90 days aggregate).
 
 ### Merchant profile
+From the aggregate done at the merchant level (using the acceptor_id) it is possible to try the unsupervised learning.
+Before performing it, the sum of amount and the count must be transformed by using the log10 operation.
+
+The unsupervised learning gives 4 clusters with score silouhette of 0.6. 
+if I try to increase the number of clusters, this score does not descrease a lot.
+But to avoid to have too many features at the end, I choose a 4 clusters solution.
   
 ## Resampling techniques
 ### Data-based technique
