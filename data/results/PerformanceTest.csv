@@ -1,15 +1,16 @@
-Package,Name,Hyperparameters,F1,Mcc,ROC,Roc
-03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.0,0.0,0.5,
-03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0.0045,0.0034,0.5017,
-03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0.0024,0.004,0.5308,
-04-sklearn.naive_bayes,GaussianNB,Default,0.0104,0.0594,0.7936,
-07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.0211,0.0313,0.5022,
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.6908,0.7113,0.5044,
-07-sklearn.ensemble,RandomForest,1-Default,0.1796,0.2049,0.5604,
-08-xgboost,XGBClassifier,1-Default,0.1095,0.1865,0.5224,
-08-xgboost,XGBClassifier,2-After tuning,0.7497,0.7622,0.5403,
-08-xgboost,XGBClassifier,3-Default-imbalanced,0.1095,0.1865,0.5224,
-08-xgboost,XGBClassifier,4-after tuning imbalanced,0.7438,0.7597,0.5224,
-09-catboost,CatBoostClassifier,1-Default,0.1765,0.2247,0.5313,
-10-imblearn.ensemble,BalancedRandomForest,1-Default,0.0181,0.0848,0.8979,0.8979
-10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0141,0.0714,0.8661,
+Package,Name,Hyperparameters,F1,Mcc,ROC
+07-sklearn.ensemble,RandomForest,2-After tuning,0.1357,0.213,0.5383
+03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.0,0.0,0.5
+03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0.0045,0.0034,0.5017
+03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0.0024,0.004,0.5308
+04-sklearn.naive_bayes,GaussianNB,Default,0.0104,0.0594,0.7936
+07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.0211,0.0313,0.5022
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.6908,0.7113,0.5044
+07-sklearn.ensemble,RandomForest,1-Default,0.1796,0.2049,0.5604
+08-xgboost,XGBClassifier,1-Default,0.1095,0.1865,0.5224
+08-xgboost,XGBClassifier,2-After tuning,0.7497,0.7622,0.5403
+08-xgboost,XGBClassifier,3-Default-imbalanced,0.1095,0.1865,0.5224
+08-xgboost,XGBClassifier,4-after tuning imbalanced,0.7438,0.7597,0.5224
+09-catboost,CatBoostClassifier,1-Default,0.1765,0.2247,0.5313
+10-imblearn.ensemble,BalancedRandomForest,1-Default,0.0181,0.0848,0.8979
+10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0141,0.0714,0.8661

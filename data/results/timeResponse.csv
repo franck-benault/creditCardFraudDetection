@@ -1,4 +1,5 @@
 Package,Name,Hyperparameters,Learning time
+07-sklearn.ensemble,RandomForest,2-After tuning,108
 03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0
 03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0
 03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0
@@ -6,7 +7,7 @@ Package,Name,Hyperparameters,Learning time
 05-autogluon.tabular,TabularPredictor,Default,1733
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,67
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,528
-07-sklearn.ensemble,RandomForest,1-Default,190
+07-sklearn.ensemble,RandomForest,1-Default,151
 08-xgboost,XGBClassifier,1-Default,19
 08-xgboost,XGBClassifier,2-After tuning,29
 08-xgboost,XGBClassifier,3-Default-imbalanced,8
