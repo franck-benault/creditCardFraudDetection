@@ -6,9 +6,11 @@ Package,Name,Hyperparameters,Learning time
 05-autogluon.tabular,TabularPredictor,Default,1733
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,67
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,528
+07-sklearn.ensemble,RandomForest,1-Default,190
 08-xgboost,XGBClassifier,1-Default,19
 08-xgboost,XGBClassifier,2-After tuning,29
 08-xgboost,XGBClassifier,3-Default-imbalanced,8
 08-xgboost,XGBClassifier,4-after tuning imbalanced,7
 09-catboost,CatBoostClassifier,1-Default,282
+10-imblearn.ensemble,BalancedRandomForest,1-Default,35
 10-imblearn.ensemble,EasyEnsembleClassifier,Default,177
