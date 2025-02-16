@@ -94,6 +94,15 @@ def join_merchant_profile(dfTrx,merchantProfileFileName):
 
     return dfTrx
 
+def previous_trx(dfTrx):
+    sorted_df = dfTrx.sort_values(by=['card_pan_id','trx_date_time'])
+    dfTrx['previous_trx']=0
+    for i in range(1,2,1):
+        sorted_df['card_pan_id1'] = sorted_df['card_pan_id'].shift(-i)
+        sorted_dfTemp=sorted_df[(sorted_df['card_pan_id']==sorted_df['card_pan_id1'])]
+        dfTrx['previous_trx']=np.where(sorted_df.index.isin(sorted_dfTemp.index),i,dfTrx['previous_trx'])
+    return dfTrx
+
 
 def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfileFileName):
     dfTrx = read_file(inputFileName)
@@ -106,6 +115,7 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
     dfTrx = category_encoding(dfTrx)
     dfTrx = amount_transformation(dfTrx)
+    dfTrx = previous_trx(dfTrx)
     dfTrx = remove_column_not_yet_managed(dfTrx)
     
     return dfTrx
