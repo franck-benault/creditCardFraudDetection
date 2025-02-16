@@ -1,7 +1,8 @@
 # Credit Card Fraud Detection
 This project shows how to use classifier to detect fraudulent credit card transactions.
-It is in a context of a back office and the goal is to do a classification based on supervised learning.
-the goal is not do to a kind of scoring.
+It is in a context of a back office and the goal is to do a binary classification based on supervised learning.
+
+The goal is not do to a kind of scoring.
 
 ## Research about the card transactions fraud detection
 
