@@ -1,17 +1,17 @@
 Package,Name,Hyperparameters,Learning time
-07-sklearn.ensemble,RandomForest,2-After tuning,108
 03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0
 03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0
 03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0
-04-sklearn.naive_bayes,GaussianNB,Default,4
+04-sklearn.naive_bayes,GaussianNB,Default,2
 05-autogluon.tabular,TabularPredictor,Default,1733
-07-sklearn.ensemble,AdaBoostClassifier,1-Default,67
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,528
-07-sklearn.ensemble,RandomForest,1-Default,151
-08-xgboost,XGBClassifier,1-Default,19
-08-xgboost,XGBClassifier,2-After tuning,29
-08-xgboost,XGBClassifier,3-Default-imbalanced,8
-08-xgboost,XGBClassifier,4-after tuning imbalanced,7
-09-catboost,CatBoostClassifier,1-Default,282
-10-imblearn.ensemble,BalancedRandomForest,1-Default,35
-10-imblearn.ensemble,EasyEnsembleClassifier,Default,177
+07-sklearn.ensemble,AdaBoostClassifier,1-Default,56
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,479
+07-sklearn.ensemble,RandomForest,1-Default,154
+07-sklearn.ensemble,RandomForest,2-After tuning,715
+08-xgboost,XGBClassifier,1-Default,14
+08-xgboost,XGBClassifier,2-After tuning,41
+08-xgboost,XGBClassifier,3-Default-imbalanced,9
+08-xgboost,XGBClassifier,4-after tuning imbalanced,21
+09-catboost,CatBoostClassifier,1-Default,271
+10-imblearn.ensemble,BalancedRandomForest,1-Default,85
+10-imblearn.ensemble,EasyEnsembleClassifier,Default,170
