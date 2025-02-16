@@ -26,6 +26,9 @@ def getPredictors(dataFrame):
     predictors = [col for col in dataFrame.columns ]
     predictors.remove('Class')
     predictors.remove('db_uuid')
+    predictors.remove('card_pan_id')
+    predictors.remove('term_mcc')
+    predictors.remove('term_country')
     predictors.remove('trx_date_time')
     return predictors
 
@@ -58,12 +61,6 @@ def getAllFiles():
     files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv','export20241125.csv']
     return files
 
-def getPredictors(dataFrame):
-    predictors = [col for col in dataFrame.columns ]
-    predictors.remove('Class')
-    predictors.remove('trx_date_time')
-    predictors.remove('db_uuid')
-    return predictors
 
 def split_data(data_df, predictors, target='Class', scaler=None):
     TEST_SIZE = 0.20 # test size using_train_test_split
