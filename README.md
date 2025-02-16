@@ -259,7 +259,7 @@ Per day around 2 000 cards are created and 2 000 merchants are created too.
 
 It means that a model done on one day because less and less accurate following the time.
 
-## Resampling techniques
+## Imbalanced issue management (Resampling techniques)
 ### Data-based technique
 #### Undersampling the majority class
 * RandomUnderSampling
@@ -286,6 +286,10 @@ Here we use a hyperparameter scale_pos_weight to ask the classifier to increase 
 class_weight Parameter for Scikit-Learn ?
 #### XGBoost
 
+### Results
+All these techniques usually improve the recall (the number of fraud detected),
+but sacrifice the precision (the number of false positives).
+The F1 score stays low, but the ROC-AUC increases a lot.
 
 ## Data filtering
 The idea behind the filtering is to simplify the work of the classifier by filtering some transactions are a considered as very probably geniune.
