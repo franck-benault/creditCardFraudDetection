@@ -241,6 +241,13 @@ Without this operation the clusters are not correctly balanced.
 For the fraud detection, I want to have a least 4 clusters and with almost the same size.
 The silouhette score is quite low (around 0,38 for 4 clusters for 90 days aggregate).
 
+#### Clustering using ecom and belgium rate
+Here the idea is to use the proportion of ecom transactions and belgium transaction the card holder usually does.
+These idea seems good for fraud detection meaning the if a card holder usually uses his card in face to face in Belgium,
+a e-commerce transaction for him would be very supicious.
+
+The silouette score for 5 clusters is better (0.44) and it is visible that some clusters are a group related to the ecom and belgium rate.
+
 ### Merchant profile
 From the aggregate done at the merchant level (using the acceptor_id) it is possible to try the unsupervised learning.
 Before performing it, the sum of amount and the count must be transformed by using the log10 operation.
