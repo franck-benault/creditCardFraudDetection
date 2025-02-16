@@ -488,3 +488,6 @@ if it drops it means that the model overfits and has just saved some noise.
 #### Book in French
 These books exist in English (Translated in English or the original version is in English)
 * [BF1] Machine Learning avec Scikit-learn (Aurélien Géron) Dunod 2023 third edition
+  
+####
+* [BE1] Introduction to Machine Learning with Python (Andrea C Müller, Sarah Guido) O'Reilly 2017 third edition
