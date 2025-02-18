@@ -1,9 +1,9 @@
 Package,Name,Hyperparameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,ROC Day3,ROC Day4
 04-sklearn.naive_bayes,GaussianNB,Default,0.0099,0.0096,0.0106,0.0091,0.8304,0.8302,0.8304,0.8099
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.0167,0.0084,0.0074,0.011,0.5044,0.5022,0.5019,0.5029
-07-sklearn.ensemble,RandomForestClassifier,2-After tuning,0.0379,0.0213,0.026,0.0314,0.51,0.5056,0.5068,0.5082
+07-sklearn.ensemble,RandomForestClassifier,2-After tuning,0.3806,0.0429,0.1033,0.0421,0.6184,0.5117,0.5284,0.5111
 08-xgboost,XGBClassifier,2-After tuning,0.4651,0.0628,0.0766,0.0315,0.6558,0.5174,0.5212,0.5086
-08-xgboost,XGBClassifier,4-after tuning imbalanced,0.0095,0.0134,0.0089,0.0049,0.5024,0.5035,0.5023,0.5012
+08-xgboost,XGBClassifier,4-after tuning imbalanced,0.1885,0.0459,0.0747,0.0238,0.5527,0.5122,0.5197,0.5062
 09-catboost,CatBoostClassifier,1-Default,0.4334,0.0658,0.1321,0.0433,0.6421,0.5183,0.5383,0.5119
 10-imblearn.ensemble,BalancedRandomForestClassifier,2-After tuning,0.0202,0.0183,0.0204,0.0175,0.9342,0.881,0.8744,0.8458
 10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0139,0.0187,0.0213,0.0181,0.8609,0.8692,0.8745,0.8434
