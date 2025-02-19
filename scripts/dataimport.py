@@ -43,7 +43,7 @@ def category_grouping(dfTrx):
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['TRANSPORTATION_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['MISCELLANOUS_STORES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
-    #dfTrx= dfTrx.drop(columns=['term_mcc'])
+    dfTrx['term_mcc'] = dfTrx['term_mcc'].astype('str')
     return dfTrx
 
 def fixTrx_reversal(trx_reversal):
@@ -88,6 +88,7 @@ def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
 
 def join_merchant_profile(dfTrx,merchantProfileFileName):
     dfMerchant = pd.read_csv('../data/processed/'+merchantProfileFileName)
+    dfMerchant['term_mcc'] = dfMerchant['term_mcc'].astype('str')
     dfTrx=pd.merge(dfTrx, dfMerchant, left_on=['acceptor_id','term_mcc','term_country'],
                 right_on=['acceptor_id','term_mcc','term_country'], how='left')
     dfTrx['clusterMerchant'] = dfTrx['clusterMerchant'].apply(lambda x: 'UNKNOWN' if pd.isnull(x) == True else x)
