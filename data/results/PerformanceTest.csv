@@ -5,10 +5,10 @@ Package,Name,Hyperparameters,F1,Mcc,ROC,Roc
 04-sklearn.naive_bayes,GaussianNB,Default,0.0104,0.0594,0.7936,
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.0211,0.0313,0.5022,
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.7045,0.7239,0.5044,
-07-sklearn.ensemble,RandomForest,1-Default,0.1572,0.1893,0.5604,0.5503
+07-sklearn.ensemble,RandomForest,1-Default,0.1572,0.1893,0.5604,
 07-sklearn.ensemble,RandomForest,2-After tuning,0.1033,0.1851,0.5383,
 08-xgboost,XGBClassifier,1-Default,0.1223,0.1968,0.5224,
-08-xgboost,XGBClassifier,2-After tuning,0.214,0.2842,0.5403,
+08-xgboost,XGBClassifier,2-After tuning,0.2147,0.2512,0.5403,0.5705
 08-xgboost,XGBClassifier,3-Default-imbalanced,0.1223,0.1968,0.5224,
 08-xgboost,XGBClassifier,4-after tuning imbalanced,0.1107,0.1984,0.5224,
 09-catboost,CatBoostClassifier,1-Default,0.1757,0.238,0.5313,
