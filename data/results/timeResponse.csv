@@ -4,10 +4,10 @@ Package,Name,Hyperparameters,Learning time
 03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0
 04-sklearn.naive_bayes,GaussianNB,Default,2
 05-autogluon.tabular,TabularPredictor,Default,1733
-07-sklearn.ensemble,AdaBoostClassifier,1-Default,116
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,479
-07-sklearn.ensemble,RandomForest,1-Default,175
-07-sklearn.ensemble,RandomForest,2-After tuning,810
+07-sklearn.ensemble,AdaBoostClassifier,1-Default,62
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,551
+07-sklearn.ensemble,RandomForest,1-Default,192
+07-sklearn.ensemble,RandomForest,2-After tuning,686
 08-xgboost,XGBClassifier,1-Default,7
 08-xgboost,XGBClassifier,2-After tuning,38
 08-xgboost,XGBClassifier,3-Default-imbalanced,7
