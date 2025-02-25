@@ -1,17 +1,19 @@
-Package,Name,Hyperparameters,F1,Mcc,ROC
-09-catboost,CatBoostClassifier,2-After tuning,0.1954,0.2476,0.5604
-03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.0,0.0,0.5
-03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0.0045,0.0034,0.5017
-03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0.0024,0.004,0.5308
-04-sklearn.naive_bayes,GaussianNB,Default,0.0105,0.0602,0.7936
-07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.0211,0.0313,0.5022
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
-07-sklearn.ensemble,RandomForest,1-Default,0.1524,0.1857,0.5604
-07-sklearn.ensemble,RandomForest,2-After tuning,0.1629,0.2063,0.5383
-08-xgboost,XGBClassifier,1-Default,0.1164,0.1953,0.5224
-08-xgboost,XGBClassifier,2-After tuning,0.2249,0.2539,0.5403
-08-xgboost,XGBClassifier,3-Default-imbalanced,0.1164,0.1953,0.5224
-08-xgboost,XGBClassifier,4-after tuning imbalanced,0.1597,0.2306,0.5224
-09-catboost,CatBoostClassifier,1-Default,0.1927,0.2526,0.5313
-10-imblearn.ensemble,BalancedRandomForest,1-Default,0.0186,0.0853,0.8979
-10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0142,0.0721,0.8661
+Package,Name,Hyperparameters,F1,Mcc,ROC,Roc
+03-sklearn.dummy,DummyClassifier,"strategy=""most_frequent""",0.0,0.0,0.5,
+03-sklearn.dummy,DummyClassifier,"strategy=""stratified""",0.0045,0.0034,0.5017,
+03-sklearn.dummy,DummyClassifier,"strategy=""uniform""",0.0024,0.004,0.5308,
+04-sklearn.naive_bayes,GaussianNB,Default,0.0105,0.0602,0.7936,
+06-sklearn.ensemble,DecisionTree,1-Default,0.1734,0.1726,0.5822,
+06-sklearn.tree,DecisionTree,2-After tuning,0.0667,0.1216,0.5181,0.5181
+07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.0211,0.0313,0.5022,
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044,
+07-sklearn.ensemble,RandomForest,1-Default,0.1524,0.1857,0.5604,
+07-sklearn.ensemble,RandomForest,2-After tuning,0.1629,0.2063,0.5383,
+08-xgboost,XGBClassifier,1-Default,0.1164,0.1953,0.5224,
+08-xgboost,XGBClassifier,2-After tuning,0.2249,0.2539,0.5403,
+08-xgboost,XGBClassifier,3-Default-imbalanced,0.1164,0.1953,0.5224,
+08-xgboost,XGBClassifier,4-after tuning imbalanced,0.1597,0.2306,0.5224,
+09-catboost,CatBoostClassifier,1-Default,0.1927,0.2526,0.5313,
+09-catboost,CatBoostClassifier,2-After tuning,0.1954,0.2476,0.5604,
+10-imblearn.ensemble,BalancedRandomForest,1-Default,0.0186,0.0853,0.8979,
+10-imblearn.ensemble,EasyEnsembleClassifier,Default,0.0142,0.0721,0.8661,
