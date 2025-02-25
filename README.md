@@ -444,6 +444,23 @@ if it drops it means that the model overfits and has just saved some noise.
 
 ![image](https://github.com/franck-benault/creditCardFraudDetection/blob/main/imgs/FD99A-Summary-nextdays.png)
 
+This tab shows some results
+* Naive bayes if you look at the ROC score is not so bad
+
+* there is overfitting for
+	- RandomForest
+	- XGB
+	- CatBoost
+  
+* The result are weak but without overfitting for
+  	- AdaBoost
+  	- DecisionTree
+
+* The result for imbalanced algorithms is good (at ROC score) without overfitting for
+  	- EasyEnsemble
+  	- BalancedRandomForest
+
+
 ## References
 ### General web site
 * [G1] Google Scholar
