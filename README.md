@@ -257,6 +257,12 @@ The unsupervised learning gives 4 clusters with score silouhette of 0.6.
 if I try to increase the number of clusters, this score does not descrease a lot.
 But to avoid to have too many features at the end, I choose a 4 clusters solution.
 
+### Previous transactions
+The idea here is to find the previous transactions done with a card and compare it to current transaction.
+I want to calculate here a distance between the transaction trying to see if the transactions are close to each other.
+A simple comparison of the country and the mcc codes seem not enough for the fraud detection.
+So I have to try something different.
+
 ### Card payment environment evolution
 
 The clustering done on the cards and merchants shows another point the constant change of the environment.
