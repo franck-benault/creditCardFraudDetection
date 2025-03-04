@@ -274,3 +274,23 @@ def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, df
     print("scoref1",scoref1)
     show_confusion_matrix(y_pred, y_train)
     return random_search.best_params_
+
+from sklearn.metrics import precision_recall_curve
+
+def show_precision_recall_curve(modelClf,x_train,y_train,x_test,y_test):
+    y_prob_train = modelClf.predict_proba(x_train)[:,1]
+    y_prob_test = modelClf.predict_proba(x_test)[:,1]
+
+    precision, recall, thresholds = precision_recall_curve(y_train, y_prob_train)
+    plt.fill_between(recall, precision)
+    plt.ylabel("Precision")
+    plt.xlabel("Recall")
+    plt.title("Train Precision-Recall curve");
+    plt.show()
+
+    precision, recall, thresholds = precision_recall_curve(y_test, y_prob_test)
+    plt.fill_between(recall, precision)
+    plt.ylabel("Precision")
+    plt.xlabel("Recall")
+    plt.title("Test Precision-Recall curve");
+    plt.show()
