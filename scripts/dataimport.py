@@ -95,13 +95,43 @@ def join_merchant_profile(dfTrx,merchantProfileFileName):
 
     return dfTrx
 
+
+
+def word_not_present(wordT,model):
+    if (wordT in model.wv.key_to_index):
+        return wordT
+    else:
+        #print(wordT)
+        return 'BEL5411'
+
+def calculDistance(input0,input1,input2,input3,model):
+    if(input0!=input1):
+        return 1.1
+    else:
+        return model.wv.similarity(input2,input3)
+
 def previous_trx(dfTrx):
-    sorted_df = dfTrx.sort_values(by=['card_pan_id','trx_date_time'])
     dfTrx['previous_trx']=0
-    for i in range(1,2,1):
-        sorted_df['card_pan_id1'] = sorted_df['card_pan_id'].shift(-i)
-        sorted_dfTemp=sorted_df[(sorted_df['card_pan_id']==sorted_df['card_pan_id1'])]
-        dfTrx['previous_trx']=np.where(sorted_df.index.isin(sorted_dfTemp.index),i,dfTrx['previous_trx'])
+    dfTrx['wordV2']=dfTrx['term_country']+dfTrx['term_mcc']
+    sorted_df = dfTrx.sort_values(by=['card_pan_id','trx_date_time'])
+
+    sorted_df['card_pan_id1'] = sorted_df['card_pan_id'].shift(-1)
+    sorted_df['wordV2P'] = sorted_df['wordV2'].shift(-1)
+    dfTrx['wordV2P'] = sorted_df['wordV2P']
+    dfTrx['card_pan_id1']=sorted_df['card_pan_id1']
+
+    sorted_dfTemp=sorted_df[(sorted_df['card_pan_id']==sorted_df['card_pan_id1'])]
+    dfTrx['previous_trx']=np.where(sorted_df.index.isin(sorted_dfTemp.index),1,dfTrx['previous_trx'])
+
+    dfTrx['distancePrevTrx']=1.1
+    import pickle
+    model = pickle.load(open('../data/processed/wordV2Model', 'rb'))
+
+    dfTrx['wordV2'] = dfTrx['wordV2'].apply(lambda x:word_not_present(x,model))
+    dfTrx['wordV2P'] = dfTrx['wordV2P'].apply(lambda x:word_not_present(x,model))
+
+    dfTrx['distancePrevTrx']= dfTrx.apply(lambda x: calculDistance(x.card_pan_id,x.card_pan_id1,x.wordV2P,x.wordV2,model), axis=1)
+    dfTrx= dfTrx.drop(columns=['wordV2','wordV2P','card_pan_id1'])
     return dfTrx
 
 
