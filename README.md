@@ -80,6 +80,7 @@ You can find a explanation in the [BF1] in chapter 3.
 	- $Precision = TP / (TP+FP)$
 * F1-score
 	- it is the harmonic mean of Precision and Recall. This value is useful when there is a significant imbalanced. F1 score has been used during previous projects in my company.
+ 	- a good F1 score means that precesion and recall are good. 
 	- $F1-score = 2 x (Precision x Recall) / (Precision + Recall)$
 
 All these metrics (Accuracy, Recall, Precision, F1 score) follow the same scale : 1 is a perfect result, 0 is the worst result. 
