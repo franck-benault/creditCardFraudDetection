@@ -66,10 +66,11 @@ But it is quite difficult to use it for automation. A simple indicator is always
 Among the single figure metrics the first one is Accurancy. it measures the proportion of correctly classified transactions among all transactions.
 For accuracy the scale is from 0 (poor result) to 1 (excelent result)
 
-$Accurancy = (TP+TN)/(Total Samples)$
+$Accuracy = (TP+TN)/(Total Samples)$
 
 But it is not a good metric for severe imbalanced datasets. We can see that we the example of the dummy classifier.
-With imbalanced dataset, we can speak about **misleading** accuracy.
+With imbalanced dataset, we can speak about **misleading** accuracy. This point is largely explained in the literature. 
+You can find a explanation in the [BF1] in chapter 3.
 
 * Precision
 	- it measures the proportion of actual fraudulent transactions correctly identified by the model.
