@@ -263,7 +263,25 @@ But to avoid to have too many features at the end, I choose a 4 clusters solutio
 The idea here is to find the previous transactions done with a card and compare it to current transaction.
 I want to calculate here a distance between the transaction trying to see if the transactions are close to each other.
 A simple comparison of the country and the mcc codes seem not enough for the fraud detection.
-So I have to try something different.
+
+
+Another method is to associate for each transaction a "word" each is the combinaison of the values of the transaction,
+compare it to the previous transaction if it is known.
+this word can be :
+* the terminal country code
+* the terminal MCC code
+* the combinaision terminal country code + MCC code
+* something more complex
+
+then I compare the previous transaction with the current transaction using a wordtovec.
+I don't filterer the fraudulent transactions because the fraud rate is very low.
+
+the second and the third solution seems to give quite good result.
+I calculate a cosine distance (meaning 1 is close trasactions, 0 very far transactions).
+the result shows that when the cosine distance descreases the fraud rate increases.
+The IV calculated is around 0,05.
+
+This method can be used in a different way to do a clustering of the country code or the mcc code.
 
 ### Card payment environment evolution
 
