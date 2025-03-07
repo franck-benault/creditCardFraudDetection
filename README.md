@@ -487,7 +487,7 @@ This tab shows some results
 	- CatBoost
   
 * The result are weak but without overfitting for
-  	- AdaBoost
+  	- AdaBoost (with a lot of false positives)
   	- DecisionTree
 
 * The result for imbalanced algorithms is good (at ROC score) without overfitting for
