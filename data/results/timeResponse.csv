@@ -12,8 +12,6 @@ Package,Name,Hyperparameters,Learning time
 07-sklearn.ensemble,RandomForest,2-After tuning,693
 08-xgboost,XGBClassifier,1-Default,8
 08-xgboost,XGBClassifier,2-After tuning,33
-08-xgboost,XGBClassifier,3-Default-imbalanced,6
-08-xgboost,XGBClassifier,4-after tuning imbalanced,4
 09-catboost,CatBoostClassifier,1-Default,91
 09-catboost,CatBoostClassifier,2-After tuning,132
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44
