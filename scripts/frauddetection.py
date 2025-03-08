@@ -60,7 +60,8 @@ def calc_iv(df, feature, target, pr=0):
 #calc_iv(amazon_turk,“age_bin”,“Y”,pr=0)
 
 def getAllFiles():
-    files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv','export20241125.csv']
+    #files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv','export20241125.csv']
+    files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv']
     return files
 
 
@@ -176,18 +177,18 @@ def draw_roc_curve(y_test,y_pred):
     plt.legend()
     plt.show()
 
-def plt_train_test(range, tabf1Train,tabf1Test=[]):
+def plt_train_test(range, tabf1Train,trainLabel="f1 Train",tabf1Test=[], testLabel="f1 test"):
     fig = plt.figure(figsize=(8,6))
     ax1 = fig.add_subplot()
 
-    ax1.set_ylabel("f1 Train")
-    ax1.plot(range, tabf1Train, color = 'red', label = 'f1 Train')
+    ax1.set_ylabel(trainLabel)
+    ax1.plot(range, tabf1Train, color = 'red', label = trainLabel)
     ax1.legend(loc = 'upper left')
 
     if(len(tabf1Test)==len(tabf1Train)):
         ax2 = ax1.twinx()
-        ax2.set_ylabel("f1 test")
-        ax2.plot(range, tabf1Test, color = 'blue', label = 'f1 Test')
+        ax2.set_ylabel(testLabel)
+        ax2.plot(range, tabf1Test, color = 'blue', label = testLabel)
         ax2.legend(loc = 'upper right')
 
     fig.autofmt_xdate()
