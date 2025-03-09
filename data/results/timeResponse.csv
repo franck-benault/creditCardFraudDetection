@@ -13,7 +13,7 @@ Package,Name,Hyperparameters,Learning time
 08-xgboost,XGBClassifier,1-Default,8
 08-xgboost,XGBClassifier,2-After tuning,33
 09-catboost,CatBoostClassifier,1-Default,150
-09-catboost,CatBoostClassifier,2-After tuning,227
+09-catboost,CatBoostClassifier,2-After tuning,238
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44
 10-imblearn.ensemble,EasyEnsembleClassifier,1-Default,59
 10-imblearn.ensemble,EasyEnsembleClassifier,2-After tuning,161
