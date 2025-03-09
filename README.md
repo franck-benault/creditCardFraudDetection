@@ -457,6 +457,24 @@ This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
 The scaling has no influence to the performance.
 
+### XGboost classifier
+This classifier is not part of skitlearn library even a xgboost algorithm exists in this library.
+This is an independant project.
+But this project follows correctly the "skitlearn interface".
+
+#### Fix overfitting issue
+This algorithm often suffers from overfitting. My first tests show it cleary.
+The training data work fine. then the result with the test data was very poor.
+The advice found to avoid this overfitting is to set the parameter "learning rate" to a very low value. 
+The default value is 0.3 which is too high, I set this parameter to 0.005.
+
+#### Decrease the threshold score
+The last change to improve the performance is to change the threshold.
+Behind the classification there is a score defined between 0 and 1.
+The threshold used by default to classify is 0.5.
+With imbalanced data, decreasing this threshold often gives better result. 
+Here a threshold of 0.2 gives the best result if I use the f1 score. 
+
 
 #### Imbalanced learning library
 ##### imblearn.ensemble EasyEnsembleClassifier
