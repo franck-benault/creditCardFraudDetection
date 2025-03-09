@@ -478,6 +478,8 @@ The threshold used by default to classify is 0.5.
 With imbalanced data, decreasing this threshold often gives better result. 
 Here a threshold of 0.2 gives the best result if I use the f1 score. 
 
+### Catboost classifier
+Catboost algorithm and other boosting algorithm can easily overfit.
 
 #### Imbalanced learning library
 ##### imblearn.ensemble EasyEnsembleClassifier
