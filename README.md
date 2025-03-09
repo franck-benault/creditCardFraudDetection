@@ -457,6 +457,9 @@ This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
 The scaling has no influence to the performance.
 
+But the final result shows that this algorithm only use few features.
+The result are quite poor and there a lot of false positives.
+
 ### XGboost classifier
 This classifier is not part of skitlearn library even a xgboost algorithm exists in this library.
 This is an independant project.
