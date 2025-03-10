@@ -446,6 +446,13 @@ So the idea is to first use the RandomizedSearchCV to have a first approach of t
 
 ## Main classifiers comparaison
 ### Skitlearn library
+#### KNeigbors Classifier
+This algorithm does not perform well with the transaction and fraud detection data.
+The reason is that the number of records is clearly too high to be managed by this algorithm.
+
+The first step is to reduce the number of records from the majority class.
+
+
 #### Ensemble package
 There 3 approaches in this package :
 * Bagging
