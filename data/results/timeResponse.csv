@@ -4,6 +4,10 @@ Package,Name,Hyperparameters,Learning time
 03-sklearn.dummy,DummyClassifier,strategy=uniform,0
 04-sklearn.naive_bayes,GaussianNB,Default,2
 05-autogluon.tabular,TabularPredictor,Default,1733
+05-sklearn.neighbors,KNeighborsClassifier,1-Default,2681
+05-sklearn.neighbors,KNeighborsClassifier,2-DownSampling,92
+05-sklearn.neighbors,KNeighborsClassifier,3-DownSampling-Scaler,121
+05-sklearn.neighbors,KNeighborsClassifier,4-DownSampling-Scaler-tuning,152
 06-sklearn.tree,DecisionTree,1-Default,12
 06-sklearn.tree,DecisionTree,2-After tuning,6
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,122
