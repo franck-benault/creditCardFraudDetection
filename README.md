@@ -296,9 +296,12 @@ It means that a model done on one day because less and less accurate following t
 ## Imbalanced issue management (Resampling techniques)
 ### Data-based technique
 #### Undersampling the majority class
-* RandomUnderSampling
-* Tomek's link
-* Edited Nearest Neighbour (ENN)
+* Pandas
+	* sample method
+* Imbalanced-learning
+	* RandomUnderSampling
+	* Tomek's link
+	* Edited Nearest Neighbour (ENN)
 
 #### Oversampling the minority class
 * Random over sampling
