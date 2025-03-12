@@ -447,10 +447,15 @@ So the idea is to first use the RandomizedSearchCV to have a first approach of t
 ## Main classifiers comparaison
 ### Skitlearn library
 #### KNeigbors Classifier
-This algorithm does not perform well with the transaction and fraud detection data.
+This algorithm does not perform well with the transactions and fraud detection data.
 The reason is that the number of records is clearly too high to be managed by this algorithm.
 
-The first step is to reduce the number of records from the majority class.
+##### Issue during the learning phase
+The first step is to reduce the number of records from the majority class by undersampling the majority class.
+Finally the sample method of the dataframe in Pandas or the randomUnderSampler give the best solution here.
+
+##### Issue the Predict phase
+Also this algorithm is quite slow during the perform methods. So this is not a good solution in the situation where the time response in important. 
 
 
 #### Ensemble package
