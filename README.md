@@ -455,6 +455,7 @@ The reason is that the number of records is clearly too high to be managed by th
 
 ##### Issue during the learning phase
 The first step is to reduce the number of records from the majority class by undersampling the majority class.
+Some advanced undersampling algorithms are very slow with the volumetry I have. They are actually not usable for this project.
 Finally the sample method of the dataframe in Pandas or the randomUnderSampler give the best solution here.
 
 ##### Issue the Predict phase
