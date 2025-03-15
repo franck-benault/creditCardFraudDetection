@@ -1,6 +1,7 @@
 Package,Name,Hyperparameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,ROC Day3,ROC Day4
-05-sklearn.neighbors,KNeighborsClassifier,2-After-tuning,0.2378,0.1469,0.1475,0.1096,0.7117,0.6359,0.6205,0.5934
 04-sklearn.naive_bayes,GaussianNB,Default,0.0099,0.0097,0.0107,0.0094,0.8331,0.835,0.836,0.8178
+05-sklearn.neighbors,KNeighborsClassifier,2-After-tuning,0.2378,0.1469,0.1475,0.1096,0.7117,0.6359,0.6205,0.5934
+05-sklearn.neighbors,KNeighborsClassifier,2-After-tuning-V2,0.2244,0.1802,0.1551,0.1268,0.6166,0.5962,0.5795,0.5646
 06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.0861,0.0774,0.0558,0.0172,0.5233,0.5213,0.5151,0.5045
 06-sklearn.tree,DecisionTreeClassifier,3-After threshold,0.219,0.2181,0.1689,0.1241,0.6126,0.6198,0.5826,0.5609
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1069,0.1241,0.1239,0.108,0.65,0.6937,0.6633,0.652
