@@ -296,12 +296,28 @@ It means that a model done on one day because less and less accurate following t
 ## Imbalanced issue management (Resampling techniques)
 ### Data-based technique
 #### Undersampling the majority class
+##### Simple solutions
 * Pandas
 	* sample method
 * Imbalanced-learning
 	* RandomUnderSampling
-	* Tomek's link
-	* Edited Nearest Neighbour (ENN)
+##### Methods that Select Examples to Keep
+* Near Miss Undersampling
+* Condensed Nearest Neighbor Rule for Undersampling
+
+##### Methods that Select Examples to Delete
+* Tomek Links for Undersampling
+* Edited Nearest Neighbors Rule for Undersampling
+
+##### Combinations of Keep and Delete Methods
+* One-Sided Selection for Undersampling
+* Neighborhood Cleaning Rule for Undersampling
+
+##### Conclusion
+Due to the severe imbalanced data, the advanced undersampling techniques do not work well and are sometimes very slow.
+Actually the randomUnderSampling works quite fine and is very quick.
+The paradox is that it works better if I remove not too many records from the majority class.
+With this approach KNeigbors Classifier works and gives not too bad results.
 
 #### Oversampling the minority class
 * Random over sampling
