@@ -468,7 +468,7 @@ So the idea is to first use the RandomizedSearchCV to have a first approach of t
 #### KNeigbors Classifier
 This algorithm does not perform well with the transactions and fraud detection data.
 The reason is that the number of records is clearly too high to be managed by this algorithm and the learning time is very high.
-Also the processing time is very slow.
+Also the prediction time is quite high.
 
 
 
@@ -479,8 +479,9 @@ Finally the sample method of the dataframe in Pandas or the randomUnderSampler g
 About the randomUnderSampler to avoid to lose to much information, this undersampling should be as small as possible.
 A undersampling of 0.01 seems to be a good solution.
 
-##### Issue the Predict phase
-Also this algorithm is quite slow during the perform methods. So this is not a good solution in the situation where the time response in important. 
+##### Issue the prediction speed
+Also this algorithm is quite slow during the prediction. 
+So this is not a good solution in the situation where the time response in important (real time applications). 
 
 ##### Normalisation and hyperparameters tuning
 This KNeigbors Classifier is feature scaling. So a normalisation is needed.
