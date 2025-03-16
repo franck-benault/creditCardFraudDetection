@@ -451,15 +451,29 @@ So the idea is to first use the RandomizedSearchCV to have a first approach of t
 ### Skitlearn library
 #### KNeigbors Classifier
 This algorithm does not perform well with the transactions and fraud detection data.
-The reason is that the number of records is clearly too high to be managed by this algorithm.
+The reason is that the number of records is clearly too high to be managed by this algorithm and the learning time is very high.
+Also the processing time is very slow.
+
+
 
 ##### Issue during the learning phase
 The first step is to reduce the number of records from the majority class by undersampling the majority class.
 Some advanced undersampling algorithms are very slow with the volumetry I have. They are actually not usable for this project.
 Finally the sample method of the dataframe in Pandas or the randomUnderSampler give the best solution here.
+About the randomUnderSampler to avoid to lose to much information, this undersampling should be as small as possible.
+A undersampling of 0.01 seems to be a good solution.
 
 ##### Issue the Predict phase
 Also this algorithm is quite slow during the perform methods. So this is not a good solution in the situation where the time response in important. 
+
+##### Normalisation and hyperparameters tuning
+This KNeigbors Classifier is feature scaling. So a normalisation is needed.
+The main hyperparameters is the number of neighbors.
+
+the good solution is
+* undersampling ratio 0.01 with the rendomUnderSamplier.
+* Scaling using the RobustScaler
+* Hyperparameter n_neighbors=6
 
 
 #### Ensemble package
