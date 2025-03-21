@@ -1,0 +1,3 @@
+Package,Name,Conclusion,Comment
+07-sklearn.ensemble.a-bagging,BaggingClassifier,rejected,overfitting
+
