@@ -470,8 +470,6 @@ This algorithm does not perform well with the transactions and fraud detection d
 The reason is that the number of records is clearly too high to be managed by this algorithm and the learning time is very high.
 Also the prediction time is quite high.
 
-
-
 ##### Issue during the learning phase
 The first step is to reduce the number of records from the majority class by undersampling the majority class.
 Some advanced undersampling algorithms are very slow with the volumetry I have. They are actually not usable for this project.
@@ -499,7 +497,16 @@ There 3 approaches in this package :
 * Boosting
 * Stacking
 
-#### Adaboost classifier
+#### Bagging
+About the bagging approach (RandomForestClassifier and BaggingClassifier)
+I don't expect good results because they cut training dataset in smaller ones and the imbalanced issue increases.
+
+##### BaggingClassifier
+This algorithm has a overfitting issue even if I try to use the undersampling techniques.
+So this algorith is rejected to be good solution for the fraud detection.
+
+#### Boosting
+##### Adaboost classifier
 This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
 The scaling has no influence to the performance.
