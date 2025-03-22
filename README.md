@@ -4,6 +4,9 @@ It is in a context of a back office and the goal is to do a binary classificatio
 
 The goal is not do to a kind of scoring.
 
+This presentation will show that the fraud detection is a very, highly or extreme imbalance data issue. 
+The algorithms do not manage correctly this issue.
+
 ## Research about the card transactions fraud detection
 
 If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
