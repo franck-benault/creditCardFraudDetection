@@ -596,7 +596,10 @@ This tab shows some results
   - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 * [PR6] bank of France (OBSERVATORY FOR THE SECURITY OF PAYMENT MEANS) annual report 3023
     - https://www.banque-france.fr/system/files/2025-01/OSMP_2023_EN.pdf
-
+* [PR7] Monitoring Consumption Switzerland (payment information but no fraud information)
+    - https://monitoringconsumption.com
+ 
+      
 ### Cloud articles and solutions
 * [CL1] How to build a serverless real-time credit card fraud detection solution (Google Big Query)
   - https://cloud.google.com/blog/products/data-analytics/how-to-build-a-fraud-detection-solution?hl=en
