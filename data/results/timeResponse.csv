@@ -1,5 +1,5 @@
 Package,Name,Hyperparameters,Learning time
-04-sklearn.naive_bayes,GaussianNB,Default,2
+04-sklearn.naive_bayes,GaussianNB,1-Default,2
 05-autogluon.tabular,TabularPredictor,Default,1733
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,2681
 05-sklearn.neighbors,KNeighborsClassifier,2-DownSampling,92
