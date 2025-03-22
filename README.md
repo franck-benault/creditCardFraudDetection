@@ -50,7 +50,7 @@ About debit card transactions, the fraud rate can be considered ten times lower 
 This is due to the fact that debit cards have less possibilities about e-commerce, about booking.
 For this example the imbalanced is higher.
 
-This work is based on credit card transactions because it was more simple to achieve some significant results.
+This work is based on credit card transactions because it was simpler to achieve some significant results.
 
 
 ## How to manage imbalanced data
