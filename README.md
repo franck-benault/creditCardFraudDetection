@@ -473,6 +473,8 @@ This algorithm does not perform well with the transactions and fraud detection d
 The reason is that the number of records is clearly too high to be managed by this algorithm and the learning time is very high.
 Also the prediction time is quite high.
 
+If the number of feature increases, the global result slightly descreases.
+
 ##### Issue during the learning phase
 The first step is to reduce the number of records from the majority class by undersampling the majority class.
 Some advanced undersampling algorithms are very slow with the volumetry I have. They are actually not usable for this project.
