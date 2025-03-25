@@ -61,6 +61,8 @@ This work is based on credit card transactions because it was simpler to achieve
 Imbalanced data refers to scenarios where the classes in the dataset are not reprsented equally.
 Also the target class is often the one underrepresented. For fraud on card transactions, I often see *severe* imbalanced data. 
 
+With imbalanced data overfitting is quite a common issue.
+
 ### Metrics choice issue
 
 The confusion matrix is an important tool to visualize the force or the weakness of a classifier. 
