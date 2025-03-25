@@ -6,8 +6,8 @@ Package,Name,Hyperparameters,Learning time
 06-sklearn.tree,DecisionTree,2-After tuning,6
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,122
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,1073
-07-sklearn.ensemble.a-bagging,RandomForest,1-Default,199
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,700
+07-sklearn.ensemble.a-bagging,RandomForest,1-Default,173
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,123
 08-xgboost,XGBClassifier,1-Default,8
 08-xgboost,XGBClassifier,2-After tuning,33
 09-catboost,CatBoostClassifier,1-Default,150

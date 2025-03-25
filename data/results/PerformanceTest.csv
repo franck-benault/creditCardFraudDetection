@@ -5,8 +5,8 @@ Package,Name,Hyperparameters,F1,Mcc,ROC,Roc
 06-sklearn.tree,DecisionTree,2-After tuning,0.0664,0.1189,0.5181,
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.036,0.0576,0.5022,
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044,
-07-sklearn.ensemble-a-bagging,RandomForest,1-Default,0.1806,0.2254,0.5564,
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.083,0.1692,0.5222,
+07-sklearn.ensemble-a-bagging,RandomForest,1-Default,0.2,0.2496,0.5564,
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1037,0.1893,0.5222,0.5282
 08-xgboost,XGBClassifier,1-Default,0.13,0.212,0.5224,
 08-xgboost,XGBClassifier,2-After tuning,0.0902,0.1794,0.5403,
 09-catboost,CatBoostClassifier,1-Default,0.2046,0.2651,0.5313,
