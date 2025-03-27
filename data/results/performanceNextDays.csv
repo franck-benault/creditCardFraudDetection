@@ -1,5 +1,4 @@
 Package,Name,Hyperparameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,ROC Day3,ROC Day4
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,5-After oversampling,0.58,0.1038,0.1248,0.0792,0.7298,0.5334,0.5386,0.5238
 04-sklearn.naive_bayes,GaussianNB,1-Default,0.0099,0.0097,0.0107,0.0093,0.8338,0.8327,0.8344,0.8131
 05-sklearn.neighbors,KNeighborsClassifier,2-After-tuning-undersampling,0.2282,0.1543,0.1647,0.0951,0.582,0.5586,0.5601,0.5328
 06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.0861,0.0774,0.0558,0.0172,0.5233,0.5213,0.5151,0.5045
@@ -7,7 +6,9 @@ Package,Name,Hyperparameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,R
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1069,0.1241,0.1239,0.108,0.65,0.6937,0.6633,0.652
 07-sklearn.ensemble.a-bagging,RandomForestClassifier,2-After tuning,0.2794,0.0168,0.1001,0.0209,0.5817,0.5043,0.5269,0.5053
 07-sklearn.ensemble.a-bagging,RandomForestClassifier,3-After threshold,0.6268,0.2188,0.1815,0.1233,0.774,0.5995,0.5744,0.5479
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,4-After undersampling,0.4208,0.1889,0.1554,0.1234,0.7182,0.5911,0.5686,0.5524
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,4-After undersampling,0.478,0.2005,0.1575,0.1002,0.6991,0.5756,0.5545,0.5332
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,5-After oversampling,0.58,0.1038,0.1248,0.0792,0.7298,0.5334,0.5386,0.5238
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,6-After overUnderSampling,0.587,0.1116,0.1376,0.0917,0.7539,0.5395,0.5458,0.5295
 08-xgboost,XGBClassifier,2-After tuning,0.1814,0.045,0.0422,0.0222,0.5503,0.5118,0.511,0.5058
 08-xgboost,XGBClassifier,3-After threshold,0.4435,0.1487,0.1659,0.1261,0.6706,0.5573,0.5601,0.5451
 09-catboost,CatBoostClassifier,2-After tuning,0.1147,0.0284,0.1042,0.0049,0.5306,0.5074,0.5281,0.5012
