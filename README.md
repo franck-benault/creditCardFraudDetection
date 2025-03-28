@@ -513,6 +513,12 @@ This algorithm has a overfitting issue even if I try to use the undersampling te
 So this algorith is rejected to be good solution for the fraud detection.
 
 #### Boosting
+##### Gradient boosting
+###### Hyperparameters
+* max_depth too avoid overfitting this parameter should be lower than 8, but at least greater to 3 to learn something
+* learning_rate a small value (0.01) is better to avoid overfitting but it means that the learning time increases also the parameter n_estimators will increase
+* n_estimators a lower learning_rate means that n_estimators will be bigger
+
 ##### Adaboost classifier
 This classifier is present in skitlearn library in the package ensemble.
 It uses a boosting approach.
