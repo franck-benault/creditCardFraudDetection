@@ -514,16 +514,22 @@ So this algorith is rejected to be good solution for the fraud detection.
 
 #### Boosting
 ##### Gradient boosting
+This classifier is present in skitlearn library in the package ensemble and it uses a boosting approach.
+The scaling or normalization has no influence to the performance.
+
 ###### Hyperparameters
 * max_depth too avoid overfitting this parameter should be lower than 8, but at least greater to 3 to learn something
 * learning_rate a small value (0.01) is better to avoid overfitting but it means that the learning time increases also the parameter n_estimators will increase
 * n_estimators a lower learning_rate means that n_estimators will be bigger
 
 ##### Adaboost classifier
-This classifier is present in skitlearn library in the package ensemble.
-It uses a boosting approach.
-The scaling has no influence to the performance.
+This classifier is present in skitlearn library in the package ensemble and it uses a boosting approach.
+The scaling or normalization has no influence to the performance.
+###### Hyperparameters
+* learning_rate a small value (0.1) is better to avoid overfitting but it means that the learning time increases also the parameter n_estimators will increase
+* n_estimators a lower learning_rate means that n_estimators will be bigger
 
+###### Final results
 But the final result shows that this algorithm only use few features.
 The result are quite poor and there a lot of false positives.
 
