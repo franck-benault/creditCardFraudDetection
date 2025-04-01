@@ -5,9 +5,12 @@ Package,Name,Hyperparameters,Learning time
 06-sklearn.tree,DecisionTree,1-Default,12
 06-sklearn.tree,DecisionTree,2-After tuning,6
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,122
-07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,1073
+07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,702
 07-sklearn.ensemble.a-bagging,RandomForest,1-Default,177
 07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,122
+07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,194
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,211
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,458
 08-xgboost,XGBClassifier,1-Default,8
 08-xgboost,XGBClassifier,2-After tuning,33
 09-catboost,CatBoostClassifier,1-Default,150
