@@ -12,9 +12,14 @@ def mccFiltering(dfTrx):
     dfRemained=dfTrx[(dfTrx['term_mcc']!=5542)]
     return dfRemained
 
+def ecomIndicatorFiltering(dfTrx):
+    dfRemained=dfTrx[(dfTrx['ecom_indicator'] !=62)]
+    return dfRemained
+
 def fullFiltering(dfTrx,maxAmount=5_000):
     dfTrx=amountFiltering(dfTrx,maxAmount)
     dfTrx=reversalFiltering(dfTrx)
     dfTrx=mccFiltering(dfTrx)
+    dfTrx=ecomIndicatorFiltering(dfTrx)
     return dfTrx
     
