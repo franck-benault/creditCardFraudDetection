@@ -370,9 +370,13 @@ The good point is that the number of fraudulent transactions filtered are low (0
 Some MCC codes have a very low fraud rate. 
 This is in fact the most efficient way to filter 4% of transactions can be filtered.
 
+### Filter on Ecom_indicator
+Some ecom_indicator codes have a very low fraud rate. 
+This is in fact the most efficient way to filter 1% of transactions can be filtered.
+
 ### Fitering results
 The filtering does not give a very good results.
-Only 5% of the transactions are filtered but the filtering errors are quite rare 5 maximum for around 1000 fradulent transactions. 
+Only 5% of the transactions are filtered but the filtering errors are quite rare 4 maximum for around 1000 fradulent transactions. 
 
 ## Main Classifiers
 ### First Classifiers
