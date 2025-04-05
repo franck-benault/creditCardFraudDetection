@@ -1,6 +1,31 @@
 
 import pandas as pd
 
+def load_features_IV_result():
+    usecols = ['Feature','IV']
+    data = pd.read_csv("../data/results/featureIV.csv", usecols=usecols)
+    data=data.sort_values(['IV'])
+    return data
+
+def save_features_IV_result(data): 
+    data.to_csv('../data/results/featureIV.csv', index=False) 
+
+def update_features_IV_result(feature, iv):
+    iv=round(iv,4)
+    #print(iv)
+    data = load_features_IV_result()
+    
+    res=data[(data['Feature']==feature)]
+    #print(res.shape[0])
+    if (res.shape[0]>0):
+        index=res.index[0]
+        #print('trace')
+        data.loc[index, 'iv']=iv
+    else:
+        data=pd.concat([pd.DataFrame([[feature,iv]], columns=data.columns), data], ignore_index=True)
+
+    save_features_IV_result(data)
+
 def load_performance_nextdays_result():
     usecols = ['Package','Name','Hyperparameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4']
     data = pd.read_csv("../data/results/performanceNextDays.csv", usecols=usecols)

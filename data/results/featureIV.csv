@@ -1,0 +1,13 @@
+Feature,IV
+country_group,1.1324
+trx_reversal,0.012
+Hour,0.1328
+trx_local_amt_val bins=5,0.2074
+ecom_indicator,0.3384
+trx_cnp,0.4978
+ecom,0.5173
+mcd_fraud_score,0.9053
+vaa_score,1.4776
+mcd_fraud_score mcd only,1.7469
+term_country,1.8862
+vaa_score visa only,3.3555
