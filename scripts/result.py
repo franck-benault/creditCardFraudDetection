@@ -20,7 +20,7 @@ def update_features_IV_result(feature, iv):
     if (res.shape[0]>0):
         index=res.index[0]
         #print('trace')
-        data.loc[index, 'iv']=iv
+        data.loc[index, 'IV']=iv
     else:
         data=pd.concat([pd.DataFrame([[feature,iv]], columns=data.columns), data], ignore_index=True)
 
