@@ -94,7 +94,7 @@ def update_performance_test_result(package, name,hyperparameters, f1,mcc,roc):
         #print('trace')
         data.loc[index, 'F1']=f1
         data.loc[index, 'Mcc']=mcc
-        data.loc[index, 'Roc']=roc
+        data.loc[index, 'ROC']=roc
     else:
         data=pd.concat([pd.DataFrame([[package,name,hyperparameters,f1,mcc,roc]], columns=data.columns), data], ignore_index=True)
 

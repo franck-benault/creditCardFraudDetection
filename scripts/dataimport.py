@@ -75,6 +75,7 @@ def ecom(dfTrx):
 def remove_column_not_yet_managed(dfTrx):
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_response_code',
                              'ecom_indicator','trx_authentication','pos_entry_mode','ch_present',
+                             'previous_trx',
                              'acceptor_id'])
     return dfTrx
 
