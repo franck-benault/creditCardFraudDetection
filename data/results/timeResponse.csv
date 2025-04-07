@@ -3,7 +3,7 @@ Package,Name,Hyperparameters,Learning time
 05-autogluon.tabular,TabularPredictor,Default,1733
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,2681
 06-sklearn.tree,DecisionTree,1-Default,12
-06-sklearn.tree,DecisionTree,2-After tuning,6
+06-sklearn.tree,DecisionTree,2-After tuning,7
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,122
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,702
 07-sklearn.ensemble.a-bagging,RandomForest,1-Default,177
