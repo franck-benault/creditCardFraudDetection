@@ -15,6 +15,6 @@ mcd_fraud_score,0.9053
 country_group,1.1324
 term_mcc,1.3053
 vaa_score,1.4776
-mcd_fraud_score mcd only,1.7469
+mcd_fraud_score (mcd only),1.7469
 term_country,1.8862
-vaa_score visa only,3.3555
+vaa_score (visa only),3.3555
