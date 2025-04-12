@@ -76,11 +76,14 @@ def split_data(data_df, predictors, target='Class', scaler=None):
     x_train, x_test, y_train, y_test = train_test_split(data_df[predictors], data_df[target], test_size = TEST_SIZE, 
                                                         stratify=data_df[target],
                                                         random_state = RANDOM_STATE)
+    
     #print("fraudulent transactions rate per mil full  data", 1000*data_df[data_df['Class'] == 1].shape[0]/data_df.shape[0])
     #print("fraudulent transactions rate per mil train data", 1000*y_train[y_train == 1].shape[0]/y_train.shape[0])
     #print("fraudulent transactions rate per mil test  data", 1000*y_test[y_test == 1].shape[0]/y_test.shape[0])
 
     if(scaler==None):
+        x_train=x_train.copy()
+        y_train = y_train.copy()
         return x_train, x_test, y_train, y_test, None
     else:
         x_train= scaler.fit_transform(x_train) 
