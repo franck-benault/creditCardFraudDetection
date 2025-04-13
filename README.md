@@ -529,13 +529,21 @@ The scaling or normalization has no influence to the performance.
 ##### Adaboost classifier
 This classifier is present in skitlearn library in the package ensemble and it uses a boosting approach.
 The scaling or normalization has no influence to the performance.
+
 ###### Hyperparameters
 * learning_rate a small value (0.1) is better to avoid overfitting but it means that the learning time increases also the parameter n_estimators will increase
 * n_estimators a lower learning_rate means that n_estimators will be bigger
+* estimator the default estimator is a decisionTreeClassifier with a deepth of 1. This kind of modele is too simple for the transaction data.
+
+###### managment of the imbalanced data
+
+In the fit method, the parameter sample_weight can be used to reenforce the minority class.
 
 ###### Final results
 But the final result shows that this algorithm only use few features.
 The result are quite poor and there a lot of false positives.
+Redifining the estimator does not give good results.
+The sample_weight does not give good results neither.
 
 ### XGboost classifier
 This classifier is not part of skitlearn library even a xgboost algorithm exists in this library.
