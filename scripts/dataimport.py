@@ -77,6 +77,8 @@ def remove_column_not_yet_managed(dfTrx):
                              'ecom_indicator','trx_authentication','pos_entry_mode','ch_present',
                              'previous_trx',
                              'acceptor_id'])
+    # Remove columns with corelation to another
+    dfTrx= dfTrx.drop(columns=['card_brand_VIS'])
     return dfTrx
 
 def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
