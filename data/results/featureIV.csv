@@ -1,14 +1,16 @@
 Feature,IV
-distancePrevTrxV3 ecom term_country term_mcc,0.0463
+ch_present,0.8135
 distancePrevTrxV0 term_country,0.0
 previous_trx,0.0
 trx_reversal,0.012
 distancePrevTrxV1 term_mcc,0.0142
+distancePrevTrxV3 ecom term_country term_mcc,0.0463
 distancePrevTrxV2 term_country term_mcc,0.0573
 Hour,0.1328
 trx_local_amt_val bins=5,0.2074
 mcc_group,0.2608
 ecom_indicator,0.3384
+ecom_indicator_group,0.3393
 trx_cnp,0.4978
 ecom,0.5173
 mcd_fraud_score,0.9053

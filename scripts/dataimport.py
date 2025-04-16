@@ -19,11 +19,6 @@ def read_file(inputFileName):
     
     return dfTrx
 
-
-def remove_columns(dfTrx):
-    dfTrx=dfTrx.drop(columns=['issuer_id', 'cluster_profile'])
-    return dfTrx
-
 def fill_missing_values(dfTrx):
     dfTrx['mcd_fraud_score'].fillna(np.mean(dfTrx['mcd_fraud_score']), inplace=True)
     dfTrx['vaa_score'].fillna(np.mean(dfTrx['vaa_score']), inplace=True)
@@ -44,6 +39,10 @@ def category_grouping(dfTrx):
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['MISCELLANOUS_STORES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['term_mcc'] = dfTrx['term_mcc'].astype('str')
+
+    dfTrx['ecom_indicator_group'] = np.where(dfTrx.ecom_indicator.isin([0,2,5]), dfTrx.ecom_indicator,10)
+    dfTrx['ecom_indicator_group'] = dfTrx['ecom_indicator_group'].astype('str')
+    
     return dfTrx
 
 def fixTrx_reversal(trx_reversal):
@@ -59,7 +58,8 @@ def reversal_fix(dfTrx):
     return dfTrx
     
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant',
+                                        'ecom_indicator_group'], dtype = int)
     return dfTrx
 
 def amount_transformation(dfTrx):
@@ -72,13 +72,22 @@ def ecom(dfTrx):
     dfTrx= dfTrx.drop(columns=['card_entry_mode'])
     return dfTrx
 
-def remove_column_not_yet_managed(dfTrx):
+def remove_columns(dfTrx):
+
+    # remove db_uuid? issuer_id cluster_profile acceptor_id used for merchant group link
+    dfTrx= dfTrx.drop(columns=['issuer_id', 'cluster_profile','acceptor_id'])
+
+    # too low IV ( previous_trx)
+    dfTrx= dfTrx.drop(columns=['previous_trx'])
+
+
     dfTrx= dfTrx.drop(columns=['TRX_3D_SECURED','trx_accepted','trx_response_code',
-                             'ecom_indicator','trx_authentication','pos_entry_mode','ch_present',
-                             'previous_trx',
-                             'acceptor_id'])
-    # Remove columns with corelation to another
-    dfTrx= dfTrx.drop(columns=['card_brand_VIS'])
+                             'trx_authentication','pos_entry_mode','ch_present'])
+
+    # Remove columns with corelation to another or grouping columns
+    dfTrx= dfTrx.drop(columns=['card_brand_VIS','ecom_indicator'])
+    print(dfTrx.shape)
+    
     return dfTrx
 
 def join_card_holder_profile(dfTrx,cardHolderProfileFileName):
@@ -140,7 +149,6 @@ def previous_trx(dfTrx):
 
 def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfileFileName):
     dfTrx = read_file(inputFileName)
-    dfTrx = remove_columns(dfTrx)
     dfTrx = fill_missing_values(dfTrx)
     dfTrx = category_grouping(dfTrx)
     dfTrx = reversal_fix(dfTrx)
@@ -150,6 +158,6 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = category_encoding(dfTrx)
     dfTrx = amount_transformation(dfTrx)
     dfTrx = previous_trx(dfTrx)
-    dfTrx = remove_column_not_yet_managed(dfTrx)
+    dfTrx = remove_columns(dfTrx)
     
     return dfTrx
