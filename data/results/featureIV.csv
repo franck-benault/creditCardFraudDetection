@@ -13,7 +13,9 @@ ecom_indicator,0.3384
 ecom_indicator_group,0.3393
 trx_cnp,0.4978
 ecom,0.5173
+trx_authentication_s,0.6412
 ch_present,0.8135
+trx_authentication,0.8772
 mcd_fraud_score,0.9053
 country_group,1.1324
 term_mcc,1.3053
