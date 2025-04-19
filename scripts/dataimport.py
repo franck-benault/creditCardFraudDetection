@@ -92,7 +92,7 @@ def remove_columns(dfTrx):
     dfTrx= dfTrx.drop(columns=['previous_trx'])
 
 
-    dfTrx= dfTrx.drop(columns=['trx_response_code','pos_entry_mode','ch_present'])
+    dfTrx= dfTrx.drop(columns=['trx_response_code','pos_entry_mode'])
 
     # Remove columns with corelation to another or grouping columns
     dfTrx= dfTrx.drop(columns=['card_brand_VIS','ecom_indicator'])
