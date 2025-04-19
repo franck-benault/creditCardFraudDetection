@@ -77,6 +77,12 @@ def trx_authentication_s(dfTrx):
     dfTrx= dfTrx.drop(columns=['trx_authentication'])
     return dfTrx
 
+def ch_present_group(dfTrx):
+    dfTrx['ch_present_group'] = np.where(dfTrx.ch_present.isin([1,2,3]), 1,0)
+    dfTrx= dfTrx.drop(columns=['ch_present'])
+    return dfTrx
+
+
 def remove_columns(dfTrx):
 
     # remove db_uuid? issuer_id cluster_profile acceptor_id used for merchant group link
@@ -157,7 +163,8 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = category_grouping(dfTrx)
     dfTrx = reversal_fix(dfTrx)
     dfTrx = ecom(dfTrx)
-    dfTrx = trx_authentication_s(dfTrx)              
+    dfTrx = trx_authentication_s(dfTrx) 
+    dfTrx = ch_present_group(dfTrx)
     dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
     dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
     dfTrx = category_encoding(dfTrx)
