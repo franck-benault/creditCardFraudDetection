@@ -7,6 +7,11 @@ The goal is not do to a kind of scoring.
 This presentation will show that the fraud detection is a very, highly or extreme imbalance data issue. 
 The algorithms do not manage correctly this issue.
 
+The goal of fraud detection can be redifined by detecting the compromised cards
+- because sometimes the first fraudulent transactions are very difficult to detect
+- the fraudster will probably perform several fraudulent transactions, so the fraud detection has to stop the fraudster as soons as possible
+
+
 ## Research about the card transactions fraud detection
 
 If you request the Google Scholar web site [G1]. We can see the increase of the publication about card transactions fraud detection.
