@@ -1,5 +1,4 @@
 Feature,IV
-pos_entry_mode_group,0.7036
 distancePrevTrxV0 term_country,0.0
 previous_trx,0.0
 trx_reversal,0.0131
@@ -16,6 +15,7 @@ trx_cnp,0.5076
 ecom,0.5342
 ch_present_group,0.5531
 trx_authentication_s,0.6244
+pos_entry_mode_group,0.7036
 ch_present,0.8214
 mcd_fraud_score,0.8784
 trx_authentication,0.8815
