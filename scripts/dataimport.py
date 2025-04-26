@@ -86,6 +86,11 @@ def trx_response_code_group(dfTrx):
     dfTrx= dfTrx.drop(columns=['trx_response_code'])
     return dfTrx
 
+def pos_entry_mode_group(dfTrx):
+    dfTrx['pos_entry_mode_group'] = np.where(dfTrx.pos_entry_mode.isin([801, 11, 12, 10, 810, 812, 100]), 1,0)
+    dfTrx= dfTrx.drop(columns=['pos_entry_mode'])
+    return dfTrx
+
 def remove_columns(dfTrx):
 
     # remove db_uuid? acceptor_id used for merchant group link
@@ -95,7 +100,7 @@ def remove_columns(dfTrx):
     dfTrx= dfTrx.drop(columns=['previous_trx','magstripe_fallback'])
 
 
-    dfTrx= dfTrx.drop(columns=['pos_entry_mode','trx_winning_bit'])
+    dfTrx= dfTrx.drop(columns=['trx_winning_bit'])
 
     # Remove columns with corelation to another or grouping columns
     dfTrx= dfTrx.drop(columns=['card_brand_VIS'])
@@ -169,6 +174,7 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = trx_authentication_group(dfTrx) 
     dfTrx = ch_present_group(dfTrx)
     dfTrx = trx_response_code_group(dfTrx)
+    dfTrx = pos_entry_mode_group(dfTrx)
     dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
     dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
     dfTrx = category_encoding(dfTrx)
