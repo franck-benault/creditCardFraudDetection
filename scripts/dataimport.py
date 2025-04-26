@@ -71,8 +71,8 @@ def ecom(dfTrx):
     dfTrx= dfTrx.drop(columns=['card_entry_mode'])
     return dfTrx
 
-def trx_authentication_s(dfTrx):
-    dfTrx['trx_authentication_s'] = np.where(dfTrx.trx_authentication.isin(['S']), 1,0)
+def trx_authentication_group(dfTrx):
+    dfTrx['trx_authentication_group'] = np.where(dfTrx.trx_authentication.isin(['S']), 1,0)
     dfTrx= dfTrx.drop(columns=['trx_authentication'])
     return dfTrx
 
@@ -162,7 +162,7 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = category_grouping(dfTrx)
     dfTrx = reversal_fix(dfTrx)
     dfTrx = ecom(dfTrx)
-    dfTrx = trx_authentication_s(dfTrx) 
+    dfTrx = trx_authentication_group(dfTrx) 
     dfTrx = ch_present_group(dfTrx)
     dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
     dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
