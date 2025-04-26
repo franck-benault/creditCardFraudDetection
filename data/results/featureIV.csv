@@ -1,4 +1,5 @@
 Feature,IV
+magstripe_fallback,0.0
 distancePrevTrxV0 term_country,0.0
 previous_trx,0.0
 trx_reversal,0.0131
@@ -10,11 +11,11 @@ Hour,0.1214
 trx_local_amt_val bins=5,0.2052
 mcc_group,0.2608
 ecom_indicator,0.3336
-ecom_indicator_group,0.3352
+ecom_indicator_group,0.3372
 trx_cnp,0.5076
 ecom,0.5342
-ch_present_group,0.5531
-trx_authentication_s,0.6244
+trx_authentication_group,0.6244
+ch_present_group,0.6541
 pos_entry_mode_group,0.7036
 ch_present,0.8214
 mcd_fraud_score,0.8784
