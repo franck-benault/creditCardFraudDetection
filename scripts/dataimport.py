@@ -77,7 +77,7 @@ def trx_authentication_group(dfTrx):
     return dfTrx
 
 def ch_present_group(dfTrx):
-    dfTrx['ch_present_group'] = np.where(dfTrx.ch_present.isin([1,2,3]), 1,0)
+    dfTrx['ch_present_group'] = np.where(dfTrx.ch_present.isin([2, 3, 1, 4]), 1,0)
     dfTrx= dfTrx.drop(columns=['ch_present'])
     return dfTrx
 
