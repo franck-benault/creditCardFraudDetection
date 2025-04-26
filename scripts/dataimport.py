@@ -40,8 +40,8 @@ def category_grouping(dfTrx):
     dfTrx['mcc_group'] = np.where(dfTrx.mcc_group.isin(['BUSINESS_SERVICES']), 'OTHER',dfTrx['mcc_group'] )
     dfTrx['term_mcc'] = dfTrx['term_mcc'].astype('str')
 
-    dfTrx['ecom_indicator_group'] = np.where(dfTrx.ecom_indicator.isin([0,2,5]), dfTrx.ecom_indicator,10)
-    dfTrx['ecom_indicator_group'] = dfTrx['ecom_indicator_group'].astype('str')
+    dfTrx['ecom_indicator_group'] = np.where(dfTrx.ecom_indicator.isin([2,61]), 1,0)
+    dfTrx=dfTrx.drop(columns=['ecom_indicator'])
     
     return dfTrx
 
@@ -58,8 +58,7 @@ def reversal_fix(dfTrx):
     return dfTrx
     
 def category_encoding(dfTrx):
-    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant',
-                                        'ecom_indicator_group'], dtype = int)
+    dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant'], dtype = int)
     return dfTrx
 
 def amount_transformation(dfTrx):
@@ -85,17 +84,17 @@ def ch_present_group(dfTrx):
 
 def remove_columns(dfTrx):
 
-    # remove db_uuid? issuer_id cluster_profile acceptor_id used for merchant group link
-    dfTrx= dfTrx.drop(columns=['issuer_id', 'cluster_profile','acceptor_id'])
+    # remove db_uuid? acceptor_id used for merchant group link
+    dfTrx= dfTrx.drop(columns=['acceptor_id'])
 
     # too low IV ( previous_trx)
-    dfTrx= dfTrx.drop(columns=['previous_trx'])
+    dfTrx= dfTrx.drop(columns=['previous_trx','magstripe_fallback'])
 
 
-    dfTrx= dfTrx.drop(columns=['trx_response_code','pos_entry_mode'])
+    dfTrx= dfTrx.drop(columns=['trx_response_code','pos_entry_mode','trx_winning_bit'])
 
     # Remove columns with corelation to another or grouping columns
-    dfTrx= dfTrx.drop(columns=['card_brand_VIS','ecom_indicator'])
+    dfTrx= dfTrx.drop(columns=['card_brand_VIS'])
     print(dfTrx.shape)
     
     return dfTrx
