@@ -251,7 +251,7 @@ def hyperparameterSelectionGridSearchCV(classifier, dic_param, scoring, dfTrxEnc
         predictors.remove(y)
 
     x_train, x_test, y_train, y_test, scaler = split_data(dfTrxEncoded2,predictors, 'Class',scaler)
-    grid = GridSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=2).fit(x_train, y_train)
+    grid = GridSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5).fit(x_train, y_train)
     print(grid.best_params_)
     print(grid.best_score_)
     
@@ -268,7 +268,7 @@ def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, df
         predictors.remove(y)
 
     x_train, x_test, y_train, y_test, scaler = split_data(dfTrxEncoded2,predictors, 'Class',scaler)
-    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=2,n_iter=10).fit(x_train, y_train)
+    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5,n_iter=10).fit(x_train, y_train)
     print(random_search.best_params_)
     print(random_search.best_score_)
     score=random_search.score(x_train,y_train)
