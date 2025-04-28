@@ -1,5 +1,5 @@
 Package,Name,Hyperparameters,F1,Mcc,ROC
-04-sklearn.naive_bayes,GaussianNB,1-Default,0.0084,0.0516,0.8258
+04-sklearn.naive_bayes,GaussianNB,1-Default,0.0128,0.0653,0.843
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,0.0599,0.1163,0.5161
 06-sklearn.tree,DecisionTree,1-Default,0.191,0.1901,0.5976
 06-sklearn.tree,DecisionTree,2-After tuning,0.1154,0.1544,0.5345

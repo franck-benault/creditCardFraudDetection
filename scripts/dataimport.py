@@ -145,6 +145,29 @@ def calculDistance(input0,input1,input2,input3,model):
     else:
         return model.wv.similarity(input2,input3)
 
+def aggregate_cardholder(dfTrx):
+    max=18
+    sorted_df = dfTrx.sort_values(by=['card_pan_id','trx_date_time'])
+
+
+    for i in np.arange(1,max+1,1):
+        sorted_df['card_pan_id'+str(i)] = sorted_df['card_pan_id'].shift(-1*i)
+        sorted_df['trx_amount'+str(i)] = sorted_df['trx_amount'].shift(-1*i)
+
+    dfTrx['previousTrxAmountSum']=0
+    dfTrx['nbPreviousTrx']=0
+
+    for i in np.arange(1,max+1,1):
+        sorted_dfTemp1=sorted_df[(sorted_df['card_pan_id']==sorted_df['card_pan_id'+str(i)])]
+        dfTrx['nbPreviousTrx']=np.where(sorted_df.index.isin(sorted_dfTemp1.index),i,dfTrx['nbPreviousTrx'])
+        dfTrx['previousTrxAmountSum']=np.where(sorted_df.index.isin(sorted_dfTemp1.index),
+            sorted_df['trx_amount'+str(i)]+dfTrx['previousTrxAmountSum'],dfTrx['previousTrxAmountSum'])
+
+    dfTrx['previousTrxAmountSumLog']=np.log10(1+dfTrx['previousTrxAmountSum'])
+    dfTrx['previousTrxAmountSumLog'].fillna(0.0, inplace=True)
+    dfTrx= dfTrx.drop(columns=['previousTrxAmountSum'])
+    return dfTrx
+
 def previous_trx(dfTrx):
     dfTrx['previous_trx']=0
     dfTrx['wordV2']=dfTrx['term_country']+dfTrx['term_mcc']
@@ -184,6 +207,7 @@ def full_import_and_clean(inputFileName,cardHolderProfileFileName, merchantProfi
     dfTrx = join_card_holder_profile(dfTrx,cardHolderProfileFileName)
     dfTrx = join_merchant_profile(dfTrx,merchantProfileFileName)
     dfTrx = category_encoding(dfTrx)
+    dfTrx = aggregate_cardholder(dfTrx)
     dfTrx = amount_transformation(dfTrx)
     dfTrx = previous_trx(dfTrx)
     dfTrx = remove_columns(dfTrx) 
