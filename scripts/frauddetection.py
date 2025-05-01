@@ -279,6 +279,20 @@ def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, df
     show_confusion_matrix(y_pred, y_train)
     return random_search.best_params_
 
+def hyperparameterSelectionRandomizedSearchCVSampling(classifier, dic_param, scoring, x_train, y_train):
+
+
+    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5,n_iter=10).fit(x_train, y_train)
+    print(random_search.best_params_)
+    print(random_search.best_score_)
+    score=random_search.score(x_train,y_train)
+    y_pred=random_search.predict(x_train)
+    scoref1=calculate_scores(y_train,y_pred,'f1')
+    print("score  ",score)
+    print("scoref1",scoref1)
+    show_confusion_matrix(y_pred, y_train)
+    return random_search.best_params_
+
 from sklearn.metrics import precision_recall_curve
 
 def show_precision_recall_curve(modelClf,x_train,y_train,x_test,y_test):
