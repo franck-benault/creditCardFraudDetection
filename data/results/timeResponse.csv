@@ -3,8 +3,10 @@ Package,Name,Hyperparameters,Learning time
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,2681
 06-sklearn.tree,DecisionTree,1-Default,9
 06-sklearn.tree,DecisionTree,2-After tuning,6
-07-sklearn.ensemble.a-bagging,RandomForest,1-Default,177
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,122
+07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,153
+07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,178
+07-sklearn.ensemble.a-bagging,RandomForest,1-Default,195
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,116
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,194
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,211
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,458
