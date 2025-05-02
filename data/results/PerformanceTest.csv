@@ -1,8 +1,8 @@
 Package,Name,Hyperparameters,F1,Mcc,ROC
 04-sklearn.naive_bayes,GaussianNB,1-Default,0.0128,0.0653,0.843
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,0.0599,0.1163,0.5161
-06-sklearn.tree,DecisionTree,1-Default,0.191,0.1901,0.5976
-06-sklearn.tree,DecisionTree,2-After tuning,0.1154,0.1544,0.5345
+06-sklearn.tree,DecisionTree,1-Default,0.1761,0.1756,0.5955
+06-sklearn.tree,DecisionTree,2-After tuning,0.135,0.182,0.5403
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.036,0.0576,0.5022
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
 07-sklearn.ensemble-a-bagging,ExtraTreesClassifier,1-Default,0.25,0.2786,0.5864

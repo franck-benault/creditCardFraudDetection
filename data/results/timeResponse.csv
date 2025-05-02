@@ -1,8 +1,8 @@
 Package,Name,Hyperparameters,Learning time
 04-sklearn.naive_bayes,GaussianNB,1-Default,2
 05-sklearn.neighbors,KNeighborsClassifier,1-Default,2681
-06-sklearn.tree,DecisionTree,1-Default,9
-06-sklearn.tree,DecisionTree,2-After tuning,6
+06-sklearn.tree,DecisionTree,1-Default,20
+06-sklearn.tree,DecisionTree,2-After tuning,13
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,153
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,178
 07-sklearn.ensemble.a-bagging,RandomForest,1-Default,195
