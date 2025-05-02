@@ -245,6 +245,19 @@ def processModel(model, dfTrx, predictors, drop_list,
     print(f"duration_in_s {duration_in_s:.1f} parameters {parameters} scaler {scaler} f1Train {f1Train:.4f} f1Test {f1Test:.4f}")
     return duration_in_s,f1Train,f1Test, scaler
 
+def hyperparameterSelectionGridSearchCVSampling(classifier, dic_param, scoring, x_train, y_train):
+
+    grid = GridSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5).fit(x_train, y_train)
+    print(grid.best_params_)
+    print(grid.best_score_)
+    
+    y_pred=grid.predict(x_train)
+    scoref1=calculate_scores(y_train,y_pred,'f1')
+    print("scoref1",scoref1)
+    show_confusion_matrix(y_pred, y_train)
+    
+    return grid.best_params_
+
 def hyperparameterSelectionGridSearchCV(classifier, dic_param, scoring, dfTrxEncoded2, predictors, drop_list,scaler):
     for y in drop_list:
         #print(y)
