@@ -7,8 +7,8 @@ Package,Name,Hyperparameters,F1,Mcc,ROC
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
 07-sklearn.ensemble-a-bagging,ExtraTreesClassifier,1-Default,0.25,0.2786,0.5864
 07-sklearn.ensemble-a-bagging,RandomForest,1-Default,0.1382,0.196,0.5403
-07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,0.2043,0.2574,0.5634
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1241,0.2035,0.5346
+07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,0.2195,0.2703,0.5692
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1438,0.2008,0.5423
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,0.1385,0.1487,0.5502
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,0.1385,0.1487,0.5502
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,0.1667,0.2198,0.5543
