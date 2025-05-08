@@ -275,7 +275,7 @@ def hyperparameterSelectionGridSearchCV(classifier, dic_param, scoring, dfTrxEnc
     
     return grid.best_params_
 
-def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, dfTrxEncoded2, predictors, drop_list, scaler):
+def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, dfTrxEncoded2, predictors, drop_list, scaler, iter=10):
     for y in drop_list:
         #print(y)
         predictors.remove(y)
@@ -292,10 +292,10 @@ def hyperparameterSelectionRandomizedSearchCV(classifier, dic_param, scoring, df
     show_confusion_matrix(y_pred, y_train)
     return random_search.best_params_
 
-def hyperparameterSelectionRandomizedSearchCVSampling(classifier, dic_param, scoring, x_train, y_train):
+def hyperparameterSelectionRandomizedSearchCVSampling(classifier, dic_param, scoring, x_train, y_train, iter=10):
 
 
-    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5,n_iter=10).fit(x_train, y_train)
+    random_search = RandomizedSearchCV(classifier,dic_param, scoring=scoring, verbose=10,cv=5,n_iter=iter).fit(x_train, y_train)
     print(random_search.best_params_)
     print(random_search.best_score_)
     score=random_search.score(x_train,y_train)
