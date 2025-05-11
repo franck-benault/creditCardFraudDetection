@@ -44,9 +44,8 @@ def draw2DPCAScaterPlot(xTrain,yTrain,xTrain2,yTrain2):
     plt.show()
 
 def randomUnderSampling(x,y,rate=1/100):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = RandomUnderSampler(sampling_strategy=rate,random_state=42)
@@ -55,17 +54,15 @@ def randomUnderSampling(x,y,rate=1/100):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def nearMissV1UnderSampling(x,y,rate=1/100):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = NearMiss(sampling_strategy=rate,version=1, n_neighbors=3)
@@ -74,17 +71,15 @@ def nearMissV1UnderSampling(x,y,rate=1/100):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def nearMissV2UnderSampling(x,y,rate=1/100):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = NearMiss(sampling_strategy=rate,version=2, n_neighbors=3)
@@ -93,36 +88,15 @@ def nearMissV2UnderSampling(x,y,rate=1/100):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
-    return x_train, y_train
-
-def nearMissV3UnderSampling(x,y,rate=1/100):
-    print("Sampling shape before", x.shape)
-    fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
-
-    then= datetime.now()
-    undersample = NearMiss(sampling_strategy=rate,version=3, n_neighbors=3)
-    x_train, y_train = undersample.fit_resample(x, y)
-    
-    now = datetime.now()
-    duration= now - then
-    duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
-    
-    fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def neighbourhoodCleaningRuleUnderSampling(x,y,rate=1/100):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = NeighbourhoodCleaningRule(n_neighbors=3, threshold_cleaning=0.5)
@@ -131,17 +105,15 @@ def neighbourhoodCleaningRuleUnderSampling(x,y,rate=1/100):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def tomekLinksUnderSampling(x,y):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = TomekLinks()
@@ -150,17 +122,17 @@ def tomekLinksUnderSampling(x,y):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
-    
+    print("Duration {0:.1f} s ".format(duration_in_s))
+
+    print(y.value_counts())
+    print(y_train.value_counts())
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def oneSidedSelectionUnderSampling(x,y):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     undersample = OneSidedSelection(n_neighbors=1, n_seeds_S=200)
@@ -169,19 +141,17 @@ def oneSidedSelectionUnderSampling(x,y):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 
 
 def randomOverSampling(x,y,rateOverSampling=5):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     oversample = RandomOverSampler(sampling_strategy=fraudRate*rateOverSampling,random_state=42)
@@ -190,18 +160,16 @@ def randomOverSampling(x,y,rateOverSampling=5):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
 
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def randomOverUnderSampling(x,y,rateOverSampling=5,rateUnderSampling=1/100):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
-
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
+    
     then= datetime.now()
     over = RandomOverSampler(sampling_strategy=rateOverSampling*fraudRate, random_state=42)
     under = RandomUnderSampler(sampling_strategy=rateUnderSampling, random_state=42) 
@@ -211,17 +179,15 @@ def randomOverUnderSampling(x,y,rateOverSampling=5,rateUnderSampling=1/100):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
 def smoteOverSampling(x,y,rateOverSampling=5):
-    print("Sampling shape before", x.shape)
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
-    print('fraud rate before  {0:.5f} '.format(fraudRate))
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
     then= datetime.now()
     oversample = SMOTE(sampling_strategy=fraudRate*rateOverSampling)
@@ -230,9 +196,8 @@ def smoteOverSampling(x,y,rateOverSampling=5):
     now = datetime.now()
     duration= now - then
     duration_in_s = duration.total_seconds()
-    print("Duration (in s) ",duration_in_s)
+    print("Duration {0:.1f} s ".format(duration_in_s))
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
-    print('fraud rate after {0:.5f} '.format(fraudRate2))
-    print('shape after',x_train.shape) 
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
