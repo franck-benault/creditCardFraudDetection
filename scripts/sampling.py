@@ -3,6 +3,7 @@ from imblearn.under_sampling import NearMiss
 #from imblearn.under_sampling import EditedNearestNeighbours
 from imblearn.under_sampling import NeighbourhoodCleaningRule
 from imblearn.under_sampling import TomekLinks
+from imblearn.under_sampling import OneSidedSelection
 
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.over_sampling import SMOTE
@@ -13,17 +14,28 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
-def draw2DPCAScaterPlot(x,y):
+def draw2DPCAScaterPlot(xTrain,yTrain,xTrain2,yTrain2):
     pca = PCA(n_components=2)
     sc = StandardScaler()
-    x2 = sc.fit_transform(x)
+    x2 = sc.fit_transform(xTrain)
     x_pca = pca.fit_transform(x2)
 
     # giving a larger plot
     plt.figure(figsize=(8, 6))
-
     plt.scatter(x_pca[:, 0], x_pca[:, 1],
-            c=y,
+            c=yTrain,
+            cmap='plasma')
+    # labeling x and y axes
+    plt.xlabel('First Principal Component')
+    plt.ylabel('Second Principal Component')
+    plt.show()
+
+    x2 = sc.transform(xTrain2)
+    x_pca = pca.transform(x2)
+
+    plt.figure(figsize=(8, 6))
+    plt.scatter(x_pca[:, 0], x_pca[:, 1],
+            c=yTrain2,
             cmap='plasma')
 
     # labeling x and y axes
@@ -145,7 +157,24 @@ def tomekLinksUnderSampling(x,y):
     print('shape after',x_train.shape) 
     return x_train, y_train
 
+def oneSidedSelectionUnderSampling(x,y):
+    print("Sampling shape before", x.shape)
+    fraudRate=y.value_counts()[1]/y.value_counts()[0]
+    print('fraud rate before  {0:.5f} '.format(fraudRate))
 
+    then= datetime.now()
+    undersample = OneSidedSelection(n_neighbors=1, n_seeds_S=200)
+    x_train, y_train = undersample.fit_resample(x, y)
+    
+    now = datetime.now()
+    duration= now - then
+    duration_in_s = duration.total_seconds()
+    print("Duration (in s) ",duration_in_s)
+    
+    fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
+    print('fraud rate after {0:.5f} '.format(fraudRate2))
+    print('shape after',x_train.shape) 
+    return x_train, y_train
 
 
 
