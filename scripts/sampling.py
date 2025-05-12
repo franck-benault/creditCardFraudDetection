@@ -14,6 +14,17 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
+import pickle as pkl
+
+def saveTrainData(x_train,y_train,fileName):
+    with open("../data/cleaned/"+fileName, "wb") as f:
+        pkl.dump([x_train, y_train], f)
+
+def loadTrainData(fileName):
+    with open("../data/cleaned/"+fileName, "rb") as f:
+        train_x, train_y = pkl.load(f)
+    return train_x,train_y
+
 def draw2DPCAScaterPlot(xTrain,yTrain,xTrain2,yTrain2):
     pca = PCA(n_components=2)
     sc = StandardScaler()
