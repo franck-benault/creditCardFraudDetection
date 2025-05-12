@@ -23,7 +23,7 @@ def saveTrainData(x_train,y_train,fileName):
 def loadTrainData(fileName):
     with open("../data/cleaned/"+fileName, "rb") as f:
         train_x, train_y = pkl.load(f)
-    return train_x,train_y
+    return train_x.copy(),train_y.copy()
 
 def draw2DPCAScaterPlot(xTrain,yTrain,xTrain2,yTrain2):
     pca = PCA(n_components=2)
