@@ -27,15 +27,15 @@ def update_features_IV_result(feature, iv):
     save_features_IV_result(data)
 
 def load_performance_nextdays_result():
-    usecols = ['Package','Name','Hyperparameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4']
+    usecols = ['Package','Name','ExtraParameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4']
     data = pd.read_csv("../data/results/performanceNextDays.csv", usecols=usecols)
-    data=data.sort_values(["Package", "Name","Hyperparameters"])
+    data=data.sort_values(["Package", "Name","ExtraParameters"])
     return data
 
 def save_performance_nextdays_result(timeResponse): 
     timeResponse.to_csv('../data/results/performanceNextDays.csv', index=False) 
 
-def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4):
+def update_performance_nextdays_result(package, name,extraParameters, f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4):
     f1Day1=round(f1Day1,4)
     f1Day2=round(f1Day2,4)
     f1Day3=round(f1Day3,4)
@@ -50,7 +50,7 @@ def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1D
     
     res=data[(data['Package']==package) 
         & (data['Name']==name)
-        & (data['Hyperparameters']==hyperparameters)]
+        & (data['ExtraParameters']==extraParameters)]
     #print(res.shape[0])
     if (res.shape[0]>0):
         index=res.index[0]
@@ -66,14 +66,14 @@ def update_performance_nextdays_result(package, name,hyperparameters, f1Day1,f1D
         data.loc[index, 'ROC Day4']=rocDay4
 
     else:
-        data=pd.concat([pd.DataFrame([[package,name,hyperparameters,f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4]], columns=data.columns), data], ignore_index=True)
+        data=pd.concat([pd.DataFrame([[package,name,extraParameters,f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4]], columns=data.columns), data], ignore_index=True)
 
     save_performance_nextdays_result(data)
 
 def load_performance_test_result():
-    usecols = ['Package','Name','Hyperparameters','F1','Mcc','ROC']
+    usecols = ['Package','Name','ExtraParameters','F1','Mcc','ROC']
     data = pd.read_csv("../data/results/performancetest.csv", usecols=usecols)
-    data=data.sort_values(["Package", "Name","Hyperparameters"])
+    data=data.sort_values(["Package", "Name","ExtraParameters"])
     return data
 
 def save_performance_test_result(timeResponse): 
@@ -101,28 +101,28 @@ def update_performance_test_result(package, name,hyperparameters, f1,mcc,roc):
     save_performance_test_result(data)
 
 def load_time_response_result():
-    usecols = ['Package','Name','Hyperparameters','Learning time']
+    usecols = ['Package','Name','ExtraParameters','Learning time']
     timeResponse = pd.read_csv("../data/results/timeResponse.csv", usecols=usecols)
-    timeResponse=timeResponse.sort_values(["Package", "Name","Hyperparameters"])
+    timeResponse=timeResponse.sort_values(["Package", "Name","ExtraParameters"])
     return timeResponse
 
 def save_time_response_result(timeResponse): 
     timeResponse.to_csv('../data/results/timeResponse.csv', index=False) 
 
-def update_time_response_result(package, name,hyperparameters, learningTime):
+def update_time_response_result(package, name,extraParameters, learningTime):
     learningTime=int(learningTime)
     #print(learningTime)
     timeResponsePandas = load_time_response_result()
     
     res=timeResponsePandas[(timeResponsePandas['Package']==package) 
         & (timeResponsePandas['Name']==name)
-        & (timeResponsePandas['Hyperparameters']==hyperparameters)]
+        & (timeResponsePandas['Hyperparameters']==extraParameters)]
     #print(res.shape[0])
     if (res.shape[0]>0):
         index=res.index[0]
         #print('trace')
         timeResponsePandas.loc[index, 'Learning time']=learningTime
     else:
-        timeResponsePandas=pd.concat([pd.DataFrame([[package,name,hyperparameters,learningTime]], columns=timeResponsePandas.columns), timeResponsePandas], ignore_index=True)
+        timeResponsePandas=pd.concat([pd.DataFrame([[package,name,extraParameters,learningTime]], columns=timeResponsePandas.columns), timeResponsePandas], ignore_index=True)
 
     save_time_response_result(timeResponsePandas)
