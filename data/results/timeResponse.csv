@@ -1,9 +1,11 @@
 Package,Name,ExtraParameters,Learning time
 04-sklearn.naive_bayes,GaussianNB,1-Default,2
 06-sklearn.tree,DecisionTree,1-Default,20
-06-sklearn.tree,DecisionTree,2-After tuning,13
-07-sklearn.ensemble.a-bagging,BaggingClassifier,1-Default,181
-07-sklearn.ensemble.a-bagging,BaggingClassifier,2-After tuning,202
+06-sklearn.tree,DecisionTree,2-After tuning,14
+06-sklearn.tree,DecisionTreeClassifier,1-Default,19
+06-sklearn.tree,DecisionTreeClassifier,2-After tuning,13
+07-sklearn.ensemble.a-bagging,BaggingClassifier,1-Default,145
+07-sklearn.ensemble.a-bagging,BaggingClassifier,2-After tuning,426
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,224
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,146
 07-sklearn.ensemble.a-bagging,RandomForest,1-Default,207
@@ -18,3 +20,5 @@ Package,Name,ExtraParameters,Learning time
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44
 10-imblearn.ensemble,EasyEnsembleClassifier,1-Default,59
 10-imblearn.ensemble,EasyEnsembleClassifier,2-After tuning,161
+DecisionTreeClassifier,06-sklearn.tree,1-Default,19
+DecisionTreeClassifier,06-sklearn.tree,2-After tuning,14
