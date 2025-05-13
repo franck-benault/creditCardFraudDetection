@@ -54,6 +54,38 @@ def draw2DPCAScaterPlot(xTrain,yTrain,xTrain2,yTrain2):
     plt.ylabel('Second Principal Component')
     plt.show()
 
+def draw2DPCAScaterPlotV2(xTrain,yTrain,xTrain2,yTrain2,title='After sampling'):
+    pca = PCA(n_components=2)
+    sc = StandardScaler()
+    x2 = sc.fit_transform(xTrain)
+    x_pca = pca.fit_transform(x2)
+
+    # giving a larger plot
+    fig,ax = plt.subplots(1,2)
+    fig.set_figheight(7)
+    fig.set_figwidth(15)
+    ax[0].set_title('Before sampling')
+    ax[0].scatter(x_pca[:, 0], x_pca[:, 1],
+            c=yTrain,
+            cmap='plasma')
+    # labeling x and y axes
+    ax[0].set_xlabel('First Principal Component')
+    ax[0].set_ylabel('Second Principal Component')
+
+    x2 = sc.transform(xTrain2)
+    x_pca = pca.transform(x2)
+
+    ax[1].set_title(title)
+    ax[1].scatter(x_pca[:, 0], x_pca[:, 1],
+            c=yTrain2,
+            cmap='plasma')
+
+    # labeling x and y axes
+    ax[1].set_xlabel('First Principal Component')
+    ax[1].set_ylabel('Second Principal Component')
+
+    plt.show()
+
 def randomUnderSampling(x,y,rate=1/100):
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
     print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
