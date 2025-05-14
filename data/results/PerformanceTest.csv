@@ -2,7 +2,7 @@ Package,Name,ExtraParameters,F1,Mcc,ROC
 04-sklearn.naive_bayes,GaussianNB,1-Default,0.0128,0.0653,0.843
 06-sklearn.tree,DecisionTree,1-Default,0.1761,0.1756,0.5955
 06-sklearn.tree,DecisionTree,2-After tuning,0.135,0.182,0.5403
-06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.135,0.182,0.5403
+06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.127,0.1668,0.5384
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.036,0.0576,0.5022
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
 07-sklearn.ensemble-a-bagging,BaggingClassifier,1-Default,0.1651,0.2041,0.5518
