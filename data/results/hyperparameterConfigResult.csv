@@ -1,0 +1,11 @@
+Package,Name,ExtraParameters,max_depth
+06-sklearn.tree,DecisionTreeClassifier,3-Random undersampling,9
+06-sklearn.tree,DecisionTreeClassifier,6-TomekLinksUnderSampling,12
+06-sklearn.tree,DecisionTreeClassifier,1-Default,14
+06-sklearn.tree,DecisionTreeClassifier,5-Random overundersampling,18
+06-sklearn.tree,DecisionTreeClassifier,4-Random oversampling,20
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,3-Random undersampling,24
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,1-Default,30
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,6-TomekLinksUnderSampling,30
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,4-Random oversampling,32
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,5-Random overundersampling,33

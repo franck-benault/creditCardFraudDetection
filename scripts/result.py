@@ -1,6 +1,32 @@
 
 import pandas as pd
 
+
+def update_hyperparameter_config_result(package, name, extraparameters,max_depth):
+    data = load_hyperparameter_config_result()
+    
+    res=data[(data['Package']==package) 
+        & (data['Name']==name)
+        & (data['ExtraParameters']==extraparameters)]
+    #print(res.shape[0])
+    if (res.shape[0]>0):
+        index=res.index[0]
+        #print('trace')
+        data.loc[index, 'max_depth']=max_depth
+    else:
+        data=pd.concat([pd.DataFrame([[package, name, extraparameters,max_depth]], columns=data.columns), data], ignore_index=True)
+
+    save_hyperparameter_config_result(data)
+
+def save_hyperparameter_config_result(data):
+    data.to_csv('../data/results/hyperparameterConfigResult.csv', index=False)   
+
+def load_hyperparameter_config_result():
+    usecols = ['Package','Name','ExtraParameters','max_depth']
+    data = pd.read_csv("../data/results/hyperparameterConfigResult.csv", usecols=usecols)
+    data=data.sort_values(['max_depth'])
+    return data
+
 def load_features_IV_result():
     usecols = ['Feature','IV']
     data = pd.read_csv("../data/results/featureIV.csv", usecols=usecols)
