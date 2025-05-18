@@ -1,8 +1,8 @@
 
 import pandas as pd
+import numpy as np
 
-
-def update_hyperparameter_config_result(package, name, extraparameters,max_depth):
+def update_hyperparameter_config_result(package, name, extraparameters,max_depth, n_estimators=np.nan):
     data = load_hyperparameter_config_result()
     
     res=data[(data['Package']==package) 
@@ -13,8 +13,9 @@ def update_hyperparameter_config_result(package, name, extraparameters,max_depth
         index=res.index[0]
         #print('trace')
         data.loc[index, 'max_depth']=max_depth
+        data.loc[index, 'n_estimators']=n_estimators
     else:
-        data=pd.concat([pd.DataFrame([[package, name, extraparameters,max_depth]], columns=data.columns), data], ignore_index=True)
+        data=pd.concat([pd.DataFrame([[package, name, extraparameters,max_depth,n_estimators]], columns=data.columns), data], ignore_index=True)
 
     save_hyperparameter_config_result(data)
 
@@ -22,7 +23,7 @@ def save_hyperparameter_config_result(data):
     data.to_csv('../data/results/hyperparameterConfigResult.csv', index=False)   
 
 def load_hyperparameter_config_result():
-    usecols = ['Package','Name','ExtraParameters','max_depth']
+    usecols = ['Package','Name','ExtraParameters','max_depth','n_estimators']
     data = pd.read_csv("../data/results/hyperparameterConfigResult.csv", usecols=usecols)
     data=data.sort_values(['max_depth'])
     return data

@@ -1,24 +1,12 @@
 Package,Name,ExtraParameters,Learning time
-04-sklearn.naive_bayes,GaussianNB,1-Default,2
 06-sklearn.tree,DecisionTree,1-Default,20
-06-sklearn.tree,DecisionTree,2-After tuning,14
-06-sklearn.tree,DecisionTreeClassifier,1-Default,21
-06-sklearn.tree,DecisionTreeClassifier,2-After tuning,16
+06-sklearn.tree,DecisionTreeClassifier,1-Default,27
 07-sklearn.ensemble.a-bagging,BaggingClassifier,1-Default,145
-07-sklearn.ensemble.a-bagging,BaggingClassifier,2-After tuning,426
-07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,224
-07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,146
-07-sklearn.ensemble.a-bagging,RandomForest,1-Default,275
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,111
+07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,359
+07-sklearn.ensemble.a-bagging,RandomForest,1-Default,355
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,194
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,211
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,458
-08-xgboost,XGBClassifier,1-Default,8
-08-xgboost,XGBClassifier,2-After tuning,33
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,424
+08-xgboost,XGBClassifier,1-Default,11
 09-catboost,CatBoostClassifier,1-Default,150
-09-catboost,CatBoostClassifier,2-After tuning,238
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44
 10-imblearn.ensemble,EasyEnsembleClassifier,1-Default,59
-10-imblearn.ensemble,EasyEnsembleClassifier,2-After tuning,161
-DecisionTreeClassifier,06-sklearn.tree,1-Default,19
-DecisionTreeClassifier,06-sklearn.tree,2-After tuning,14
