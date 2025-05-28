@@ -4,6 +4,7 @@ import sourcedata as sd
 
 import pandas as pd 
 import numpy as np
+import pickle as pkl
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -64,6 +65,15 @@ def getAllFiles():
     files =['export20241118.csv','export20241119.csv','export20241120.csv','export20241121.csv']
     return files
 
+def getStandardScaledData(fileName,source,predictors):
+
+    with open("../data/cleaned/"+source+fileName+".standardScaler.pkl", "rb") as f:
+        x, y = pkl.load(f)
+
+    X_pandas=pd.DataFrame(x, columns=predictors)
+    Y_pandas=pd.DataFrame(y, columns=['Class'])
+
+    return pd.concat([X_pandas,Y_pandas], axis=1)
 
 def split_data(data_df, predictors, target='Class', scaler=None):
     TEST_SIZE = 0.20 # test size using_train_test_split

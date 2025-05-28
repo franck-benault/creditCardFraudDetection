@@ -1,16 +1,13 @@
 Package,Name,ExtraParameters,F1,Mcc,ROC
-04-sklearn.naive_bayes,GaussianNB,1-Default,0.0128,0.0653,0.843
-06-sklearn.tree,DecisionTree,1-Default,0.1761,0.1756,0.5955
-06-sklearn.tree,DecisionTree,2-After tuning,0.135,0.182,0.5403
-06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.2787,0.2808,0.6628
+06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.1612,0.161,0.5897
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.036,0.0576,0.5022
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
 07-sklearn.ensemble-a-bagging,BaggingClassifier,1-Default,0.1651,0.2041,0.5518
 07-sklearn.ensemble-a-bagging,ExtraTreesClassifier,1-Default,0.25,0.2786,0.5864
-07-sklearn.ensemble-a-bagging,RandomForest,1-Default,0.1382,0.196,0.5403
+07-sklearn.ensemble-a-bagging,RandomForest,1-Default,0.1629,0.2258,0.548
 07-sklearn.ensemble.a-bagging,BaggingClassifier,2-After tuning,0.1031,0.1668,0.5288
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,0.2299,0.2639,0.5768
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1625,0.2077,0.5499
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1801,0.228,0.5557
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,0.0751,0.0863,0.5248
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,0.1647,0.1936,0.5537
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,0.0924,0.1007,0.5325
@@ -22,4 +19,3 @@ Package,Name,ExtraParameters,F1,Mcc,ROC
 10-imblearn.ensemble,BalancedRandomForest,1-Default,0.0197,0.0891,0.8979
 10-imblearn.ensemble,EasyEnsembleClassifier,1-Default,0.0176,0.0822,0.8875
 10-imblearn.ensemble,EasyEnsembleClassifier,2-After tuning,0.0176,0.0824,0.8873
-DecisionTreeClassifier,06-sklearn.tree,2-After tuning,0.135,0.182,0.5403

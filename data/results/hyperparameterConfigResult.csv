@@ -1,29 +1,31 @@
 Package,Name,ExtraParameters,max_depth,n_estimators
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,3-Random undersampling,5,180.0
-07-sklearn.ensemble.b-boosting,AdaBoostClassifier,6-TomekLinksUnderSampling,6,49.0
+07-sklearn.ensemble.b-boosting,AdaBoostClassifier,6-TomekLinksUnderSampling,6,51.0
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,5-Random overundersampling,7,44.0
 06-sklearn.tree,DecisionTreeClassifier,2-class-weight,7,
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,4-Random oversampling,7,54.0
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,6-TomekLinksUnderSampling,8,96.0
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,6-TomekLinksUnderSampling,8,95.0
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,8,75.0
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,4-Random oversampling,8,110.0
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,9,97.0
 06-sklearn.tree,DecisionTreeClassifier,3-Random undersampling,9,
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,9,97.0
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,5-Random overundersampling,10,135.0
-06-sklearn.tree,DecisionTreeClassifier,6-TomekLinksUnderSampling,12,
 06-sklearn.tree,DecisionTreeClassifier,1-Default,14,
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,3-Random undersampling,15,75.0
-06-sklearn.tree,DecisionTreeClassifier,5-Random overundersampling,18,
-06-sklearn.tree,DecisionTreeClassifier,4-Random oversampling,20,
 07-sklearn.ensemble.a-bagging,RandomForestClassifier,2-class-weight,21,73.0
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,3-Random undersampling,24,73.0
+06-sklearn.tree,DecisionTreeClassifier,6-TomekLinksUnderSampling,22,
+06-sklearn.tree,DecisionTreeClassifier,7-SmoteOverSampling,23,
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-class-weight,25,93.0
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,3-Random undersampling,26,73.0
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,3-Random undersampling,28,109.0
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,6-TomekLinksUnderSampling,30,67.0
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,1-Default,32,37.0
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,4-Random oversampling,32,84.0
-07-sklearn.ensemble.a-bagging,RandomForestClassifier,5-Random overundersampling,33,52.0
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,6-TomekLinksUnderSampling,29,67.0
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,7-SmoteOverSampling,30,63.0
+06-sklearn.tree,DecisionTreeClassifier,5-Random overundersampling,31,
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,1-Default,31,37.0
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,6-TomekLinksUnderSampling,34,111.0
+06-sklearn.tree,DecisionTreeClassifier,4-Random oversampling,35,
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,4-Random oversampling,36,80.0
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,37,115.0
+07-sklearn.ensemble.a-bagging,RandomForestClassifier,5-Random overundersampling,38,54.0
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,5-Random overundersampling,41,72.0
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,4-Random oversampling,42,82.0
