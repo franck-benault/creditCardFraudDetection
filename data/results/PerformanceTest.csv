@@ -9,9 +9,9 @@ Package,Name,ExtraParameters,F1,Mcc,ROC
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,0.2299,0.2639,0.5768
 07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,0.1801,0.228,0.5557
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,0.0751,0.0863,0.5248
-07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,0.1647,0.1936,0.5537
+07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,0.1558,0.2145,0.5461
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,0.0924,0.1007,0.5325
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,0.1026,0.1372,0.5307
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,0.1093,0.1472,0.5326
 08-xgboost,XGBClassifier,1-Default,0.1208,0.1807,0.5346
 08-xgboost,XGBClassifier,2-After tuning,0.0569,0.108,0.5154
 09-catboost,CatBoostClassifier,1-Default,0.2046,0.2651,0.5313

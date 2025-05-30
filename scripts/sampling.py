@@ -204,7 +204,7 @@ def randomOverUnderSampling(x,y,rateOverSampling=3,rateUnderSampling=1/100):
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
-def smoteOverSampling(x,y,rateOverSampling=5):
+def smoteOverSampling(x,y,rateOverSampling=3):
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
     print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
