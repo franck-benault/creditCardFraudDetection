@@ -8,7 +8,7 @@ Package,Name,ExtraParameters,Learning time
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,105
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,566
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,394
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,3139
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,730
 08-xgboost,XGBClassifier,1-Default,11
 09-catboost,CatBoostClassifier,1-Default,150
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44
