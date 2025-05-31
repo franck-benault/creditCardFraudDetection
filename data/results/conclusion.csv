@@ -1,6 +1,0 @@
-Package,Name,Conclusion,Comment
-04-sklearn.naive_bayes,GaussianNB,rejected-low resut,f1<0.01
-05-sklearn.neighbors,KNeighborsClassifier,rejected-low resut,f1<0.23+slow+slightly overfitting
-07-sklearn.ensemble.a-bagging,BaggingClassifier,rejected-no result,overfitting
-07-sklearn.ensemble.b-boosting,AdaBoostClassifier,rejected-low resut,f1<0.20+slow
-
