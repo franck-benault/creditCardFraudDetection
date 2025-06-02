@@ -16,6 +16,8 @@ import matplotlib.pyplot as plt
 
 import pickle as pkl
 
+import result as resultMd
+
 def saveTrainData(x_train,y_train,fileName):
     with open("../data/cleaned/"+fileName, "wb") as f:
         pkl.dump([x_train, y_train], f)
@@ -70,6 +72,7 @@ def randomUnderSampling(x,y,rate=1/100):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Undersampling", "randomUnderSampling", duration_in_s )
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
@@ -180,6 +183,7 @@ def randomOverSampling(x,y,rateOverSampling=3):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Oversampling", "randomOverSampling", duration_in_s )
 
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))

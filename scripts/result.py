@@ -157,3 +157,30 @@ def update_time_response_result(package, name,extraParameters, learningTime):
         timeResponsePandas=pd.concat([pd.DataFrame([[package,name,extraParameters,learningTime]], columns=timeResponsePandas.columns), timeResponsePandas], ignore_index=True)
 
     save_time_response_result(timeResponsePandas)
+
+
+def load_sampling_time_result():
+    usecols = ['Type','Name','Process time']
+    timeResponse = pd.read_csv("../data/results/SamplingTimeResponse.csv", usecols=usecols)
+    timeResponse=timeResponse.sort_values(["Type", "Name"])
+    return timeResponse
+
+def save_sampling_time_result(timeResponse): 
+    timeResponse.to_csv('../data/results/SamplingTimeResponse.csv', index=False) 
+
+def update_sampling_time_result(type, name, processTime):
+    processTime=int(processTime)
+    #print(learningTime)
+    timeResponsePandas = load_sampling_time_result()
+    
+    res=timeResponsePandas[(timeResponsePandas['Type']==type) 
+        & (timeResponsePandas['Name']==name)]
+    #print(res.shape[0])
+    if (res.shape[0]>0):
+        index=res.index[0]
+        #print('trace')
+        timeResponsePandas.loc[index, 'Process time']=processTime
+    else:
+        timeResponsePandas=pd.concat([pd.DataFrame([[type,name,processTime]], columns=timeResponsePandas.columns), timeResponsePandas], ignore_index=True)
+
+    save_sampling_time_result(timeResponsePandas)
