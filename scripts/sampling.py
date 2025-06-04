@@ -90,6 +90,7 @@ def nearMissV1UnderSampling(x,y,rate=1/100):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Undersampling", "nearMissV1", duration_in_s )
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
@@ -107,6 +108,7 @@ def nearMissV2UnderSampling(x,y,rate=1/100):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Undersampling", "nearMissV2", duration_in_s )
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
@@ -143,6 +145,7 @@ def tomekLinksUnderSampling(x,y):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Undersampling", "tomekLinks", duration_in_s )
 
     print(y.value_counts())
     print(y_train.value_counts())
@@ -162,6 +165,7 @@ def oneSidedSelectionUnderSampling(x,y):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Undersampling", "oneSidedSelection", duration_in_s )
 
     print(y.value_counts())
     print(y_train.value_counts())

@@ -1,14 +1,14 @@
 Package,Name,ExtraParameters,Learning time
-06-sklearn.tree,DecisionTreeClassifier,1-Default,22
-06-sklearn.tree,DecisionTreeClassifier,2-After tuning,12
+06-sklearn.tree,DecisionTreeClassifier,1-Default,14
+06-sklearn.tree,DecisionTreeClassifier,2-After tuning,11
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,1-Default,237
 07-sklearn.ensemble.a-bagging,ExtraTreesClassifier,2-After tuning,213
 07-sklearn.ensemble.a-bagging,RandomForest,1-Default,480
-07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,261
+07-sklearn.ensemble.a-bagging,RandomForest,2-After tuning,136
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,105
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,566
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,394
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,940
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,1073
 08-xgboost,XGBClassifier,1-Default,11
 09-catboost,CatBoostClassifier,1-Default,150
 10-imblearn.ensemble,BalancedRandomForest,1-Default,44

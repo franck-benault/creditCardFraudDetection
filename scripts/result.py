@@ -54,7 +54,7 @@ def update_features_IV_result(feature, iv):
     save_features_IV_result(data)
 
 def load_performance_nextdays_result():
-    usecols = ['Package','Name','ExtraParameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4','DiffF1']
+    usecols = ['Package','Name','ExtraParameters','F1 Day1','F1 Day2','F1 Day3','F1 Day4','ROC Day1','ROC Day2','ROC Day3','ROC Day4','DiffF1','AmountImportance']
     data = pd.read_csv("../data/results/performanceNextDays.csv", usecols=usecols)
     data=data.sort_values(["Package", "Name","ExtraParameters"])
     return data
@@ -62,7 +62,7 @@ def load_performance_nextdays_result():
 def save_performance_nextdays_result(timeResponse): 
     timeResponse.to_csv('../data/results/performanceNextDays.csv', index=False) 
 
-def update_performance_nextdays_result(package, name,extraParameters, f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4,diffF1):
+def update_performance_nextdays_result(package, name,extraParameters, f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4,diffF1,amountImportance):
     f1Day1=round(f1Day1,4)
     f1Day2=round(f1Day2,4)
     f1Day3=round(f1Day3,4)
@@ -74,6 +74,7 @@ def update_performance_nextdays_result(package, name,extraParameters, f1Day1,f1D
     rocDay4=round(rocDay4,4)
 
     diffF1=round(diffF1,4)
+    amountImportance=round(amountImportance,4)
 
     data = load_performance_nextdays_result()
     
@@ -95,9 +96,10 @@ def update_performance_nextdays_result(package, name,extraParameters, f1Day1,f1D
         data.loc[index, 'ROC Day4']=rocDay4
 
         data.loc[index, 'DiffF1']=diffF1
+        data.loc[index, 'AmountImportance']=amountImportance
 
     else:
-        data=pd.concat([pd.DataFrame([[package,name,extraParameters,f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4,diffF1]], columns=data.columns), data], ignore_index=True)
+        data=pd.concat([pd.DataFrame([[package,name,extraParameters,f1Day1,f1Day2,f1Day3,f1Day4,rocDay1,rocDay2,rocDay3,rocDay4,diffF1,amountImportance]], columns=data.columns), data], ignore_index=True)
 
     save_performance_nextdays_result(data)
 

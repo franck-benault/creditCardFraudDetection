@@ -1,3 +1,5 @@
 Type,Name,Process time
 Oversampling,randomOverSampling,0
+Undersampling,nearMissV1,9
+Undersampling,nearMissV2,90
 Undersampling,randomUnderSampling,0
