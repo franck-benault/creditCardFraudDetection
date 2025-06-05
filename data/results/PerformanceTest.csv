@@ -1,4 +1,6 @@
 Package,Name,ExtraParameters,F1,Mcc,ROC
+06-sklearn.tree,01-DecisionTreeClassifier,2-After tuning,0.1118,0.1586,0.5326
+06-sklearn.tree,1-DecisionTreeClassifier,2-After tuning,0.1749,0.174,0.5917
 06-sklearn.tree,DecisionTreeClassifier,2-After tuning,0.1612,0.161,0.5897
 07-sklearn.ensemble,AdaBoostClassifier,1-Default,0.036,0.0576,0.5022
 07-sklearn.ensemble,AdaBoostClassifier,2-After tuning,0.1207,0.1572,0.5044
@@ -11,7 +13,7 @@ Package,Name,ExtraParameters,F1,Mcc,ROC
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,1-Default,0.0751,0.0863,0.5248
 07-sklearn.ensemble.b-boosting,AdaBoostClassifier,2-After tuning,0.1467,0.2154,0.5423
 07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,1-Default,0.0924,0.1007,0.5325
-07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,0.1093,0.1472,0.5326
+07-sklearn.ensemble.b-boosting,GradientBoostingClassifier,2-After tuning,0.1014,0.1547,0.5288
 08-xgboost,XGBClassifier,1-Default,0.1208,0.1807,0.5346
 08-xgboost,XGBClassifier,2-After tuning,0.0569,0.108,0.5154
 09-catboost,CatBoostClassifier,1-Default,0.2046,0.2651,0.5313

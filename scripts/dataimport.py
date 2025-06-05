@@ -61,10 +61,24 @@ def category_encoding(dfTrx):
     dfTrx=pd.get_dummies(dfTrx,columns=['card_brand','country_group','mcc_group','trx_reversal','clusterCardHolder','clusterMerchant'], dtype = int)
     return dfTrx
 
+def amountBin(val):
+    if val<=0.682:
+        return 1
+    if val<=1.146:
+        return 2
+    if val<=1.492:
+        return 3
+    if val<=1.887:
+        return 4
+    return 5
+
 def amount_transformation(dfTrx):
     dfTrx['trx_amount_log10']=np.log10(1+dfTrx['trx_amount'])
     dfTrx= dfTrx.drop(columns=['trx_amount'])
+    dfTrx['amountBin']= dfTrx.apply(lambda x: amountBin(x.trx_amount_log10), axis=1)
     return dfTrx
+
+
 
 def ecom(dfTrx):
     dfTrx['ecom'] =np.where(dfTrx.card_entry_mode.isin([5,6,9]), 1,0)

@@ -31,8 +31,9 @@ def getPredictors(dataFrame):
     predictors.remove('term_mcc')
     predictors.remove('term_country')
     predictors.remove('trx_date_time')
-    predictors.remove('clusterCardHolder_UNKNOWN')
     predictors.remove('clusterMerchant_UNKNOWN')
+    predictors.remove('clusterCardHolder_UNKNOWN')
+    predictors.remove('trx_amount_log10')
     return predictors
 
 #calculate information value 
