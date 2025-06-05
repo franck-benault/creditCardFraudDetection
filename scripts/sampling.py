@@ -207,6 +207,7 @@ def randomOverUnderSampling(x,y,rateOverSampling=3,rateUnderSampling=1/100):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Combined", "randomOverUnderSampling", duration_in_s )
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
@@ -224,6 +225,8 @@ def smoteOverSampling(x,y,rateOverSampling=3):
     duration= now - then
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Oversampling", "smoteOverSampling", duration_in_s )
+
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
