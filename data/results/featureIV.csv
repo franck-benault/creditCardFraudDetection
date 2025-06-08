@@ -21,13 +21,13 @@ ch_present,0.8214
 mcd_fraud_score,0.8784
 trx_authentication,0.8815
 pos_entry_mode,0.9238
-country_group,1.1324
+country_group,1.1203
 term_mcc,1.3053
 vaa_score,1.4601
 trx_response_code_group,1.5047
 trx_winning_bit_group,1.5534
 trx_response_code,1.6321
 mcd_fraud_score (mcd only),1.6823
-term_country,1.8862
+term_country,1.8669
 trx_winning_bit,2.1425
 vaa_score (visa only),3.3009

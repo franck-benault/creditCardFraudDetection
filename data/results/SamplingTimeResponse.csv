@@ -1,9 +1,9 @@
 Type,Name,Process time
-Combined,randomOverUnderSampling,1
+Combined,randomOverUnderSampling,2
 Oversampling,randomOverSampling,0
-Oversampling,smoteOverSampling,1
-Undersampling,nearMissV1,6
-Undersampling,nearMissV2,66
-Undersampling,oneSidedSelection,488
-Undersampling,randomUnderSampling,0
+Oversampling,smoteOverSampling,2
+Undersampling,nearMissV1,10
+Undersampling,nearMissV2,89
+Undersampling,oneSidedSelection,567
+Undersampling,randomUnderSampling,1
 Undersampling,tomekLinks,2701

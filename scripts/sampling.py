@@ -175,7 +175,7 @@ def oneSidedSelectionUnderSampling(x,y):
 
 
 
-def randomOverSampling(x,y,rateOverSampling=3):
+def randomOverSampling(x,y,rateOverSampling=1.5):
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
     print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
 
@@ -193,7 +193,7 @@ def randomOverSampling(x,y,rateOverSampling=3):
     print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
     return x_train, y_train
 
-def randomOverUnderSampling(x,y,rateOverSampling=3,rateUnderSampling=1/100):
+def randomOverUnderSampling(x,y,rateOverSampling=1.5,rateUnderSampling=1/100):
     fraudRate=y.value_counts()[1]/y.value_counts()[0]
     print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
     
