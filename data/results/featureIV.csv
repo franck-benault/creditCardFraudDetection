@@ -22,7 +22,7 @@ mcd_fraud_score,0.8784
 trx_authentication,0.8815
 pos_entry_mode,0.9238
 country_group,1.1203
-term_mcc,1.3053
+term_mcc,1.2598
 vaa_score,1.4601
 trx_response_code_group,1.5047
 trx_winning_bit_group,1.5534
