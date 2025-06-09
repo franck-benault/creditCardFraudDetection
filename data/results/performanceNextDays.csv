@@ -28,6 +28,6 @@ Package,Name,ExtraParameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,R
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,1-Default,0.0827,0.0599,0.1261,0.0378,0.5245,0.5174,0.5382,0.5105,0.0252,0.08
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,3-Random undersampling,0.1487,0.1397,0.1694,0.1316,0.5972,0.5918,0.5975,0.5791,0.1391,0.0773
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,4-Random oversampling,0.0946,0.0731,0.1372,0.064,0.531,0.5236,0.5462,0.5198,0.0106,0.0725
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,5-Random overundersampling,0.139,0.1358,0.1699,0.1294,0.599,0.595,0.6108,0.5868,0.1488,0.0533
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,5-Random overundersampling,0.139,0.1358,0.1696,0.1293,0.599,0.595,0.6108,0.5868,0.1488,0.0535
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,6-TomekLinksUnderSampling,0.0847,0.0633,0.1267,0.0427,0.5253,0.5187,0.5393,0.512,0.0214,0.0767
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,0.1132,0.1009,0.1638,0.0864,0.5428,0.5381,0.564,0.5328,0.1128,0.04
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,0.1084,0.0998,0.1599,0.0894,0.5405,0.5373,0.5618,0.5336,0.1302,0.04
