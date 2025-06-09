@@ -1,10 +1,10 @@
 Package,Name,ExtraParameters,max_depth,n_estimators
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,3-Random undersampling,1,375.0
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,1-Default,1,400.0
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,4-Random oversampling,1,375.0
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,1-Default,1,375.0
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,4-Random oversampling,1,360.0
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,5-Random overundersampling,1,747.0
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,6-TomekLinksUnderSampling,1,280.0
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,1,500.0
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,6-TomekLinksUnderSampling,1,270.0
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,1,600.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,3-Random undersampling,1,325.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,1-Default,1,150.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,4-Random oversampling,1,100.0
