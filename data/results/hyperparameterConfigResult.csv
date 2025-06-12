@@ -4,13 +4,13 @@ Package,Name,ExtraParameters,max_depth,n_estimators
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,4-Random oversampling,1,360.0
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,5-Random overundersampling,1,747.0
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,6-TomekLinksUnderSampling,1,272.0
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,1,750.0
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,7-SmoteOverSampling,1,800.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,3-Random undersampling,1,473.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,1-Default,1,350.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,4-Random oversampling,1,60.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,5-Random overundersampling,1,568.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,6-TomekLinksUnderSampling,1,125.0
-07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,7-SmoteOverSampling,1,500.0
+07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,7-SmoteOverSampling,1,650.0
 06-sklearn.tree,1-DecisionTreeClassifier,2-class-weight,7,
 06-sklearn.tree,1-DecisionTreeClassifier,3-Random undersampling,9,
 06-sklearn.tree,1-DecisionTreeClassifier,1-Default,15,

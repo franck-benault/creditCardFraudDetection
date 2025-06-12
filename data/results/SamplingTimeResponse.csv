@@ -1,7 +1,7 @@
 Type,Name,Process time
 Combined,randomOverUnderSampling,1
 Oversampling,randomOverSampling,0
-Oversampling,smoteOverSampling,1
+Oversampling,smoteOverSampling,0
 Undersampling,nearMissV1,5
 Undersampling,nearMissV2,56
 Undersampling,oneSidedSelection,327
