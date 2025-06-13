@@ -7,6 +7,7 @@ from imblearn.under_sampling import OneSidedSelection
 
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.over_sampling import SMOTE
+from imblearn.over_sampling import ADASYN
 
 from datetime import datetime
 
@@ -226,6 +227,25 @@ def smoteOverSampling(x,y,rateOverSampling=3):
     duration_in_s = duration.total_seconds()
     print("Duration {0:.1f} s ".format(duration_in_s))
     resultMd.update_sampling_time_result("Oversampling", "smoteOverSampling", duration_in_s )
+
+    
+    fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
+    print("After Sampling shape  {0} fraud rate {1:.5f} ".format(x_train.shape,fraudRate2))
+    return x_train, y_train
+
+def adasynOverSampling(x,y,rateOverSampling=3):
+    fraudRate=y.value_counts()[1]/y.value_counts()[0]
+    print("Before Sampling shape {0} fraud rate {1:.5f} ".format(x.shape,fraudRate))
+
+    then= datetime.now()
+    oversample = ADASYN(sampling_strategy=fraudRate*rateOverSampling)
+    x_train, y_train = oversample.fit_resample(x, y)
+
+    now = datetime.now()
+    duration= now - then
+    duration_in_s = duration.total_seconds()
+    print("Duration {0:.1f} s ".format(duration_in_s))
+    resultMd.update_sampling_time_result("Oversampling", "adasynOverSampling", duration_in_s )
 
     
     fraudRate2=y_train.value_counts()[1]/y_train.value_counts()[0]
