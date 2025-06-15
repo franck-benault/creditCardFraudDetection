@@ -1,8 +1,8 @@
 Type,Name,Process time
-Combined,randomOverUnderSampling,1
-Oversampling,adasynOverSampling,11
+Combined,randomOverUnderSampling,0
+Oversampling,adasynOverSampling,4
 Oversampling,randomOverSampling,0
-Oversampling,smoteOverSampling,4
+Oversampling,smoteOverSampling,0
 Undersampling,nearMissV1,3
 Undersampling,nearMissV2,39
 Undersampling,oneSidedSelection,340
