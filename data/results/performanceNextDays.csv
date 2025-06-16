@@ -19,13 +19,13 @@ Package,Name,ExtraParameters,F1 Day1,F1 Day2,F1 Day3,F1 Day4,ROC Day1,ROC Day2,R
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,11-Random undersampling,0.1575,0.1634,0.1612,0.1311,0.5996,0.6064,0.5977,0.5822,0.1649,0.0086
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,12-TomekLinksUnderSampling,0.0888,0.0628,0.1307,0.0522,0.5287,0.5211,0.5451,0.5166,0.0266,0.0
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,21-Random oversampling,0.0952,0.0627,0.1306,0.0521,0.531,0.5211,0.5451,0.5166,0.0383,0.0
-07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,22-SmoteOverSampling,0.1293,0.1073,0.1429,0.0723,0.5467,0.5398,0.5527,0.5251,0.1035,0.0063
-07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,23-AdasynOverSampling,0.1204,0.0926,0.1423,0.0691,0.5417,0.5332,0.5512,0.5232,0.1123,0.0063
+07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,22-SmoteOverSampling,0.1249,0.0843,0.1442,0.0704,0.5437,0.5302,0.5523,0.524,0.0997,0.0064
+07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,23-AdasynOverSampling,0.1231,0.092,0.1453,0.0677,0.5425,0.5327,0.552,0.5228,0.1076,0.0068
 07-sklearn.ensemble.b-boosting,4-GradientBoostingClassifier,31-Random overundersampling,0.1562,0.1606,0.1653,0.1338,0.6018,0.6072,0.6043,0.5857,0.1513,0.008
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,01-Default,0.0843,0.0621,0.128,0.0442,0.5253,0.5183,0.5393,0.5124,0.0283,0.0753
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,11-Random undersampling,0.1487,0.1397,0.1694,0.1316,0.5972,0.5918,0.5975,0.5791,0.1391,0.0773
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,12-TomekLinksUnderSampling,0.0839,0.0581,0.1263,0.0403,0.5249,0.517,0.5386,0.5112,0.0198,0.0809
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,21-Random oversampling,0.0943,0.0724,0.1346,0.0628,0.5306,0.5232,0.5451,0.5194,0.0104,0.075
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,22-SmoteOverSampling,0.1148,0.1009,0.1621,0.0827,0.544,0.5389,0.5639,0.5317,0.1579,0.0282
-07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,23-AdasynOverSampling,0.1068,0.0917,0.1466,0.0816,0.5397,0.534,0.5552,0.5301,0.115,0.04
+07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,23-AdasynOverSampling,0.1047,0.0908,0.1491,0.0821,0.539,0.534,0.5567,0.5305,0.1238,0.0378
 07-sklearn.ensemble.b-boosting,5-AdaBoostClassifier,31-Random overundersampling,0.139,0.1358,0.1696,0.1293,0.599,0.595,0.6108,0.5868,0.1488,0.0535
